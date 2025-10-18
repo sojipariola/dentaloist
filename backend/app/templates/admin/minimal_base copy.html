@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Test</title>
+    <style>
+        body { margin: 0; font-family: Arial; background: #f5f5f5; }
+        .container { display: flex; min-height: 100vh; }
+        .sidebar { width: 280px; background: white; border-right: 2px solid #ddd; padding: 20px; }
+        .main { flex: 1; margin-left: 280px; }
+        .navbar { background: white; padding: 15px 20px; border-bottom: 1px solid #ddd; }
+        .content { padding: 20px; }
+        .category { margin: 10px 0; }
+        .category-header { background: #f8f9fa; padding: 10px; cursor: pointer; border-left: 3px solid #007bff; }
+        .nav-link { display: block; padding: 8px 15px; color: #333; text-decoration: none; }
+        .nav-link:hover { background: #e9ecef; }
+        .debug { background: #ffeaa7; padding: 10px; margin: 10px 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h2>🧩 Dentaloist Admin</h2>
+            
+            <div class="debug">
+                <strong>Debug Info:</strong><br>
+                admin_manager: {{ '✅ Available' if admin_manager else '❌ Missing' }}<br>
+                Menu: {{ '✅ Available' if admin_manager and admin_manager.get_menu() else '❌ Missing' }}<br>
+                Categories: {{ admin_manager.get_menu().keys()|list|length if admin_manager and admin_manager.get_menu() else 0 }}
+            </div>
+
+            {% if admin_manager and admin_manager.get_menu() %}
+                {% for category, items in admin_manager.get_menu().items() %}
+                <div class="category">
+                    <div class="category-header">
+                        <strong>{{ category }}</strong> ({{ items|length }})
+                    </div>
+                    <div>
+                        {% for item in items %}
+                        <a href="{{ url_for('admin.list_view', model_name=item.model_name) }}" class="nav-link">
+                            📄 {{ item.name }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div style="color: red; padding: 20px; text-align: center;">
+                    ❌ No menu data available in template
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main">
+            <!-- NAVBAR -->
+            <div class="navbar">
+                <strong>Navbar</strong> | 
+                User: {{ current_user.email if current_user.is_authenticated else 'Guest' }} |
+                <a href="{{ url_for('auth.logout_route') }}">Logout</a>
+            </div>
+
+            <!-- CONTENT -->
+            <div class="content">
+                {% block content %}
+                <h1>Welcome to Admin</h1>
+                <p>This is a minimal test template.</p>
+                <p>If you can see the sidebar with categories, the menu is working!</p>
+                
+                <div class="debug">
+                    <h3>Template Variables Check:</h3>
+                    <ul>
+                        <li>admin_manager: {{ '✅ Present' if admin_manager else '❌ Missing' }}</li>
+                        <li>Menu data: {{ '✅ Present' if admin_manager and admin_manager.get_menu() else '❌ Missing' }}</li>
+                        <li>Categories count: {{ admin_manager.get_menu().keys()|list|length if admin_manager and admin_manager.get_menu() else 0 }}</li>
+                        <li>Current user: {{ current_user.email if current_user.is_authenticated else 'Not authenticated' }}</li>
+                    </ul>
+                </div>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

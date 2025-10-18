@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab Orders - DentalSys</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/themes/light.css" id="theme-link">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div class="main-content">
+        <div id="sidebar-container"></div>
+        <div class="page-content">
+            <h1>🧪 Lab Orders</h1>
+            <div class="toolbar">
+                <button id="create-order">+ New Order</button>
+                <select id="status-filter">
+                    <option value="all">All Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="in_progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            <div id="orders-list"></div>
+        </div>
+    </div>
+    <script type="module" src="../../js/pages/lab_orders.js"></script>
+</body>
+</html>

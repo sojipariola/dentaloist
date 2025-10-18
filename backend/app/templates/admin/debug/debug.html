@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Dentaloist Admin</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .debug-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; background: white; border-radius: 8px; }
+        .success { border-left: 4px solid #28a745; }
+        .error { border-left: 4px solid #dc3545; }
+        .info { border-left: 4px solid #17a2b8; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 4px; overflow-x: auto; }
+        .category-list { margin: 10px 0; }
+        .category-item { padding: 8px; border-bottom: 1px solid #eee; }
+    </style>
+</head>
+<body>
+    <h1>🧩 Dentaloist Admin Debug</h1>
+    
+    <div class="debug-section info">
+        <h2>📊 Admin Manager Status</h2>
+        <p><strong>admin_manager exists:</strong> {{ '✅ Yes' if admin_manager else '❌ No' }}</p>
+        <p><strong>Menu exists:</strong> {{ '✅ Yes' if admin_manager and admin_manager.get_menu() else '❌ No' }}</p>
+        <p><strong>Categories count:</strong> {{ admin_manager.get_menu().keys()|list|length if admin_manager and admin_manager.get_menu() else 0 }}</p>
+    </div>
+
+    <div class="debug-section success">
+        <h2>📁 Menu Structure</h2>
+        {% if admin_manager and admin_manager.get_menu() %}
+            <div class="category-list">
+                {% for category, items in admin_manager.get_menu().items() %}
+                <div class="category-item">
+                    <strong>{{ category }}</strong> - {{ items|length }} items
+                    <ul style="margin: 5px 0 0 20px; color: #666;">
+                        {% for item in items %}
+                        <li>{{ item.name }} ({{ item.model_name }}) - icon: {{ item.icon }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="error">❌ No menu data available</p>
+        {% endif %}
+    </div>
+
+    <div class="debug-section info">
+        <h2>🛠 Template Information</h2>
+        <p><strong>Current User:</strong> {{ current_user.email if current_user.is_authenticated else 'Not authenticated' }}</p>
+        <p><strong>Template Rendered:</strong> ✅ Successfully</p>
+        <p><strong>Total Models:</strong> {{ admin_manager._views|length if admin_manager else 0 }}</p>
+    </div>
+
+    <div class="debug-section">
+        <h2>🔗 Quick Links</h2>
+        <ul>
+            <li><a href="{{ url_for('admin.dashboard') }}">Main Admin Dashboard</a></li>
+            <li><a href="{{ url_for('admin.list_view', model_name='user') }}">Users List</a></li>
+            <li><a href="{{ url_for('admin.list_view', model_name='patient') }}">Patients List</a></li>
+        </ul>
+    </div>
+
+    <div class="debug-section info">
+        <h2>🔧 Technical Details</h2>
+        <p><strong>Views Registered:</strong></p>
+        <ul>
+            {% if admin_manager %}
+                {% for model_name, view in admin_manager._views.items() %}
+                <li>{{ model_name }} - {{ view.name }} ({{ view.__class__.__name__ }})</li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+</body>
+</html>

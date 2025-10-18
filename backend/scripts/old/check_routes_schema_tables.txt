@@ -1,0 +1,3602 @@
+============================================================
+DENTALOIST SYSTEM ANALYSIS REPORT
+============================================================
+Generated FERNET_KEY from SECRET_KEY
+🔍 Analyzing application routes...
+✅ Found 43 routes across 1 blueprints
+🔄 Initializing main admin views...
+📁 Setting up categories...
+   ✅ Added category: Practice Management
+   ✅ Added category: Clinical
+   ✅ Added category: Financial
+   ✅ Added category: Inventory
+   ✅ Added category: Security & Analytics
+   ✅ Added category: Family
+🔄 Creating view for Organizations in category Practice Management...
+🔄 Created view: Organizations for Organization in category: Practice Management
+✅ Added admin view for Organization (model: organization) in category Practice Management
+✅ Registered Organizations in category Practice Management
+🔄 Creating view for Tenants in category Practice Management...
+🔄 Created view: Tenants for Tenant in category: Practice Management
+✅ Added admin view for Tenant (model: tenant) in category Practice Management
+✅ Registered Tenants in category Practice Management
+🔄 Creating view for Staff in category Practice Management...
+🔄 Created view: Staff for Staff in category: Practice Management
+✅ Added admin view for Staff (model: staff) in category Practice Management
+✅ Registered Staff in category Practice Management
+🔄 Creating view for Appointments in category Practice Management...
+🔄 Created view: Appointments for Appointment in category: Practice Management
+✅ Added admin view for Appointment (model: appointment) in category Practice Management
+✅ Registered Appointments in category Practice Management
+🔄 Creating view for Subscriptions in category Practice Management...
+🔄 Created view: Subscriptions for Subscription in category: Practice Management
+✅ Added admin view for Subscription (model: subscription) in category Practice Management
+✅ Registered Subscriptions in category Practice Management
+🔄 Creating view for Patients in category Clinical...
+🔄 Created view: Patients for Patient in category: Clinical
+✅ Added admin view for Patient (model: patient) in category Clinical
+✅ Registered Patients in category Clinical
+🔄 Creating view for Treatments in category Clinical...
+🔄 Created view: Treatments for Treatment in category: Clinical
+✅ Added admin view for Treatment (model: treatment) in category Clinical
+✅ Registered Treatments in category Clinical
+🔄 Creating view for Treatment Plans in category Clinical...
+🔄 Created view: Treatment Plans for TreatmentPlan in category: Clinical
+✅ Added admin view for TreatmentPlan (model: treatmentplan) in category Clinical
+✅ Registered Treatment Plans in category Clinical
+🔄 Creating view for Clinical Notes in category Clinical...
+🔄 Created view: Clinical Notes for ClinicalNote in category: Clinical
+✅ Added admin view for ClinicalNote (model: clinicalnote) in category Clinical
+✅ Registered Clinical Notes in category Clinical
+🔄 Creating view for Allergies in category Clinical...
+🔄 Created view: Allergies for Allergy in category: Clinical
+✅ Added admin view for Allergy (model: allergy) in category Clinical
+✅ Registered Allergies in category Clinical
+🔄 Creating view for Prescriptions in category Clinical...
+🔄 Created view: Prescriptions for Prescription in category: Clinical
+✅ Added admin view for Prescription (model: prescription) in category Clinical
+✅ Registered Prescriptions in category Clinical
+🔄 Creating view for Vital Signs in category Clinical...
+🔄 Created view: Vital Signs for VitalSign in category: Clinical
+✅ Added admin view for VitalSign (model: vitalsign) in category Clinical
+✅ Registered Vital Signs in category Clinical
+🔄 Creating view for Invoices in category Financial...
+🔄 Created view: Invoices for Invoice in category: Financial
+✅ Added admin view for Invoice (model: invoice) in category Financial
+✅ Registered Invoices in category Financial
+🔄 Creating view for Payments in category Financial...
+🔄 Created view: Payments for Payment in category: Financial
+✅ Added admin view for Payment (model: payment) in category Financial
+✅ Registered Payments in category Financial
+🔄 Creating view for Insurance Plans in category Financial...
+🔄 Created view: Insurance Plans for InsurancePlan in category: Financial
+✅ Added admin view for InsurancePlan (model: insuranceplan) in category Financial
+✅ Registered Insurance Plans in category Financial
+🔄 Creating view for Insurance Claims in category Financial...
+🔄 Created view: Insurance Claims for InsuranceClaim in category: Financial
+✅ Added admin view for InsuranceClaim (model: insuranceclaim) in category Financial
+✅ Registered Insurance Claims in category Financial
+🔄 Creating view for Expenses in category Financial...
+🔄 Created view: Expenses for Expense in category: Financial
+✅ Added admin view for Expense (model: expense) in category Financial
+✅ Registered Expenses in category Financial
+🔄 Creating view for Financial Reports in category Financial...
+🔄 Created view: Financial Reports for FinancialReport in category: Financial
+✅ Added admin view for FinancialReport (model: financialreport) in category Financial
+✅ Registered Financial Reports in category Financial
+🔄 Creating view for Products in category Inventory...
+🔄 Created view: Products for Product in category: Inventory
+✅ Added admin view for Product (model: product) in category Inventory
+✅ Registered Products in category Inventory
+🔄 Creating view for Product Categories in category Inventory...
+🔄 Created view: Product Categories for ProductCategory in category: Inventory
+✅ Added admin view for ProductCategory (model: productcategory) in category Inventory
+✅ Registered Product Categories in category Inventory
+🔄 Creating view for Suppliers in category Inventory...
+🔄 Created view: Suppliers for Supplier in category: Inventory
+✅ Added admin view for Supplier (model: supplier) in category Inventory
+✅ Registered Suppliers in category Inventory
+🔄 Creating view for Purchase Orders in category Inventory...
+🔄 Created view: Purchase Orders for PurchaseOrder in category: Inventory
+✅ Added admin view for PurchaseOrder (model: purchaseorder) in category Inventory
+✅ Registered Purchase Orders in category Inventory
+🔄 Creating view for Inventory Transactions in category Inventory...
+🔄 Created view: Inventory Transactions for InventoryTransaction in category: Inventory
+✅ Added admin view for InventoryTransaction (model: inventorytransaction) in category Inventory
+✅ Registered Inventory Transactions in category Inventory
+🔄 Creating view for Users in category Security & Analytics...
+🔄 Created view: Users for User in category: Security & Analytics
+✅ Added admin view for User (model: user) in category Security & Analytics
+✅ Registered Users in category Security & Analytics
+🔄 Creating view for Roles in category Security & Analytics...
+🔄 Created view: Roles for Role in category: Security & Analytics
+✅ Added admin view for Role (model: role) in category Security & Analytics
+✅ Registered Roles in category Security & Analytics
+🔄 Creating view for Notifications in category Security & Analytics...
+🔄 Created view: Notifications for Notification in category: Security & Analytics
+✅ Added admin view for Notification (model: notification) in category Security & Analytics
+✅ Registered Notifications in category Security & Analytics
+🔄 Creating view for Audit Trail in category Security & Analytics...
+🔄 Created view: Audit Trail for AuditTrail in category: Security & Analytics
+✅ Added admin view for AuditTrail (model: audittrail) in category Security & Analytics
+✅ Registered Audit Trail in category Security & Analytics
+🔄 Creating view for Security Events in category Security & Analytics...
+🔄 Created view: Security Events for SecurityEvent in category: Security & Analytics
+✅ Added admin view for SecurityEvent (model: securityevent) in category Security & Analytics
+✅ Registered Security Events in category Security & Analytics
+🔄 Creating view for Login Attempts in category Security & Analytics...
+🔄 Created view: Login Attempts for LoginAttempt in category: Security & Analytics
+✅ Added admin view for LoginAttempt (model: loginattempt) in category Security & Analytics
+✅ Registered Login Attempts in category Security & Analytics
+🔄 Creating view for Family Members in category Family...
+🔄 Created view: Family Members for FamilyMember in category: Family
+✅ Added admin view for FamilyMember (model: familymember) in category Family
+✅ Registered Family Members in category Family
+🎯 Custom Admin interface initialized with 30 views
+📊 Final menu state: {'total_views': 30, 'total_categories': 6, 'categories': ['Practice Management', 'Clinical', 'Financial', 'Inventory', 'Security & Analytics', 'Family'], 'category_counts': {'Practice Management': 5, 'Clinical': 7, 'Financial': 6, 'Inventory': 5, 'Security & Analytics': 6, 'Family': 1}, 'views_registered': ['organization', 'tenant', 'staff', 'appointment', 'subscription', 'patient', 'treatment', 'treatmentplan', 'clinicalnote', 'allergy', 'prescription', 'vitalsign', 'invoice', 'payment', 'insuranceplan', 'insuranceclaim', 'expense', 'financialreport', 'product', 'productcategory', 'supplier', 'purchaseorder', 'inventorytransaction', 'user', 'role', 'notification', 'audittrail', 'securityevent', 'loginattempt', 'familymember']}
+🔄 Initializing lookup table views...
+✅ Added admin view for AppointmentStatus (model: appointmentstatus) in category Lookup Tables
+✅ Registered lookup view: Appointment Statuses
+✅ Added admin view for AppointmentType (model: appointmenttype) in category Lookup Tables
+✅ Registered lookup view: Appointment Types
+✅ Added admin view for TreatmentStatus (model: treatmentstatus) in category Lookup Tables
+✅ Registered lookup view: Treatment Statuses
+✅ Added admin view for TreatmentType (model: treatmenttype) in category Lookup Tables
+✅ Registered lookup view: Treatment Types
+✅ Added admin view for TreatmentPriority (model: treatmentpriority) in category Lookup Tables
+✅ Registered lookup view: Treatment Priorities
+✅ Added admin view for AllergySeverity (model: allergyseverity) in category Lookup Tables
+✅ Registered lookup view: Allergy Severities
+✅ Added admin view for MedicationRoute (model: medicationroute) in category Lookup Tables
+✅ Registered lookup view: Medication Routes
+✅ Added admin view for NoteType (model: notetype) in category Lookup Tables
+✅ Registered lookup view: Note Types
+✅ Added admin view for VitalSignsUnit (model: vitalsignsunit) in category Lookup Tables
+✅ Registered lookup view: Vital Signs Units
+✅ Added admin view for InvoiceStatus (model: invoicestatus) in category Lookup Tables
+✅ Registered lookup view: Invoice Statuses
+✅ Added admin view for PaymentStatus (model: paymentstatus) in category Lookup Tables
+✅ Registered lookup view: Payment Statuses
+✅ Added admin view for PaymentMethod (model: paymentmethod) in category Lookup Tables
+✅ Registered lookup view: Payment Methods
+✅ Added admin view for ClaimStatus (model: claimstatus) in category Lookup Tables
+✅ Registered lookup view: Claim Statuses
+✅ Added admin view for ExpenseCategory (model: expensecategory) in category Lookup Tables
+✅ Registered lookup view: Expense Categories
+✅ Added admin view for Currency (model: currency) in category Lookup Tables
+✅ Registered lookup view: Currencies
+✅ Added admin view for OrganizationType (model: organizationtype) in category Lookup Tables
+✅ Registered lookup view: Organization Types
+✅ Added admin view for IndustryType (model: industrytype) in category Lookup Tables
+✅ Registered lookup view: Industry Types
+✅ Added admin view for SubscriptionPlan (model: subscriptionplan) in category Lookup Tables
+✅ Registered lookup view: Subscription Plans
+✅ Added admin view for TenantStatus (model: tenantstatus) in category Lookup Tables
+✅ Registered lookup view: Tenant Statuses
+✅ Added admin view for UserRole (model: userrole) in category Lookup Tables
+✅ Registered lookup view: User Roles
+✅ Added admin view for PermissionCategory (model: permissioncategory) in category Lookup Tables
+✅ Registered lookup view: Permission Categories
+✅ Added admin view for NotificationType (model: notificationtype) in category Lookup Tables
+✅ Registered lookup view: Notification Types
+✅ Added admin view for SecurityEventType (model: securityeventtype) in category Lookup Tables
+✅ Registered lookup view: Security Event Types
+✅ Added admin view for WebhookEventStatus (model: webhookeventstatus) in category Lookup Tables
+✅ Registered lookup view: Webhook Event Statuses
+✅ Added admin view for IntegrationStatus (model: integrationstatus) in category Lookup Tables
+✅ Registered lookup view: Integration Statuses
+✅ Added admin view for ProductType (model: producttype) in category Lookup Tables
+✅ Registered lookup view: Product Types
+✅ Added admin view for PurchaseOrderStatus (model: purchaseorderstatus) in category Lookup Tables
+✅ Registered lookup view: Purchase Order Statuses
+✅ Added admin view for InventoryAdjustmentType (model: inventoryadjustmenttype) in category Lookup Tables
+✅ Registered lookup view: Inventory Adjustment Types
+✅ Added admin view for InventoryTransactionType (model: inventorytransactiontype) in category Lookup Tables
+✅ Registered lookup view: Inventory Transaction Types
+✅ Added admin view for ReportType (model: reporttype) in category Lookup Tables
+✅ Registered lookup view: Report Types
+✅ Added admin view for WidgetType (model: widgettype) in category Lookup Tables
+✅ Registered lookup view: Widget Types
+✅ Added admin view for PriorityLevel (model: prioritylevel) in category Lookup Tables
+✅ Registered lookup view: Priority Levels
+🎯 Lookup tables initialized: 32 views
+✅ Complete Dentaloist Admin System Initialized
+✅ Database Tables: All models + lookup tables
+✅ App Routes: Complete route analysis
+✅ Available at: /admin
+✅ Admin interface initialized
+✅ Template folder: /home/soji/Documents/Projects/Dentaloist/backend/app/templates
+✅ CLI commands registered.
+🚀 DENTALOIST ROUTE & SCHEMA CHECKER
+==================================================
+📅 Generated at: 2025-10-08 18:01:41
+==================================================
+📊 DATABASE SCHEMA CHECK
+------------------------------
+✅ Found 110 tables:
+
+   📋 allergies: 12 columns
+         patient_id           INTEGER NOT NULL
+         allergen             VARCHAR(100) NOT NULL
+         reaction             VARCHAR(255) NULL
+         severity_id          INTEGER NULL
+         onset_date           DATE NULL
+         is_active            BOOLEAN NULL
+         notes                TEXT NULL
+         recorded_by          INTEGER NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 3
+          ['patient_id'] → patients.['id']
+          ['severity_id'] → allergy_severities.['id']
+          ['recorded_by'] → users.['id']
+      📑 Indexes: 2
+          idx_allergy_allergen: allergen
+          idx_allergy_patient: patient_id, is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM alle...' should be explicitly declared as text('SELECT COUNT(*) FROM alle...')
+
+   📋 allergy_severities: 12 columns
+         requires_emergency_care BOOLEAN NULL
+         risk_level           VARCHAR(20) NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_allergy_severities_code: code
+          ix_allergy_severities_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM alle...' should be explicitly declared as text('SELECT COUNT(*) FROM alle...')
+
+   📋 analytics_dashboards: 16 columns
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         organization_id      VARCHAR(50) NOT NULL
+         layout_type          VARCHAR(20) NULL
+         is_default           BOOLEAN NULL
+         is_public            BOOLEAN NULL
+         refresh_interval     INTEGER NULL
+         allowed_roles        JSON NULL
+         required_permissions JSON NULL
+         theme                VARCHAR(50) NULL
+         custom_css           TEXT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['organization_id'] → organizations.['public_id']
+      📑 Indexes: 3
+          idx_dashboard_org_default: organization_id, is_default
+          idx_dashboard_visibility: is_public, is_active
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM anal...' should be explicitly declared as text('SELECT COUNT(*) FROM anal...')
+
+   📋 analytics_events: 14 columns
+         event_type           VARCHAR(100) NOT NULL
+         event_name           VARCHAR(200) NOT NULL
+         user_id              INTEGER NULL
+         session_id           VARCHAR(100) NULL
+         properties           JSON NULL
+         context              JSON NULL
+         organization_id      VARCHAR(50) NULL
+         client_timestamp     DATETIME NULL
+         processed_at         DATETIME NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['user_id'] → users.['id']
+          ['organization_id'] → organizations.['public_id']
+      📑 Indexes: 6
+          idx_analytics_event_created: created_at
+          idx_analytics_event_session: session_id, created_at
+          ... and 4 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM anal...' should be explicitly declared as text('SELECT COUNT(*) FROM anal...')
+
+   📋 analytics_reports: 15 columns
+         organization_id      VARCHAR(50) NOT NULL
+         title                VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         report_type_id       INTEGER NOT NULL
+         parameters           JSON NULL
+         is_template          BOOLEAN NULL
+         is_public            BOOLEAN NULL
+         generated_at         DATETIME NULL
+         file_url             VARCHAR(255) NULL
+         created_by           INTEGER NOT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 3
+          ['organization_id'] → organizations.['public_id']
+          ['report_type_id'] → report_types.['id']
+          ['created_by'] → users.['id']
+      📑 Indexes: 3
+          idx_analytics_idx_report_created: created_at
+          idx_analytics_report_org_type: organization_id, report_type_id
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM anal...' should be explicitly declared as text('SELECT COUNT(*) FROM anal...')
+
+   📋 analytics_widgets: 23 columns
+         dashboard_id         INTEGER NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         title                VARCHAR(200) NOT NULL
+         widget_type_id       INTEGER NOT NULL
+         data_source          VARCHAR(200) NOT NULL
+         query_parameters     JSON NULL
+         refresh_interval     INTEGER NULL
+         position_x           INTEGER NULL
+         position_y           INTEGER NULL
+         width                INTEGER NULL
+         height               INTEGER NULL
+         configuration        JSON NULL
+         filters              JSON NULL
+         is_visible           BOOLEAN NULL
+         is_enabled           BOOLEAN NULL
+         cached_data          JSON NULL
+         cached_at            DATETIME NULL
+         cache_ttl            INTEGER NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['dashboard_id'] → analytics_dashboards.['id']
+          ['widget_type_id'] → widget_types.['id']
+      📑 Indexes: 2
+          idx_widget_dashboard: dashboard_id
+          ix_analytics_widgets_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM anal...' should be explicitly declared as text('SELECT COUNT(*) FROM anal...')
+
+   📋 appointment_statuses: 12 columns
+         name                 VARCHAR(50) NOT NULL
+         description          TEXT NULL
+         allows_editing       BOOLEAN NULL
+         is_final_status      BOOLEAN NULL
+         code                 VARCHAR(20) NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          ix_appointment_statuses_is_active: is_active
+          UNIQUE ix_appointment_statuses_name: name
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM appo...' should be explicitly declared as text('SELECT COUNT(*) FROM appo...')
+
+   📋 appointment_types: 13 columns
+         default_duration     INTEGER NULL
+         requires_specialist  BOOLEAN NULL
+         category             VARCHAR(50) NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_appointment_types_code: code
+          ix_appointment_types_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM appo...' should be explicitly declared as text('SELECT COUNT(*) FROM appo...')
+
+   📋 appointments: 42 columns
+         organization_id      VARCHAR(50) NOT NULL
+         patient_id           INTEGER NOT NULL
+         dentist_id           INTEGER NULL
+         treatment_id         INTEGER NULL
+         staff_id             INTEGER NULL
+         availability_slot_id INTEGER NULL
+         appointment_type_id  INTEGER NOT NULL
+         status_id            INTEGER NOT NULL
+         priority_id          INTEGER NULL
+         title                VARCHAR(200) NOT NULL
+         description          TEXT NULL
+         start_time           DATETIME NOT NULL
+         end_time             DATETIME NOT NULL
+         duration             INTEGER NOT NULL
+         actual_start_time    DATETIME NULL
+         actual_end_time      DATETIME NULL
+         actual_duration      INTEGER NULL
+         treatment_room       VARCHAR(50) NULL
+         location             VARCHAR(200) NULL
+         equipment_needed     JSON NULL
+         chief_complaint      TEXT NULL
+         treatment_notes      TEXT NULL
+         prescribed_medications JSON NULL
+         follow_up_required   BOOLEAN NULL
+         follow_up_date       DATETIME NULL
+         estimated_cost       NUMERIC(10, 2) NULL
+         insurance_covered    NUMERIC(10, 2) NULL
+         patient_payment      NUMERIC(10, 2) NULL
+         payment_status       VARCHAR(20) NULL
+         reminder_sent        BOOLEAN NULL
+         confirmation_sent    BOOLEAN NULL
+         sms_reminder         BOOLEAN NULL
+         email_reminder       BOOLEAN NULL
+         reminder_sent_at     DATETIME NULL
+         cancellation_reason  TEXT NULL
+         cancelled_by_id      INTEGER NULL
+         cancellation_date    DATETIME NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 10
+          ['organization_id'] → organizations.['public_id']
+          ['patient_id'] → patients.['id']
+          ['dentist_id'] → users.['id']
+          ... and 7 more foreign keys
+      📑 Indexes: 7
+          idx_appointment_dentist: dentist_id, start_time
+          idx_appointment_org_date: organization_id, start_time
+          ... and 5 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM appo...' should be explicitly declared as text('SELECT COUNT(*) FROM appo...')
+
+   📋 audit_trails: 17 columns
+         user_id              INTEGER NOT NULL
+         ip_address           VARCHAR(45) NULL
+         user_agent           TEXT NULL
+         action               VARCHAR(100) NOT NULL
+         entity               VARCHAR(100) NOT NULL
+         entity_id            VARCHAR(50) NOT NULL
+         old_values           JSON NULL
+         new_values           JSON NULL
+         changes              JSON NULL
+         description          TEXT NULL
+         organization_id      VARCHAR(50) NULL
+         tenant_id            INTEGER NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 3
+          ['user_id'] → users.['id']
+          ['organization_id'] → organizations.['public_id']
+          ['tenant_id'] → tenants.['id']
+      📑 Indexes: 5
+          idx_audit_action_date: action, created_at
+          idx_audit_entity_id: entity, entity_id
+          ... and 3 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM audi...' should be explicitly declared as text('SELECT COUNT(*) FROM audi...')
+
+   📋 availability_slots: 25 columns
+         staff_id             INTEGER NOT NULL
+         organization_id      VARCHAR(50) NOT NULL
+         room_id              INTEGER NULL
+         date                 DATE NOT NULL
+         start_time           TIME NOT NULL
+         end_time             TIME NOT NULL
+         slot_type            VARCHAR(50) NOT NULL
+         status               VARCHAR(20) NOT NULL
+         recurrence_pattern   VARCHAR(50) NULL
+         recurrence_end_date  DATE NULL
+         max_patients         INTEGER NULL
+         current_bookings     INTEGER NULL
+         is_bookable          BOOLEAN NULL
+         is_online            BOOLEAN NULL
+         special_notes        TEXT NULL
+         allowed_appointment_types VARCHAR(200) NULL
+         min_advance_booking_hours INTEGER NULL
+         max_advance_booking_days INTEGER NULL
+         required_equipment   TEXT NULL
+         deleted_at           DATETIME NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 3
+          ['staff_id'] → staff.['id']
+          ['organization_id'] → organizations.['public_id']
+          ['room_id'] → treatment_rooms.['id']
+      📑 Indexes: 5
+          idx_clinical_idx_slot_datetime: date, start_time, end_time
+          idx_clinical_idx_staff_availability: staff_id, date, status
+          ... and 3 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM avai...' should be explicitly declared as text('SELECT COUNT(*) FROM avai...')
+
+   📋 claim_statuses: 12 columns
+         is_active            BOOLEAN NULL
+         requires_action      BOOLEAN NULL
+         allows_resubmission  BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 1
+          UNIQUE ix_claim_statuses_code: code
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM clai...' should be explicitly declared as text('SELECT COUNT(*) FROM clai...')
+
+   📋 clinical_notes: 13 columns
+         treatment_id         INTEGER NOT NULL
+         author_id            INTEGER NOT NULL
+         note_type_id         INTEGER NOT NULL
+         content              TEXT NOT NULL
+         subjective           TEXT NULL
+         objective            TEXT NULL
+         assessment           TEXT NULL
+         plan                 TEXT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 3
+          ['treatment_id'] → treatments.['id']
+          ['author_id'] → users.['id']
+          ['note_type_id'] → note_types.['id']
+      📑 Indexes: 4
+          idx_clinical_note_author: author_id
+          idx_clinical_note_treatment: treatment_id, created_at
+          ... and 2 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM clin...' should be explicitly declared as text('SELECT COUNT(*) FROM clin...')
+
+   📋 currencies: 12 columns
+         symbol               VARCHAR(10) NULL
+         code                 VARCHAR(3) NOT NULL
+         decimal_places       INTEGER NULL
+         is_active            BOOLEAN NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+      🗝️  Primary Key: id
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM curr...' should be explicitly declared as text('SELECT COUNT(*) FROM curr...')
+
+   📋 data_exports: 19 columns
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         organization_id      VARCHAR(50) NOT NULL
+         requested_by         INTEGER NOT NULL
+         export_type          VARCHAR(50) NOT NULL
+         filters              JSON NULL
+         format               VARCHAR(20) NULL
+         include_sensitive    BOOLEAN NULL
+         status               VARCHAR(20) NULL
+         progress             INTEGER NULL
+         file_url             VARCHAR(500) NULL
+         file_size            INTEGER NULL
+         record_count         INTEGER NULL
+         expires_at           DATETIME NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['organization_id'] → organizations.['public_id']
+          ['requested_by'] → users.['id']
+      📑 Indexes: 4
+          idx_data_export_created: created_at
+          idx_data_export_expires: expires_at
+          ... and 2 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM data...' should be explicitly declared as text('SELECT COUNT(*) FROM data...')
+
+   📋 email_logs: 24 columns
+         recipient_email      VARCHAR(255) NOT NULL
+         recipient_name       VARCHAR(100) NULL
+         subject              VARCHAR(255) NOT NULL
+         body                 TEXT NULL
+         body_html            TEXT NULL
+         sender_email         VARCHAR(255) NOT NULL
+         sender_name          VARCHAR(100) NULL
+         template_id          VARCHAR(100) NULL
+         email_type           VARCHAR(50) NULL
+         status               VARCHAR(20) NULL
+         status_message       TEXT NULL
+         provider             VARCHAR(50) NULL
+         provider_message_id  VARCHAR(255) NULL
+         sent_at              DATETIME NULL
+         delivered_at         DATETIME NULL
+         opened_at            DATETIME NULL
+         headers              JSON NULL
+         attachments_count    INTEGER NULL
+         retry_count          INTEGER NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 6
+          idx_email_log_recipient: recipient_email
+          idx_email_log_sent_at: sent_at
+          ... and 4 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM emai...' should be explicitly declared as text('SELECT COUNT(*) FROM emai...')
+
+   📋 expense_categories: 13 columns
+         is_tax_deductible    BOOLEAN NULL
+         requires_approval    BOOLEAN NULL
+         budget_category      VARCHAR(50) NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_expense_categories_code: code
+          ix_expense_categories_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM expe...' should be explicitly declared as text('SELECT COUNT(*) FROM expe...')
+
+   📋 expenses: 22 columns
+         organization_id      VARCHAR(50) NOT NULL
+         category_id          INTEGER NOT NULL
+         payment_method_id    INTEGER NULL
+         amount               NUMERIC(10, 2) NOT NULL
+         description          TEXT NULL
+         expense_date         DATE NOT NULL
+         vendor_name          VARCHAR(200) NULL
+         vendor_invoice_number VARCHAR(100) NULL
+         payment_date         DATE NULL
+         is_recurring         BOOLEAN NULL
+         recurrence_pattern   VARCHAR(50) NULL
+         is_tax_deductible    BOOLEAN NULL
+         tax_amount           NUMERIC(10, 2) NULL
+         status               VARCHAR(20) NULL
+         approved_by          INTEGER NULL
+         approved_date        DATETIME NULL
+         incurred_by          INTEGER NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 5
+          ['organization_id'] → organizations.['public_id']
+          ['category_id'] → expense_categories.['id']
+          ['payment_method_id'] → payment_methods.['id']
+          ... and 2 more foreign keys
+      📑 Indexes: 5
+          idx_expense_date: expense_date
+          idx_expense_org_category: organization_id, category_id
+          ... and 3 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM expe...' should be explicitly declared as text('SELECT COUNT(*) FROM expe...')
+
+   📋 family_members: 15 columns
+         user_id              INTEGER NOT NULL
+         organization_id      VARCHAR(50) NOT NULL
+         patient_id           INTEGER NULL
+         family_user_id       INTEGER NOT NULL
+         created_by           INTEGER NULL
+         first_name           VARCHAR(100) NOT NULL
+         last_name            VARCHAR(100) NOT NULL
+         relationship_type    VARCHAR(50) NULL
+         emergency_contact    BOOLEAN NULL
+         primary_contact      BOOLEAN NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 5
+          ['user_id'] → users.['id']
+          ['organization_id'] → organizations.['public_id']
+          ['patient_id'] → patients.['id']
+          ... and 2 more foreign keys
+      📑 Indexes: 1
+          ix_family_members_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM fami...' should be explicitly declared as text('SELECT COUNT(*) FROM fami...')
+
+   📋 family_relationships: 9 columns
+         family_member_id     INTEGER NOT NULL
+         related_member_id    INTEGER NOT NULL
+         relationship_type    VARCHAR(50) NOT NULL
+         notes                TEXT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['family_member_id'] → family_members.['id']
+          ['related_member_id'] → family_members.['id']
+      📑 Indexes: 3
+          idx_family_relationship_members: family_member_id, related_member_id
+          idx_family_relationship_type: relationship_type
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM fami...' should be explicitly declared as text('SELECT COUNT(*) FROM fami...')
+
+   📋 file_records: 11 columns
+         user_id              INTEGER NOT NULL
+         filename             VARCHAR(255) NOT NULL
+         file_url             VARCHAR(255) NOT NULL
+         file_type            VARCHAR(50) NULL
+         size                 INTEGER NULL
+         description          TEXT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['user_id'] → users.['id']
+      📑 Indexes: 3
+          idx_file_record_type: file_type
+          idx_file_record_user: user_id
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM file...' should be explicitly declared as text('SELECT COUNT(*) FROM file...')
+
+   📋 financial_reports: 20 columns
+         organization_id      VARCHAR(50) NOT NULL
+         title                VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         report_type          VARCHAR(50) NOT NULL
+         parameters           JSON NULL
+         data                 JSON NULL
+         summary              JSON NULL
+         generated_at         DATETIME NULL
+         period_start         DATETIME NULL
+         period_end           DATETIME NULL
+         file_url             VARCHAR(255) NULL
+         is_template          BOOLEAN NULL
+         is_public            BOOLEAN NULL
+         shared_with          JSON NULL
+         created_by           INTEGER NOT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['organization_id'] → organizations.['public_id']
+          ['created_by'] → users.['id']
+      📑 Indexes: 4
+          idx_financial_idx_report_created: created_at
+          idx_financial_report_org_type: organization_id, report_type
+          ... and 2 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM fina...' should be explicitly declared as text('SELECT COUNT(*) FROM fina...')
+
+   📋 financial_transactions: 37 columns
+         organization_id      VARCHAR(50) NOT NULL
+         patient_id           INTEGER NULL
+         invoice_id           INTEGER NULL
+         payment_id           INTEGER NULL
+         expense_id           INTEGER NULL
+         claim_id             INTEGER NULL
+         transaction_type_id  INTEGER NOT NULL
+         currency_id          INTEGER NOT NULL
+         transaction_number   VARCHAR(100) NOT NULL
+         reference_number     VARCHAR(100) NULL
+         transaction_date     DATETIME NOT NULL
+         effective_date       DATE NOT NULL
+         description          TEXT NOT NULL
+         debit_amount         NUMERIC(10, 2) NULL
+         credit_amount        NUMERIC(10, 2) NULL
+         net_amount           NUMERIC(10, 2) NOT NULL
+         account_type         VARCHAR(50) NOT NULL
+         account_subtype      VARCHAR(50) NULL
+         status               VARCHAR(20) NULL
+         is_reconciled        BOOLEAN NULL
+         reconciled_date      DATETIME NULL
+         settlement_date      DATE NULL
+         settlement_reference VARCHAR(100) NULL
+         transaction_metadata JSON NULL
+         source_module        VARCHAR(50) NOT NULL
+         source_reference     VARCHAR(100) NULL
+         is_reversal          BOOLEAN NULL
+         reversed_transaction_id INTEGER NULL
+         reversal_reason      TEXT NULL
+         posted_by            INTEGER NOT NULL
+         verified_by          INTEGER NULL
+         verified_date        DATETIME NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 11
+          ['organization_id'] → organizations.['public_id']
+          ['patient_id'] → patients.['id']
+          ['invoice_id'] → invoices.['id']
+          ... and 8 more foreign keys
+      📑 Indexes: 15
+          idx_transaction_effective_date: effective_date
+          idx_transaction_org_account: organization_id, account_type, account_subtype
+          ... and 13 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM fina...' should be explicitly declared as text('SELECT COUNT(*) FROM fina...')
+
+   📋 genders: 11 columns
+         pronoun              VARCHAR(50) NULL
+         is_active            BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 1
+          UNIQUE ix_genders_code: code
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM gend...' should be explicitly declared as text('SELECT COUNT(*) FROM gend...')
+
+   📋 industry_types: 13 columns
+         category             VARCHAR(50) NULL
+         requires_license     BOOLEAN NULL
+         special_requirements JSON NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_industry_types_code: code
+          ix_industry_types_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM indu...' should be explicitly declared as text('SELECT COUNT(*) FROM indu...')
+
+   📋 insurance_claims: 28 columns
+         patient_id           INTEGER NOT NULL
+         insurance_plan_id    INTEGER NOT NULL
+         invoice_id           INTEGER NULL
+         treatment_id         INTEGER NULL
+         status_id            INTEGER NOT NULL
+         claim_number         VARCHAR(100) NULL
+         insurance_provider   VARCHAR(100) NOT NULL
+         policy_number        VARCHAR(100) NOT NULL
+         claim_amount         NUMERIC(10, 2) NOT NULL
+         approved_amount      NUMERIC(10, 2) NULL
+         patient_responsibility NUMERIC(10, 2) NULL
+         submission_date      DATETIME NULL
+         processing_date      DATETIME NULL
+         resolution_date      DATETIME NULL
+         procedures           JSON NOT NULL
+         diagnosis_codes      JSON NULL
+         rendering_provider_id INTEGER NULL
+         facility_info        JSON NULL
+         denial_reason        TEXT NULL
+         adjustment_codes     JSON NULL
+         payer_notes          TEXT NULL
+         start_date           DATE NULL
+         end_date             DATE NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 6
+          ['patient_id'] → patients.['id']
+          ['insurance_plan_id'] → insurance_plans.['id']
+          ['invoice_id'] → invoices.['id']
+          ... and 3 more foreign keys
+      📑 Indexes: 6
+          idx_insurance_claim_number: claim_number
+          idx_insurance_claim_patient: patient_id, submission_date
+          ... and 4 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM insu...' should be explicitly declared as text('SELECT COUNT(*) FROM insu...')
+
+   📋 insurance_plans: 32 columns
+         created_by           INTEGER NOT NULL
+         organization_id      VARCHAR(50) NOT NULL
+         patient_id           INTEGER NULL
+         family_member_id     INTEGER NULL
+         insurance_provider   VARCHAR(200) NOT NULL
+         plan_name            VARCHAR(200) NOT NULL
+         policy_number        VARCHAR(100) NOT NULL
+         group_number         VARCHAR(100) NULL
+         subscriber_name      VARCHAR(200) NULL
+         subscriber_dob       DATE NULL
+         subscriber_relationship VARCHAR(50) NULL
+         coverage_type        VARCHAR(100) NOT NULL
+         effective_date       DATE NOT NULL
+         expiration_date      DATE NULL
+         is_primary           BOOLEAN NULL
+         is_active            BOOLEAN NULL
+         verification_status  VARCHAR(50) NULL
+         last_verified        DATETIME NULL
+         verification_notes   TEXT NULL
+         benefits             JSON NULL
+         copay_info           JSON NULL
+         deductible_info      JSON NULL
+         annual_maximum       NUMERIC(10, 2) NULL
+         annual_used          NUMERIC(10, 2) NULL
+         provider_phone       VARCHAR(20) NULL
+         provider_address     TEXT NULL
+         claims_address       TEXT NULL
+         notes                TEXT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 4
+          ['created_by'] → users.['id']
+          ['organization_id'] → organizations.['public_id']
+          ['patient_id'] → patients.['id']
+          ... and 1 more foreign keys
+      📑 Indexes: 6
+          idx_insurance_plan_org_provider: organization_id, insurance_provider
+          idx_insurance_plan_patient: patient_id
+          ... and 4 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM insu...' should be explicitly declared as text('SELECT COUNT(*) FROM insu...')
+
+   📋 integration_logs: 9 columns
+         integration_id       INTEGER NOT NULL
+         level                VARCHAR(20) NOT NULL
+         message              VARCHAR(500) NOT NULL
+         details              JSON NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['integration_id'] → integrations.['id']
+      📑 Indexes: 3
+          idx_integration_log_created: created_at
+          idx_integration_log_level: integration_id, level
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM inte...' should be explicitly declared as text('SELECT COUNT(*) FROM inte...')
+
+   📋 integration_statuses: 13 columns
+         allows_sync          BOOLEAN NULL
+         requires_attention   BOOLEAN NULL
+         retry_allowed        BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_integration_statuses_code: code
+          ix_integration_statuses_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM inte...' should be explicitly declared as text('SELECT COUNT(*) FROM inte...')
+
+   📋 integrations: 16 columns
+         organization_id      VARCHAR(50) NOT NULL
+         integration_type     VARCHAR(50) NOT NULL
+         settings             TEXT NULL
+         oauth_token          TEXT NULL
+         integration_status_id INTEGER NOT NULL
+         sync_status          VARCHAR(20) NULL
+         last_sync            DATETIME NULL
+         last_test            DATETIME NULL
+         last_error           TEXT NULL
+         created_by           INTEGER NOT NULL
+         updated_by           INTEGER NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 4
+          ['organization_id'] → organizations.['public_id']
+          ['integration_status_id'] → integration_statuses.['id']
+          ['created_by'] → users.['id']
+          ... and 1 more foreign keys
+      📑 Indexes: 3
+          idx_integration_org_type: organization_id, integration_type
+          idx_integration_status: integration_status_id
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM inte...' should be explicitly declared as text('SELECT COUNT(*) FROM inte...')
+
+   📋 inventory_adjustment_types: 13 columns
+         stock_impact         VARCHAR(10) NULL
+         requires_reason      BOOLEAN NULL
+         requires_approval    BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_inventory_adjustment_types_code: code
+          ix_inventory_adjustment_types_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM inve...' should be explicitly declared as text('SELECT COUNT(*) FROM inve...')
+
+   📋 inventory_adjustments: 11 columns
+         item_id              INTEGER NOT NULL
+         adjustment_type_id   INTEGER NOT NULL
+         quantity             INTEGER NOT NULL
+         reason               TEXT NULL
+         adjusted_by          INTEGER NOT NULL
+         adjustment_date      DATETIME NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 3
+          ['item_id'] → inventory_items.['id']
+          ['adjustment_type_id'] → inventory_adjustment_types.['id']
+          ['adjusted_by'] → users.['id']
+      📑 Indexes: 3
+          idx_inventory_adj_item_date: item_id, adjustment_date
+          idx_inventory_adj_type: adjustment_type_id
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM inve...' should be explicitly declared as text('SELECT COUNT(*) FROM inve...')
+
+   📋 inventory_items: 20 columns
+         organization_id      VARCHAR(50) NOT NULL
+         name                 VARCHAR(200) NOT NULL
+         category             VARCHAR(100) NOT NULL
+         sku                  VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         unit_price           VARCHAR(50) NOT NULL
+         quantity             INTEGER NOT NULL
+         min_quantity         INTEGER NOT NULL
+         max_quantity         INTEGER NOT NULL
+         cost                 NUMERIC(10, 2) NOT NULL
+         price                NUMERIC(10, 2) NOT NULL
+         supplier_id          INTEGER NULL
+         location             VARCHAR(100) NULL
+         reorder_point        INTEGER NULL
+         lead_time_days       INTEGER NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['organization_id'] → organizations.['public_id']
+          ['supplier_id'] → suppliers.['id']
+      📑 Indexes: 6
+          idx_inventory_item_category: category
+          idx_inventory_item_name: name
+          ... and 4 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM inve...' should be explicitly declared as text('SELECT COUNT(*) FROM inve...')
+
+   📋 inventory_transaction_types: 13 columns
+         affects_stock        BOOLEAN NULL
+         stock_direction      VARCHAR(10) NULL
+         requires_approval    BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_inventory_transaction_types_code: code
+          ix_inventory_transaction_types_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM inve...' should be explicitly declared as text('SELECT COUNT(*) FROM inve...')
+
+   📋 inventory_transactions: 17 columns
+         item_id              INTEGER NOT NULL
+         transaction_type_id  INTEGER NOT NULL
+         quantity             INTEGER NOT NULL
+         product_id           INTEGER NOT NULL
+         old_stock_level      INTEGER NOT NULL
+         new_stock_level      INTEGER NOT NULL
+         unit_cost            NUMERIC(10, 2) NOT NULL
+         total_cost           NUMERIC(10, 2) NOT NULL
+         reference_type       VARCHAR(50) NULL
+         reference_id         INTEGER NULL
+         notes                TEXT NULL
+         performed_by         INTEGER NOT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 4
+          ['item_id'] → inventory_items.['id']
+          ['transaction_type_id'] → inventory_transaction_types.['id']
+          ['product_id'] → products.['id']
+          ... and 1 more foreign keys
+      📑 Indexes: 4
+          idx_inventory_txn_item_date: item_id, created_at
+          idx_inventory_txn_reference: reference_type, reference_id
+          ... and 2 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM inve...' should be explicitly declared as text('SELECT COUNT(*) FROM inve...')
+
+   📋 invoice_statuses: 13 columns
+         is_final             BOOLEAN NULL
+         allows_editing       BOOLEAN NULL
+         send_notifications   BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_invoice_statuses_code: code
+          ix_invoice_statuses_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM invo...' should be explicitly declared as text('SELECT COUNT(*) FROM invo...')
+
+   📋 invoices: 34 columns
+         organization_id      VARCHAR(50) NOT NULL
+         patient_id           INTEGER NULL
+         treatment_id         INTEGER NULL
+         appointment_id       INTEGER NULL
+         status_id            INTEGER NOT NULL
+         currency_id          INTEGER NOT NULL
+         invoice_number       VARCHAR(50) NOT NULL
+         invoice_date         DATETIME NOT NULL
+         due_date             DATETIME NOT NULL
+         sent_date            DATETIME NULL
+         viewed_date          DATETIME NULL
+         payment_terms        VARCHAR(100) NULL
+         items                JSON NOT NULL
+         subtotal             NUMERIC(10, 2) NOT NULL
+         tax_amount           NUMERIC(10, 2) NULL
+         discount_amount      NUMERIC(10, 2) NULL
+         total_amount         NUMERIC(10, 2) NOT NULL
+         amount_paid          NUMERIC(10, 2) NULL
+         balance_due          NUMERIC(10, 2) NOT NULL
+         tax_rate             NUMERIC(5, 2) NULL
+         is_taxable           BOOLEAN NULL
+         discount_percentage  NUMERIC(5, 2) NULL
+         discount_reason      TEXT NULL
+         payment_instructions TEXT NULL
+         notes                TEXT NULL
+         terms_and_conditions TEXT NULL
+         primary_insurance_id INTEGER NULL
+         secondary_insurance_id INTEGER NULL
+         insurance_estimated  NUMERIC(10, 2) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 8
+          ['organization_id'] → organizations.['public_id']
+          ['patient_id'] → patients.['id']
+          ['treatment_id'] → treatments.['id']
+          ... and 5 more foreign keys
+      📑 Indexes: 7
+          idx_invoice_balance: balance_due
+          idx_invoice_due_date: due_date
+          ... and 5 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM invo...' should be explicitly declared as text('SELECT COUNT(*) FROM invo...')
+
+   📋 kpi_history: 12 columns
+         kpi_id               INTEGER NOT NULL
+         value                FLOAT NOT NULL
+         calculated_at        DATETIME NOT NULL
+         period_start         DATETIME NOT NULL
+         period_end           DATETIME NOT NULL
+         data_points          INTEGER NULL
+         confidence_score     FLOAT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['kpi_id'] → kpis.['id']
+      📑 Indexes: 3
+          idx_kpi_history_kpi_date: kpi_id, calculated_at
+          idx_kpi_history_period: period_start, period_end
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM kpi_...' should be explicitly declared as text('SELECT COUNT(*) FROM kpi_...')
+
+   📋 kpis: 20 columns
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         organization_id      VARCHAR(50) NOT NULL
+         category             VARCHAR(50) NOT NULL
+         calculation_query    TEXT NOT NULL
+         target_value         FLOAT NULL
+         target_type          VARCHAR(20) NULL
+         target_range_min     FLOAT NULL
+         target_range_max     FLOAT NULL
+         unit                 VARCHAR(20) NULL
+         format_type          VARCHAR(20) NULL
+         decimal_places       INTEGER NULL
+         alert_enabled        BOOLEAN NULL
+         alert_condition      VARCHAR(20) NULL
+         alert_threshold      FLOAT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['organization_id'] → organizations.['public_id']
+      📑 Indexes: 3
+          idx_kpi_alert: alert_enabled, is_active
+          idx_kpi_org_category: organization_id, category
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM kpis' should be explicitly declared as text('SELECT COUNT(*) FROM kpis')
+
+   📋 lab_orders: 15 columns
+         patient_id           INTEGER NOT NULL
+         treatment_id         INTEGER NULL
+         ordered_by           INTEGER NOT NULL
+         test_type            VARCHAR(100) NOT NULL
+         status               VARCHAR(20) NULL
+         order_date           DATETIME NULL
+         completion_date      DATETIME NULL
+         results              TEXT NULL
+         results_url          VARCHAR(255) NULL
+         notes                TEXT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 3
+          ['patient_id'] → patients.['id']
+          ['treatment_id'] → treatments.['id']
+          ['ordered_by'] → users.['id']
+      📑 Indexes: 1
+          ix_lab_orders_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM lab_...' should be explicitly declared as text('SELECT COUNT(*) FROM lab_...')
+
+   📋 login_attempts: 12 columns
+         user_id              INTEGER NULL
+         username             VARCHAR(255) NOT NULL
+         ip_address           VARCHAR(45) NOT NULL
+         user_agent           TEXT NULL
+         success              BOOLEAN NULL
+         attempt_type         VARCHAR(20) NULL
+         failure_reason       VARCHAR(100) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['user_id'] → users.['id']
+      📑 Indexes: 1
+          ix_login_attempts_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM logi...' should be explicitly declared as text('SELECT COUNT(*) FROM logi...')
+
+   📋 medical_records: 14 columns
+         patient_id           INTEGER NOT NULL
+         treatment_id         INTEGER NULL
+         uploaded_by          INTEGER NOT NULL
+         record_type          VARCHAR(50) NOT NULL
+         title                VARCHAR(200) NOT NULL
+         description          TEXT NULL
+         file_url             VARCHAR(255) NOT NULL
+         file_size            INTEGER NULL
+         file_type            VARCHAR(50) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 3
+          ['patient_id'] → patients.['id']
+          ['treatment_id'] → treatments.['id']
+          ['uploaded_by'] → users.['id']
+      📑 Indexes: 1
+          ix_medical_records_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM medi...' should be explicitly declared as text('SELECT COUNT(*) FROM medi...')
+
+   📋 medication_routes: 12 columns
+         administration_instructions TEXT NULL
+         requires_training    BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_medication_routes_code: code
+          ix_medication_routes_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM medi...' should be explicitly declared as text('SELECT COUNT(*) FROM medi...')
+
+   📋 note_types: 12 columns
+         requires_soap_format BOOLEAN NULL
+         template             TEXT NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_note_types_code: code
+          ix_note_types_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM note...' should be explicitly declared as text('SELECT COUNT(*) FROM note...')
+
+   📋 notes: 9 columns
+         patient_id           INTEGER NOT NULL
+         created_by           INTEGER NOT NULL
+         content              TEXT NOT NULL
+         tags                 JSON NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['patient_id'] → patients.['id']
+          ['created_by'] → users.['id']
+      📑 Indexes: 1
+          ix_notes_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM note...' should be explicitly declared as text('SELECT COUNT(*) FROM note...')
+
+   📋 notification_types: 14 columns
+         priority             VARCHAR(20) NULL
+         auto_expire_days     INTEGER NULL
+         requires_action      BOOLEAN NULL
+         template             TEXT NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_notification_types_code: code
+          ix_notification_types_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM noti...' should be explicitly declared as text('SELECT COUNT(*) FROM noti...')
+
+   📋 notifications: 17 columns
+         user_id              INTEGER NOT NULL
+         notification_type_id INTEGER NOT NULL
+         title                VARCHAR(200) NOT NULL
+         message              TEXT NOT NULL
+         is_read              BOOLEAN NULL
+         is_archived          BOOLEAN NULL
+         action_url           VARCHAR(500) NULL
+         action_text          VARCHAR(100) NULL
+         source_entity        VARCHAR(100) NULL
+         source_id            VARCHAR(50) NULL
+         notification_metadata JSON NULL
+         expires_at           DATETIME NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['user_id'] → users.['id']
+          ['notification_type_id'] → notification_types.['id']
+      📑 Indexes: 5
+          idx_notification_created: created_at
+          idx_notification_expires: expires_at
+          ... and 3 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM noti...' should be explicitly declared as text('SELECT COUNT(*) FROM noti...')
+
+   📋 organization_types: 14 columns
+         max_users            INTEGER NULL
+         max_patients         INTEGER NULL
+         features_available   JSON NULL
+         requires_verification BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_organization_types_code: code
+          ix_organization_types_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM orga...' should be explicitly declared as text('SELECT COUNT(*) FROM orga...')
+
+   📋 organizations: 26 columns
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         address              VARCHAR(200) NULL
+         city                 VARCHAR(100) NULL
+         state                VARCHAR(100) NULL
+         postal_code          VARCHAR(20) NULL
+         country              VARCHAR(100) NULL
+         phone                VARCHAR(20) NULL
+         email                VARCHAR(120) NULL
+         website              VARCHAR(200) NULL
+         timezone             VARCHAR(20) NULL
+         currency_id          VARCHAR(200) NULL
+         organization_type_id INTEGER NOT NULL
+         tax_id               VARCHAR(100) NULL
+         business_type        VARCHAR(50) NULL
+         industry             VARCHAR(100) NULL
+         max_staff            INTEGER NULL
+         max_patients         INTEGER NULL
+         status               VARCHAR(20) NULL
+         is_verified          BOOLEAN NULL
+         tenant_id            INTEGER NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['organization_type_id'] → organization_types.['id']
+          ['tenant_id'] → tenants.['id']
+      📑 Indexes: 6
+          idx_organization_email: email
+          idx_organization_status: status
+          ... and 4 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM orga...' should be explicitly declared as text('SELECT COUNT(*) FROM orga...')
+
+   📋 password_history: 7 columns
+         user_id              INTEGER NOT NULL
+         password_hash        VARCHAR(255) NOT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['user_id'] → users.['id']
+      📑 Indexes: 1
+          ix_password_history_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM pass...' should be explicitly declared as text('SELECT COUNT(*) FROM pass...')
+
+   📋 patients: 25 columns
+         organization_id      VARCHAR(50) NOT NULL
+         first_name           VARCHAR(50) NOT NULL
+         last_name            VARCHAR(50) NOT NULL
+         email                VARCHAR(120) NULL
+         phone                VARCHAR(20) NULL
+         date_of_birth        DATE NULL
+         gender               VARCHAR(20) NULL
+         address              JSON NULL
+         emergency_contact    JSON NULL
+         medical_history      JSON NULL
+         allergies            JSON NULL
+         medications          JSON NULL
+         insurance_info       JSON NULL
+         dental_history       JSON NULL
+         oral_hygiene         VARCHAR(50) NULL
+         last_dental_visit    DATE NULL
+         next_recall_date     DATE NULL
+         status               VARCHAR(20) NULL
+         preferred_language   VARCHAR(50) NULL
+         communication_preferences JSON NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['organization_id'] → organizations.['public_id']
+      📑 Indexes: 9
+          idx_patient_dob: date_of_birth
+          idx_patient_email: email
+          ... and 7 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM pati...' should be explicitly declared as text('SELECT COUNT(*) FROM pati...')
+
+   📋 payment_methods: 14 columns
+         category             VARCHAR(50) NULL
+         requires_processing  BOOLEAN NULL
+         processing_fee_percentage NUMERIC(5, 2) NULL
+         is_online            BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_payment_methods_code: code
+          ix_payment_methods_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM paym...' should be explicitly declared as text('SELECT COUNT(*) FROM paym...')
+
+   📋 payment_records: 14 columns
+         organization_id      VARCHAR(50) NOT NULL
+         payment_id           INTEGER NOT NULL
+         amount               NUMERIC(10, 2) NOT NULL
+         currency             VARCHAR(10) NULL
+         payment_method       VARCHAR(50) NULL
+         status               VARCHAR(20) NULL
+         transaction_id       VARCHAR(100) NULL
+         gateway_response     JSON NULL
+         gateway_fees         NUMERIC(10, 2) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['organization_id'] → organizations.['public_id']
+          ['payment_id'] → payments.['id']
+      📑 Indexes: 5
+          idx_payment_record_org: organization_id, created_at
+          idx_payment_record_status: status
+          ... and 3 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM paym...' should be explicitly declared as text('SELECT COUNT(*) FROM paym...')
+
+   📋 payment_statuses: 13 columns
+         is_completed         BOOLEAN NULL
+         allows_refund        BOOLEAN NULL
+         requires_action      BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_payment_statuses_code: code
+          ix_payment_statuses_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM paym...' should be explicitly declared as text('SELECT COUNT(*) FROM paym...')
+
+   📋 payments: 21 columns
+         invoice_id           INTEGER NULL
+         patient_id           INTEGER NOT NULL
+         payment_method_id    INTEGER NOT NULL
+         status_id            INTEGER NOT NULL
+         currency_id          INTEGER NOT NULL
+         amount               NUMERIC(10, 2) NOT NULL
+         exchange_rate        NUMERIC(8, 4) NULL
+         payment_date         DATETIME NOT NULL
+         processed_date       DATETIME NULL
+         reference_number     VARCHAR(100) NULL
+         transaction_id       VARCHAR(100) NULL
+         check_number         VARCHAR(50) NULL
+         fee_amount           NUMERIC(10, 2) NULL
+         net_amount           NUMERIC(10, 2) NULL
+         notes                TEXT NULL
+         payment_metadata     JSON NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 5
+          ['invoice_id'] → invoices.['id']
+          ['patient_id'] → patients.['id']
+          ['payment_method_id'] → payment_methods.['id']
+          ... and 2 more foreign keys
+      📑 Indexes: 7
+          idx_payment_invoice: invoice_id
+          idx_payment_method: payment_method_id
+          ... and 5 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM paym...' should be explicitly declared as text('SELECT COUNT(*) FROM paym...')
+
+   📋 permission_categories: 11 columns
+         module               VARCHAR(50) NULL
+         sort_order           INTEGER NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_permission_categories_code: code
+          ix_permission_categories_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM perm...' should be explicitly declared as text('SELECT COUNT(*) FROM perm...')
+
+   📋 permissions: 8 columns
+         name                 VARCHAR(50) NOT NULL
+         description          VARCHAR(255) NULL
+         category             VARCHAR(50) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 4
+          idx_permission_category: category
+          idx_permission_name: name
+          ... and 2 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM perm...' should be explicitly declared as text('SELECT COUNT(*) FROM perm...')
+
+   📋 prescriptions: 21 columns
+         patient_id           INTEGER NOT NULL
+         treatment_id         INTEGER NULL
+         prescribed_by        INTEGER NOT NULL
+         route_id             INTEGER NULL
+         medication_name      VARCHAR(100) NOT NULL
+         dosage               VARCHAR(100) NOT NULL
+         frequency            VARCHAR(100) NOT NULL
+         quantity             INTEGER NULL
+         refills              INTEGER NULL
+         start_date           DATE NULL
+         end_date             DATE NULL
+         duration_days        INTEGER NULL
+         is_active            BOOLEAN NULL
+         status               VARCHAR(20) NULL
+         instructions         TEXT NULL
+         side_effects         TEXT NULL
+         contraindications    TEXT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 4
+          ['patient_id'] → patients.['id']
+          ['treatment_id'] → treatments.['id']
+          ['prescribed_by'] → users.['id']
+          ... and 1 more foreign keys
+      📑 Indexes: 3
+          idx_prescription_medication: medication_name
+          idx_prescription_patient: patient_id, is_active
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM pres...' should be explicitly declared as text('SELECT COUNT(*) FROM pres...')
+
+   📋 priority_levels: 12 columns
+         escalation_hours     INTEGER NULL
+         requires_immediate_attention BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_priority_levels_code: code
+          ix_priority_levels_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM prio...' should be explicitly declared as text('SELECT COUNT(*) FROM prio...')
+
+   📋 procedures: 15 columns
+         appointment_id       INTEGER NOT NULL
+         performed_by         INTEGER NOT NULL
+         code                 VARCHAR(20) NOT NULL
+         procedure_type       VARCHAR(100) NOT NULL
+         description          VARCHAR(255) NOT NULL
+         tooth_number         VARCHAR(10) NULL
+         surface              VARCHAR(10) NULL
+         quantity             INTEGER NULL
+         unit_price           NUMERIC(10, 2) NOT NULL
+         total_price          NUMERIC(10, 2) NOT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['appointment_id'] → appointments.['id']
+          ['performed_by'] → users.['id']
+      📑 Indexes: 1
+          ix_procedures_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM proc...' should be explicitly declared as text('SELECT COUNT(*) FROM proc...')
+
+   📋 product_categories: 9 columns
+         organization_id      VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         parent_category_id   INTEGER NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['organization_id'] → organizations.['public_id']
+          ['parent_category_id'] → product_categories.['id']
+      📑 Indexes: 4
+          idx_category_org_name: organization_id, name
+          idx_category_parent: parent_category_id
+          ... and 2 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM prod...' should be explicitly declared as text('SELECT COUNT(*) FROM prod...')
+
+   📋 product_images: 10 columns
+         product_id           INTEGER NOT NULL
+         image_url            VARCHAR(500) NOT NULL
+         caption              VARCHAR(200) NULL
+         is_primary           BOOLEAN NULL
+         sort_order           INTEGER NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['product_id'] → products.['id']
+      📑 Indexes: 3
+          idx_product_image_primary: is_primary
+          idx_product_image_product: product_id
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM prod...' should be explicitly declared as text('SELECT COUNT(*) FROM prod...')
+
+   📋 product_price_history: 11 columns
+         product_id           INTEGER NOT NULL
+         old_price            NUMERIC(10, 2) NOT NULL
+         new_price            NUMERIC(10, 2) NOT NULL
+         changed_by           INTEGER NOT NULL
+         change_reason        TEXT NULL
+         effective_date       DATETIME NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['product_id'] → products.['id']
+          ['changed_by'] → users.['id']
+      📑 Indexes: 3
+          idx_price_history_date: effective_date
+          idx_price_history_product: product_id
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM prod...' should be explicitly declared as text('SELECT COUNT(*) FROM prod...')
+
+   📋 product_types: 14 columns
+         category             VARCHAR(50) NULL
+         requires_lot_tracking BOOLEAN NULL
+         requires_expiration  BOOLEAN NULL
+         is_medical           BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_product_types_code: code
+          ix_product_types_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM prod...' should be explicitly declared as text('SELECT COUNT(*) FROM prod...')
+
+   📋 products: 45 columns
+         organization_id      VARCHAR(50) NOT NULL
+         supplier_id          INTEGER NULL
+         category_id          INTEGER NULL
+         product_type_id      INTEGER NOT NULL
+         sku                  VARCHAR(100) NOT NULL
+         name                 VARCHAR(200) NOT NULL
+         description          TEXT NULL
+         brand                VARCHAR(100) NULL
+         model                VARCHAR(100) NULL
+         unit_of_measure      VARCHAR(50) NOT NULL
+         unit_size            VARCHAR(50) NULL
+         weight               NUMERIC(10, 2) NULL
+         dimensions           VARCHAR(100) NULL
+         cost_price           NUMERIC(10, 2) NOT NULL
+         selling_price        NUMERIC(10, 2) NOT NULL
+         current_price        NUMERIC(10, 2) NOT NULL
+         tax_rate             NUMERIC(5, 2) NULL
+         discount_percentage  NUMERIC(5, 2) NULL
+         min_stock_level      INTEGER NULL
+         max_stock_level      INTEGER NULL
+         reorder_point        INTEGER NULL
+         current_stock        INTEGER NULL
+         reserved_stock       INTEGER NULL
+         average_consumption  INTEGER NULL
+         is_medical           BOOLEAN NULL
+         requires_prescription BOOLEAN NULL
+         active_ingredients   TEXT NULL
+         dosage_form          VARCHAR(100) NULL
+         strength             VARCHAR(100) NULL
+         expiration_alert_days INTEGER NULL
+         shelf_life_months    INTEGER NULL
+         requires_refrigeration BOOLEAN NULL
+         status               VARCHAR(20) NULL
+         is_taxable           BOOLEAN NULL
+         is_returnable        BOOLEAN NULL
+         return_period_days   INTEGER NULL
+         barcode              VARCHAR(100) NULL
+         manufacturer_code    VARCHAR(100) NULL
+         supplier_code        VARCHAR(100) NULL
+         ndc_code             VARCHAR(100) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 4
+          ['organization_id'] → organizations.['public_id']
+          ['supplier_id'] → suppliers.['id']
+          ['category_id'] → product_categories.['id']
+          ... and 1 more foreign keys
+      📑 Indexes: 9
+          idx_product_barcode: barcode
+          idx_product_name_org: name, organization_id
+          ... and 7 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM prod...' should be explicitly declared as text('SELECT COUNT(*) FROM prod...')
+
+   📋 purchase_order_items: 14 columns
+         purchase_order_id    INTEGER NOT NULL
+         inventory_item_id    INTEGER NULL
+         product_id           INTEGER NOT NULL
+         quantity             INTEGER NOT NULL
+         unit_cost            NUMERIC(10, 2) NOT NULL
+         total_cost           NUMERIC(10, 2) NOT NULL
+         received_quantity    INTEGER NULL
+         received_date        DATETIME NULL
+         notes                TEXT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 3
+          ['purchase_order_id'] → purchase_orders.['id']
+          ['inventory_item_id'] → inventory_items.['id']
+          ['product_id'] → products.['id']
+      📑 Indexes: 2
+          idx_po_item_po_product: purchase_order_id, product_id
+          ix_purchase_order_items_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM purc...' should be explicitly declared as text('SELECT COUNT(*) FROM purc...')
+
+   📋 purchase_order_statuses: 13 columns
+         allows_editing       BOOLEAN NULL
+         is_final             BOOLEAN NULL
+         send_notifications   BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_purchase_order_statuses_code: code
+          ix_purchase_order_statuses_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM purc...' should be explicitly declared as text('SELECT COUNT(*) FROM purc...')
+
+   📋 purchase_orders: 23 columns
+         supplier_id          INTEGER NOT NULL
+         organization_id      VARCHAR(50) NOT NULL
+         status_id            INTEGER NOT NULL
+         po_number            VARCHAR(50) NOT NULL
+         order_date           DATETIME NULL
+         expected_delivery_date DATETIME NULL
+         actual_delivery_date DATETIME NULL
+         tracking_number      VARCHAR(100) NULL
+         shipping_method      VARCHAR(100) NULL
+         subtotal             NUMERIC(10, 2) NULL
+         tax_amount           NUMERIC(10, 2) NULL
+         shipping_cost        NUMERIC(10, 2) NULL
+         total_amount         NUMERIC(10, 2) NOT NULL
+         notes                TEXT NULL
+         terms_and_conditions TEXT NULL
+         created_by           INTEGER NOT NULL
+         approved_by          INTEGER NULL
+         approved_at          DATETIME NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 5
+          ['supplier_id'] → suppliers.['id']
+          ['organization_id'] → organizations.['public_id']
+          ['status_id'] → purchase_order_statuses.['id']
+          ... and 2 more foreign keys
+      📑 Indexes: 6
+          idx_po_delivery_date: expected_delivery_date
+          idx_po_number: po_number
+          ... and 4 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM purc...' should be explicitly declared as text('SELECT COUNT(*) FROM purc...')
+
+   📋 rate_limiters: 10 columns
+         user_id              INTEGER NOT NULL
+         endpoint             VARCHAR(100) NOT NULL
+         request_count        INTEGER NULL
+         window_start         DATETIME NULL
+         window_end           DATETIME NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['user_id'] → users.['id']
+      📑 Indexes: 3
+          idx_rate_limiter_user_endpoint: user_id, endpoint
+          idx_rate_limiter_window: window_start, window_end
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM rate...' should be explicitly declared as text('SELECT COUNT(*) FROM rate...')
+
+   📋 rate_limits: 8 columns
+         key                  VARCHAR(255) NOT NULL
+         timestamp            FLOAT NOT NULL
+         expires_at           FLOAT NOT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 4
+          idx_analytics_idx_rate_limit_expires_at: expires_at
+          idx_analytics_idx_rate_limit_key_timestamp: key, timestamp
+          ... and 2 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM rate...' should be explicitly declared as text('SELECT COUNT(*) FROM rate...')
+
+   📋 report_runs: 15 columns
+         schedule_id          INTEGER NOT NULL
+         status               VARCHAR(20) NULL
+         started_at           DATETIME NULL
+         completed_at         DATETIME NULL
+         duration_seconds     INTEGER NULL
+         file_url             VARCHAR(500) NULL
+         file_size            INTEGER NULL
+         record_count         INTEGER NULL
+         error_message        TEXT NULL
+         stack_trace          TEXT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['schedule_id'] → report_schedules.['id']
+      📑 Indexes: 3
+          idx_report_run_schedule: schedule_id, created_at
+          idx_report_run_status: status, created_at
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM repo...' should be explicitly declared as text('SELECT COUNT(*) FROM repo...')
+
+   📋 report_schedules: 19 columns
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         organization_id      VARCHAR(50) NOT NULL
+         report_type_id       INTEGER NOT NULL
+         parameters           JSON NULL
+         output_format        VARCHAR(20) NULL
+         schedule_type        VARCHAR(20) NOT NULL
+         schedule_config      JSON NULL
+         timezone             VARCHAR(50) NULL
+         recipients           JSON NOT NULL
+         subject_template     VARCHAR(200) NULL
+         message_template     TEXT NULL
+         is_active            BOOLEAN NULL
+         last_run             DATETIME NULL
+         next_run             DATETIME NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['organization_id'] → organizations.['public_id']
+          ['report_type_id'] → report_types.['id']
+      📑 Indexes: 2
+          idx_report_schedule_next_run: next_run, is_active
+          idx_report_schedule_org: organization_id, is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM repo...' should be explicitly declared as text('SELECT COUNT(*) FROM repo...')
+
+   📋 report_types: 14 columns
+         category             VARCHAR(50) NULL
+         requires_parameters  BOOLEAN NULL
+         data_retention_days  INTEGER NULL
+         template_available   BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_report_types_code: code
+          ix_report_types_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM repo...' should be explicitly declared as text('SELECT COUNT(*) FROM repo...')
+
+   📋 role_permissions: 3 columns
+      🔑 role_id              INTEGER NOT NULL
+      🔑 permission_id        INTEGER NOT NULL
+         granted_at           DATETIME NULL
+      🗝️  Primary Key: role_id, permission_id
+      🔗 Foreign Keys: 2
+          ['role_id'] → roles.['id']
+          ['permission_id'] → permissions.['id']
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM role...' should be explicitly declared as text('SELECT COUNT(*) FROM role...')
+
+   📋 roles: 10 columns
+         name                 VARCHAR(50) NOT NULL
+         description          TEXT NULL
+         is_system_role       BOOLEAN NULL
+         organization_id      VARCHAR(50) NOT NULL
+         is_default           BOOLEAN NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['organization_id'] → organizations.['public_id']
+      📑 Indexes: 5
+          idx_role_default: is_default
+          idx_role_org_name: organization_id, name
+          ... and 3 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM role...' should be explicitly declared as text('SELECT COUNT(*) FROM role...')
+
+   📋 security_event_types: 13 columns
+         severity             VARCHAR(20) NULL
+         requires_notification BOOLEAN NULL
+         log_level            VARCHAR(20) NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_security_event_types_code: code
+          ix_security_event_types_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM secu...' should be explicitly declared as text('SELECT COUNT(*) FROM secu...')
+
+   📋 security_events: 10 columns
+         user_id              INTEGER NOT NULL
+         event_type_id        INTEGER NOT NULL
+         description          TEXT NULL
+         ip_address           VARCHAR(45) NULL
+         user_agent           TEXT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['user_id'] → users.['id']
+          ['event_type_id'] → security_event_types.['id']
+      📑 Indexes: 1
+          ix_security_events_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM secu...' should be explicitly declared as text('SELECT COUNT(*) FROM secu...')
+
+   📋 staff: 27 columns
+         organization_id      VARCHAR(50) NOT NULL
+         user_id              INTEGER NOT NULL
+         staff_id             INTEGER NULL
+         staff_number         VARCHAR(50) NOT NULL
+         job_title            VARCHAR(100) NOT NULL
+         department           VARCHAR(100) NULL
+         specialization       VARCHAR(100) NULL
+         license_number       VARCHAR(100) NULL
+         license_expiry       DATE NULL
+         hire_date            DATE NOT NULL
+         termination_date     DATE NULL
+         salary               NUMERIC(10, 2) NULL
+         employment_type      VARCHAR(20) NOT NULL
+         status               VARCHAR(20) NULL
+         employee_id          VARCHAR(20) NULL
+         work_email           VARCHAR(120) NULL
+         work_phone           VARCHAR(20) NULL
+         emergency_contact    JSON NULL
+         office_location      VARCHAR(200) NULL
+         office_hours         VARCHAR(100) NULL
+         qualifications       TEXT NULL
+         certifications       TEXT NULL
+         languages_spoken     TEXT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 3
+          ['organization_id'] → organizations.['public_id']
+          ['user_id'] → users.['id']
+          ['staff_id'] → staff.['id']
+      📑 Indexes: 5
+          idx_staff_hire_date: hire_date
+          idx_staff_job_title: job_title
+          ... and 3 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM staf...' should be explicitly declared as text('SELECT COUNT(*) FROM staf...')
+
+   📋 staff_availability: 10 columns
+         staff_id             INTEGER NOT NULL
+         day_of_week          INTEGER NOT NULL
+         start_time           TIME NOT NULL
+         end_time             TIME NOT NULL
+         is_available         BOOLEAN NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['staff_id'] → staff.['id']
+      📑 Indexes: 1
+          ix_staff_availability_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM staf...' should be explicitly declared as text('SELECT COUNT(*) FROM staf...')
+
+   📋 staff_leave: 11 columns
+         staff_id             INTEGER NOT NULL
+         leave_type           VARCHAR(50) NOT NULL
+         start_date           DATE NOT NULL
+         end_date             DATE NOT NULL
+         reason               TEXT NULL
+         status               VARCHAR(20) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['staff_id'] → staff.['id']
+      📑 Indexes: 1
+          ix_staff_leave_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM staf...' should be explicitly declared as text('SELECT COUNT(*) FROM staf...')
+
+   📋 staff_roles_association: 3 columns
+      🔑 staff_id             INTEGER NOT NULL
+      🔑 role_id              INTEGER NOT NULL
+         assigned_at          DATETIME NULL
+      🗝️  Primary Key: staff_id, role_id
+      🔗 Foreign Keys: 2
+          ['staff_id'] → staff.['id']
+          ['role_id'] → roles.['id']
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM staf...' should be explicitly declared as text('SELECT COUNT(*) FROM staf...')
+
+   📋 subscription_plans: 15 columns
+         price_monthly        NUMERIC(10, 2) NULL
+         price_yearly         NUMERIC(10, 2) NULL
+         max_users            INTEGER NULL
+         max_patients         INTEGER NULL
+         features             JSON NULL
+         is_active            BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 1
+          UNIQUE ix_subscription_plans_code: code
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM subs...' should be explicitly declared as text('SELECT COUNT(*) FROM subs...')
+
+   📋 subscriptions: 11 columns
+         organization_id      VARCHAR(50) NOT NULL
+         plan_id              INTEGER NOT NULL
+         price                NUMERIC(10, 2) NULL
+         start_date           DATETIME NULL
+         end_date             DATETIME NULL
+         is_active            BOOLEAN NULL
+         stripe_subscription_id VARCHAR(100) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['organization_id'] → organizations.['public_id']
+          ['plan_id'] → subscription_plans.['id']
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM subs...' should be explicitly declared as text('SELECT COUNT(*) FROM subs...')
+
+   📋 suppliers: 23 columns
+         organization_id      VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         contact_name         VARCHAR(100) NULL
+         contact_email        VARCHAR(100) NULL
+         contact_phone        VARCHAR(20) NULL
+         address              VARCHAR(255) NULL
+         city                 VARCHAR(100) NULL
+         state                VARCHAR(100) NULL
+         postal_code          VARCHAR(20) NULL
+         country              VARCHAR(100) NULL
+         tax_id               VARCHAR(100) NULL
+         payment_terms        VARCHAR(100) NULL
+         lead_time_days       INTEGER NULL
+         rating               INTEGER NULL
+         is_preferred         BOOLEAN NULL
+         is_active            BOOLEAN NULL
+         website              VARCHAR(200) NULL
+         notes                TEXT NULL
+         categories_served    JSON NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['organization_id'] → organizations.['public_id']
+      📑 Indexes: 4
+          idx_supplier_org_name: organization_id, name
+          idx_supplier_preferred: is_preferred
+          ... and 2 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM supp...' should be explicitly declared as text('SELECT COUNT(*) FROM supp...')
+
+   📋 telehealth_sessions: 8 columns
+      🔑 id                   INTEGER NOT NULL
+         appointment_id       INTEGER NOT NULL
+         session_url          VARCHAR(500) NOT NULL
+         start_time           DATETIME NOT NULL
+         end_time             DATETIME NULL
+         is_active            BOOLEAN NULL
+         created_at           DATETIME NULL
+         updated_at           DATETIME NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['appointment_id'] → appointments.['id']
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM tele...' should be explicitly declared as text('SELECT COUNT(*) FROM tele...')
+
+   📋 tenant_audit_logs: 13 columns
+         tenant_id            INTEGER NOT NULL
+         user_id              INTEGER NOT NULL
+         action               VARCHAR(100) NOT NULL
+         resource_type        VARCHAR(100) NULL
+         resource_id          VARCHAR(50) NULL
+         details              JSON NULL
+         ip_address           VARCHAR(45) NULL
+         user_agent           VARCHAR(500) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['tenant_id'] → tenants.['id']
+          ['user_id'] → users.['id']
+      📑 Indexes: 1
+          ix_tenant_audit_logs_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM tena...' should be explicitly declared as text('SELECT COUNT(*) FROM tena...')
+
+   📋 tenant_invitations: 12 columns
+         tenant_id            INTEGER NOT NULL
+         email                VARCHAR(120) NOT NULL
+         role                 VARCHAR(50) NOT NULL
+         token                VARCHAR(100) NOT NULL
+         invited_by           INTEGER NOT NULL
+         expires_at           DATETIME NOT NULL
+         accepted_at          DATETIME NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['tenant_id'] → tenants.['id']
+          ['invited_by'] → users.['id']
+      📑 Indexes: 2
+          ix_tenant_invitations_is_active: is_active
+          UNIQUE ix_tenant_invitations_token: token
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM tena...' should be explicitly declared as text('SELECT COUNT(*) FROM tena...')
+
+   📋 tenant_statuses: 13 columns
+         allows_login         BOOLEAN NULL
+         requires_action      BOOLEAN NULL
+         is_trial_status      BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_tenant_statuses_code: code
+          ix_tenant_statuses_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM tena...' should be explicitly declared as text('SELECT COUNT(*) FROM tena...')
+
+   📋 tenants: 47 columns
+         name                 VARCHAR(200) NOT NULL
+         domain               VARCHAR(50) NULL
+         subdomain            VARCHAR(50) NULL
+         display_name         VARCHAR(200) NULL
+         description          TEXT NULL
+         industry_id          INTEGER NOT NULL
+         contact_email        VARCHAR(120) NOT NULL
+         contact_phone        VARCHAR(20) NULL
+         website              VARCHAR(200) NULL
+         address_line1        VARCHAR(200) NULL
+         address_line2        VARCHAR(200) NULL
+         city                 VARCHAR(100) NULL
+         state                VARCHAR(100) NULL
+         postal_code          VARCHAR(20) NULL
+         country              VARCHAR(100) NULL
+         timezone             VARCHAR(50) NULL
+         subscription_plan_id INTEGER NOT NULL
+         status_id            INTEGER NOT NULL
+         stripe_customer_id   VARCHAR(100) NULL
+         stripe_subscription_id VARCHAR(100) NULL
+         trial_ends_at        DATETIME NULL
+         subscription_ends_at DATETIME NULL
+         billing_cycle_start  DATETIME NULL
+         billing_cycle_end    DATETIME NULL
+         max_organizations    INTEGER NULL
+         max_users            INTEGER NULL
+         max_patients         INTEGER NULL
+         max_storage_mb       INTEGER NULL
+         features_enabled     JSON NULL
+         logo_url             VARCHAR(500) NULL
+         favicon_url          VARCHAR(500) NULL
+         theme_settings       JSON NULL
+         custom_domain        VARCHAR(200) NULL
+         settings             JSON NULL
+         business_hours       JSON NULL
+         holiday_schedule     JSON NULL
+         privacy_policy_url   VARCHAR(500) NULL
+         terms_of_service_url VARCHAR(500) NULL
+         data_retention_days  INTEGER NULL
+         compliance_settings  JSON NULL
+         activated_at         DATETIME NULL
+         activated_by         INTEGER NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 3
+          ['industry_id'] → industry_types.['id']
+          ['subscription_plan_id'] → subscription_plans.['id']
+          ['status_id'] → tenant_statuses.['id']
+      📑 Indexes: 11
+          idx_tenant_contact_email: contact_email
+          idx_tenant_created_at: created_at
+          ... and 9 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM tena...' should be explicitly declared as text('SELECT COUNT(*) FROM tena...')
+
+   📋 transaction_types: 13 columns
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         category             VARCHAR(50) NOT NULL
+         is_system            BOOLEAN NULL
+         requires_verification BOOLEAN NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 1
+          ix_transaction_types_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM tran...' should be explicitly declared as text('SELECT COUNT(*) FROM tran...')
+
+   📋 treatment_plans: 14 columns
+         staff_id             INTEGER NULL
+         patient_id           INTEGER NOT NULL
+         organization_id      VARCHAR(50) NOT NULL
+         created_by           INTEGER NOT NULL
+         diagnosis            TEXT NOT NULL
+         procedures           JSON NOT NULL
+         medications          JSON NULL
+         status               VARCHAR(20) NULL
+         notes                TEXT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 4
+          ['staff_id'] → staff.['id']
+          ['patient_id'] → patients.['id']
+          ['organization_id'] → organizations.['public_id']
+          ... and 1 more foreign keys
+      📑 Indexes: 1
+          ix_treatment_plans_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM trea...' should be explicitly declared as text('SELECT COUNT(*) FROM trea...')
+
+   📋 treatment_priorities: 10 columns
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_treatment_priorities_code: code
+          ix_treatment_priorities_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM trea...' should be explicitly declared as text('SELECT COUNT(*) FROM trea...')
+
+   📋 treatment_rooms: 12 columns
+         organization_id      VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         room_number          VARCHAR(20) NULL
+         description          TEXT NULL
+         room_type            VARCHAR(50) NULL
+         equipment            TEXT NULL
+         status               VARCHAR(20) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['organization_id'] → organizations.['public_id']
+      📑 Indexes: 1
+          ix_treatment_rooms_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM trea...' should be explicitly declared as text('SELECT COUNT(*) FROM trea...')
+
+   📋 treatment_statuses: 12 columns
+         allows_modification  BOOLEAN NULL
+         is_completed_status  BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_treatment_statuses_code: code
+          ix_treatment_statuses_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM trea...' should be explicitly declared as text('SELECT COUNT(*) FROM trea...')
+
+   📋 treatment_types: 13 columns
+         category             VARCHAR(50) NULL
+         complexity_level     VARCHAR(20) NULL
+         typical_duration     INTEGER NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_treatment_types_code: code
+          ix_treatment_types_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM trea...' should be explicitly declared as text('SELECT COUNT(*) FROM trea...')
+
+   📋 treatments: 33 columns
+         tenant_id            INTEGER NOT NULL
+         patient_id           INTEGER NOT NULL
+         dentist_id           INTEGER NOT NULL
+         assistant_id         INTEGER NULL
+         treatment_type_id    INTEGER NOT NULL
+         status_id            INTEGER NOT NULL
+         priority_id          INTEGER NOT NULL
+         name                 VARCHAR(200) NOT NULL
+         description          TEXT NULL
+         procedure_code       VARCHAR(50) NULL
+         diagnosis_codes      JSON NULL
+         scheduled_date       DATETIME NOT NULL
+         estimated_duration   INTEGER NULL
+         actual_start_time    DATETIME NULL
+         actual_end_time      DATETIME NULL
+         actual_duration      INTEGER NULL
+         tooth_numbers        JSON NULL
+         surfaces             JSON NULL
+         anesthesia_used      JSON NULL
+         complications        TEXT NULL
+         post_treatment_instructions TEXT NULL
+         cost_estimate        NUMERIC(10, 2) NULL
+         actual_cost          NUMERIC(10, 2) NULL
+         insurance_covered    NUMERIC(10, 2) NULL
+         patient_responsibility NUMERIC(10, 2) NULL
+         duration             INTEGER NULL
+         price                NUMERIC(10, 2) NULL
+         category             VARCHAR(50) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 7
+          ['tenant_id'] → tenants.['id']
+          ['patient_id'] → patients.['id']
+          ['dentist_id'] → users.['id']
+          ... and 4 more foreign keys
+      📑 Indexes: 7
+          idx_treatment_dentist_date: dentist_id, scheduled_date
+          idx_treatment_patient_status: patient_id, status_id
+          ... and 5 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM trea...' should be explicitly declared as text('SELECT COUNT(*) FROM trea...')
+
+   📋 user_oauths: 11 columns
+         user_id              INTEGER NOT NULL
+         provider             VARCHAR(50) NOT NULL
+         provider_user_id     VARCHAR(100) NOT NULL
+         access_token         VARCHAR(255) NOT NULL
+         refresh_token        VARCHAR(255) NULL
+         token_expiry         DATETIME NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['user_id'] → users.['id']
+      📑 Indexes: 1
+          ix_user_oauths_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM user...' should be explicitly declared as text('SELECT COUNT(*) FROM user...')
+
+   📋 user_roles: 14 columns
+         is_system_role       BOOLEAN NULL
+         access_level         VARCHAR(20) NULL
+         can_manage_users     BOOLEAN NULL
+         can_access_reports   BOOLEAN NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_user_roles_code: code
+          ix_user_roles_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM user...' should be explicitly declared as text('SELECT COUNT(*) FROM user...')
+
+   📋 user_roles_association: 3 columns
+      🔑 user_id              INTEGER NOT NULL
+      🔑 role_id              INTEGER NOT NULL
+         assigned_at          DATETIME NULL
+      🗝️  Primary Key: user_id, role_id
+      🔗 Foreign Keys: 2
+          ['user_id'] → users.['id']
+          ['role_id'] → roles.['id']
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM user...' should be explicitly declared as text('SELECT COUNT(*) FROM user...')
+
+   📋 user_sessions: 11 columns
+         user_id              INTEGER NOT NULL
+         session_token        VARCHAR(255) NOT NULL
+         ip_address           VARCHAR(45) NULL
+         user_agent           VARCHAR(255) NULL
+         login_time           DATETIME NULL
+         logout_time          DATETIME NULL
+         is_active            BOOLEAN NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['user_id'] → users.['id']
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM user...' should be explicitly declared as text('SELECT COUNT(*) FROM user...')
+
+   📋 users: 34 columns
+         email                VARCHAR(120) NOT NULL
+         password_hash        VARCHAR(128) NOT NULL
+         first_name           VARCHAR(50) NOT NULL
+         last_name            VARCHAR(50) NOT NULL
+         phone                VARCHAR(20) NULL
+         address              VARCHAR(100) NULL
+         city                 VARCHAR(20) NULL
+         state                VARCHAR(20) NULL
+         country              VARCHAR(20) NULL
+         postal_code          VARCHAR(20) NULL
+         timezone             VARCHAR(20) NULL
+         avatar_url           VARCHAR(255) NULL
+         bio                  TEXT NULL
+         date_of_birth        DATE NULL
+         gender_id            INTEGER NULL
+         specialization       VARCHAR(100) NULL
+         license_number       VARCHAR(100) NULL
+         experience_years     INTEGER NULL
+         clinic_name          VARCHAR(100) NULL
+         user_role_id         INTEGER NOT NULL
+         organization_id      VARCHAR(50) NOT NULL
+         custom_role_id       INTEGER NULL
+         tenant_id            INTEGER NULL
+         is_admin             BOOLEAN NULL
+         email_verified       BOOLEAN NULL
+         last_login           DATETIME NULL
+         last_activity        DATETIME NULL
+         stripe_customer_id   VARCHAR(255) NULL
+         settings             JSON NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 5
+          ['gender_id'] → genders.['id']
+          ['user_role_id'] → user_roles.['id']
+          ['organization_id'] → organizations.['public_id']
+          ... and 2 more foreign keys
+      📑 Indexes: 7
+          idx_user_activity: last_activity
+          idx_user_email_org: email, organization_id
+          ... and 5 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM user...' should be explicitly declared as text('SELECT COUNT(*) FROM user...')
+
+   📋 vital_signs: 19 columns
+         patient_id           INTEGER NOT NULL
+         recorded_by          INTEGER NOT NULL
+         blood_pressure_systolic INTEGER NULL
+         blood_pressure_diastolic INTEGER NULL
+         heart_rate           INTEGER NULL
+         respiratory_rate     INTEGER NULL
+         temperature          NUMERIC(4, 1) NULL
+         oxygen_saturation    NUMERIC(4, 1) NULL
+         height               NUMERIC(4, 1) NULL
+         weight               NUMERIC(5, 2) NULL
+         bmi                  NUMERIC(4, 1) NULL
+         record_date          DATETIME NULL
+         notes                TEXT NULL
+         position             VARCHAR(50) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['patient_id'] → patients.['id']
+          ['recorded_by'] → users.['id']
+      📑 Indexes: 3
+          idx_vital_sign_date: record_date
+          idx_vital_sign_patient_date: patient_id, record_date
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM vita...' should be explicitly declared as text('SELECT COUNT(*) FROM vita...')
+
+   📋 vital_signs_units: 13 columns
+         unit_type            VARCHAR(50) NULL
+         conversion_factor    FLOAT NULL
+         si_unit              VARCHAR(20) NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_vital_signs_units_code: code
+          ix_vital_signs_units_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM vita...' should be explicitly declared as text('SELECT COUNT(*) FROM vita...')
+
+   📋 webhook_event_statuses: 13 columns
+         is_final_status      BOOLEAN NULL
+         allows_retry         BOOLEAN NULL
+         max_retries          INTEGER NULL
+         code                 VARCHAR(50) NOT NULL
+         name                 VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 2
+          UNIQUE ix_webhook_event_statuses_code: code
+          ix_webhook_event_statuses_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM webh...' should be explicitly declared as text('SELECT COUNT(*) FROM webh...')
+
+   📋 webhook_events: 14 columns
+         webhook_id           INTEGER NOT NULL
+         event_type           VARCHAR(100) NOT NULL
+         payload              JSON NOT NULL
+         webhook_event_status_id INTEGER NOT NULL
+         response_code        INTEGER NULL
+         response_body        TEXT NULL
+         attempts             INTEGER NULL
+         next_retry           DATETIME NULL
+         delivered_at         DATETIME NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 2
+          ['webhook_id'] → webhooks.['id']
+          ['webhook_event_status_id'] → webhook_event_statuses.['id']
+      📑 Indexes: 3
+          idx_webhook_event_status: webhook_id, webhook_event_status_id
+          idx_webhook_event_type: event_type
+          ... and 1 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM webh...' should be explicitly declared as text('SELECT COUNT(*) FROM webh...')
+
+   📋 webhooks: 10 columns
+         integration_id       INTEGER NOT NULL
+         url                  VARCHAR(500) NOT NULL
+         events               JSON NOT NULL
+         secret               VARCHAR(100) NOT NULL
+         is_active            BOOLEAN NULL
+         description          TEXT NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['integration_id'] → integrations.['id']
+      📑 Indexes: 2
+          idx_webhook_active: is_active
+          idx_webhook_integration: integration_id
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM webh...' should be explicitly declared as text('SELECT COUNT(*) FROM webh...')
+
+   📋 widget_configs: 24 columns
+         name                 VARCHAR(100) NOT NULL
+         title                VARCHAR(200) NOT NULL
+         widget_type_id       INTEGER NOT NULL
+         user_id              INTEGER NULL
+         tenant_id            INTEGER NULL
+         role                 VARCHAR(50) NULL
+         configuration        JSON NULL
+         data_source          VARCHAR(200) NULL
+         refresh_interval     INTEGER NULL
+         position_x           INTEGER NULL
+         position_y           INTEGER NULL
+         width                INTEGER NULL
+         height               INTEGER NULL
+         is_visible           BOOLEAN NULL
+         is_enabled           BOOLEAN NULL
+         requires_permission  VARCHAR(100) NULL
+         theme                VARCHAR(50) NULL
+         custom_css           TEXT NULL
+         created_by           INTEGER NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 4
+          ['widget_type_id'] → widget_types.['id']
+          ['user_id'] → users.['id']
+          ['tenant_id'] → tenants.['id']
+          ... and 1 more foreign keys
+      📑 Indexes: 5
+          idx_widget_config_type: widget_type_id
+          idx_widget_config_user_tenant: user_id, tenant_id
+          ... and 3 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM widg...' should be explicitly declared as text('SELECT COUNT(*) FROM widg...')
+
+   📋 widget_templates: 14 columns
+         name                 VARCHAR(100) NOT NULL
+         title                VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         widget_type_id       INTEGER NOT NULL
+         default_config       JSON NOT NULL
+         default_size         VARCHAR(20) NULL
+         category             VARCHAR(50) NULL
+         is_system_template   BOOLEAN NULL
+         required_permission  VARCHAR(100) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 1
+          ['widget_type_id'] → widget_types.['id']
+      📑 Indexes: 4
+          idx_widget_template_category: category
+          idx_widget_template_system: is_system_template
+          ... and 2 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM widg...' should be explicitly declared as text('SELECT COUNT(*) FROM widg...')
+
+   📋 widget_types: 14 columns
+         name                 VARCHAR(50) NOT NULL
+         description          TEXT NULL
+         code                 VARCHAR(50) NOT NULL
+         default_size         VARCHAR(20) NULL
+         category             VARCHAR(50) NULL
+         supports_refresh     BOOLEAN NULL
+         max_data_points      INTEGER NULL
+         sort_order           INTEGER NULL
+         color                VARCHAR(7) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      📑 Indexes: 1
+          ix_widget_types_is_active: is_active
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM widg...' should be explicitly declared as text('SELECT COUNT(*) FROM widg...')
+
+   📋 widgets: 21 columns
+         user_id              INTEGER NOT NULL
+         organization_id      VARCHAR(50) NOT NULL
+         widget_type_id       INTEGER NOT NULL
+         title                VARCHAR(100) NOT NULL
+         description          TEXT NULL
+         size                 VARCHAR(20) NULL
+         position_x           INTEGER NULL
+         position_y           INTEGER NULL
+         width                INTEGER NULL
+         height               INTEGER NULL
+         config               JSON NULL
+         data_source          JSON NOT NULL
+         refresh_interval     INTEGER NULL
+         filters              JSON NULL
+         is_visible           BOOLEAN NULL
+         requires_permission  VARCHAR(100) NULL
+      🔑 id                   INTEGER NOT NULL
+         public_id            VARCHAR(36) NOT NULL
+         created_at           DATETIME NOT NULL
+         updated_at           DATETIME NULL
+         is_active            BOOLEAN NULL
+      🗝️  Primary Key: id
+      🔗 Foreign Keys: 3
+          ['user_id'] → users.['id']
+          ['organization_id'] → organizations.['public_id']
+          ['widget_type_id'] → widget_types.['id']
+      📑 Indexes: 5
+          idx_widget_position: position_x, position_y
+          idx_widget_type: widget_type_id
+          ... and 3 more indexes
+      ⚠️  Could not get row count: Textual SQL expression 'SELECT COUNT(*) FROM widg...' should be explicitly declared as text('SELECT COUNT(*) FROM widg...')
+
+👑 Admin users: 0
+   ❌ No admin users found!
+   💡 You need to create an admin user to access the admin interface
+
+👥 All users (10 total, showing first 10):
+      sojipariola@gmail.com (ID: 1)
+      staff1_1@brightsmiledentalclinic.com (ID: 2)
+      staff1_2@brightsmiledentalclinic.com (ID: 3)
+      staff1_3@brightsmiledentalclinic.com (ID: 4)
+      staff1_4@brightsmiledentalclinic.com (ID: 5)
+      admin2@perfectteethorthodontics.com (ID: 6)
+      staff2_1@perfectteethorthodontics.com (ID: 7)
+      staff2_2@perfectteethorthodontics.com (ID: 8)
+      staff2_3@perfectteethorthodontics.com (ID: 9)
+      staff2_4@perfectteethorthodontics.com (ID: 10)
+
+==================================================
+🛣️  APPLICATION ROUTES
+------------------------------
+Total routes: 265
+
+📁 WEBAUTH ROUTES (8):
+   GET,POST        /web/change-password
+   GET,POST        /web/forgot-password
+   GET,POST        /web/login
+   GET,POST        /web/login/2fa
+   GET             /web/logout
+   GET,POST        /web/profile
+   GET,POST        /web/reset-password/<token>
+   GET,POST        /web/security
+
+📁 ADMIN ROUTES (43):
+   GET             /admin/
+      ↳ endpoint: admin.dashboard
+   POST            /admin/admin_logout
+      ↳ endpoint: admin.admin_logout
+   GET             /admin/api/database-schema
+      ↳ endpoint: admin.api_database_schema
+   POST            /admin/api/database/execute-cli
+      ↳ endpoint: admin.api_execute_cli
+   GET             /admin/api/database/stats
+      ↳ endpoint: admin.api_database_stats
+   GET             /admin/api/debug/simple
+      ↳ endpoint: admin.api_debug_simple
+   GET             /admin/api/lookup-tables
+      ↳ endpoint: admin.api_lookup_tables
+   GET             /admin/api/menu
+      ↳ endpoint: admin.api_menu
+   GET             /admin/api/routes-analysis
+      ↳ endpoint: admin.api_routes_analysis
+   GET             /admin/api/stats
+      ↳ endpoint: admin.api_stats
+   GET             /admin/api/stats/refresh
+      ↳ endpoint: admin.refresh_stats
+   GET             /admin/api/system-stats
+      ↳ endpoint: admin.api_system_stats
+   GET             /admin/database/management
+      ↳ endpoint: admin.database_management
+   GET             /admin/database/schema
+      ↳ endpoint: admin.database_schema
+   GET             /admin/database/stats
+      ↳ endpoint: admin.database_stats
+   GET             /admin/debug
+      ↳ endpoint: admin.debug_views
+   GET             /admin/debug-session
+      ↳ endpoint: admin.debug_session
+   GET             /admin/debug/auth-status
+      ↳ endpoint: admin.debug_auth_status
+   GET             /admin/debug/health
+      ↳ endpoint: admin.debug_health
+   POST            /admin/debug/login-test
+      ↳ endpoint: admin.debug_login_test
+   GET             /admin/debug/models
+      ↳ endpoint: admin.debug_models
+   GET             /admin/debug/template-vars
+      ↳ endpoint: admin.debug_template_vars
+   GET             /admin/debug/tenant-test
+      ↳ endpoint: admin.debug_tenant_test
+   GET             /admin/debug/urls
+      ↳ endpoint: admin.debug_urls
+   GET             /admin/documentation
+      ↳ endpoint: admin.documentation
+   GET             /admin/logout
+      ↳ endpoint: admin.logout_get
+   GET             /admin/menu
+      ↳ endpoint: admin.admin_menu
+   GET             /admin/model/<model_name>/
+      ↳ endpoint: admin.list_view
+   POST            /admin/model/<model_name>/action/
+      ↳ endpoint: admin.bulk_action
+   POST            /admin/model/<model_name>/delete/
+      ↳ endpoint: admin.delete_view
+   GET             /admin/model/<model_name>/details/<int:id>/
+      ↳ endpoint: admin.detail_view
+   GET,POST        /admin/model/<model_name>/edit/<int:id>/
+      ↳ endpoint: admin.edit_view
+   GET             /admin/model/<model_name>/export/
+      ↳ endpoint: admin.export_view
+   GET,POST        /admin/model/<model_name>/new/
+      ↳ endpoint: admin.create_view
+   GET             /admin/routes-analysis
+      ↳ endpoint: admin.routes_analysis
+   GET             /admin/static/<path:filename>
+      ↳ endpoint: admin.static
+   GET             /admin/system-overview
+      ↳ endpoint: admin.system_overview
+   GET             /admin/test
+      ↳ endpoint: admin.test_route
+   GET             /admin/test-complete
+      ↳ endpoint: admin.test_complete
+   GET             /admin/test-minimal
+      ↳ endpoint: admin.test_minimal
+   GET             /admin/test-protected
+      ↳ endpoint: admin.test_protected
+   GET             /admin/test-public
+      ↳ endpoint: admin.test_public
+   GET             /admin/test-simple
+      ↳ endpoint: admin.test_simple
+
+📁 ANALYTICS ROUTES (4):
+   GET             /api/analytics/appointments
+      ↳ endpoint: analytics.get_appointment_analytics
+   GET             /api/analytics/dashboard
+      ↳ endpoint: analytics.get_dashboard_analytics
+   GET             /api/analytics/patients
+      ↳ endpoint: analytics.get_patient_analytics
+   GET             /api/analytics/revenue
+      ↳ endpoint: analytics.get_revenue_analytics
+
+📁 API-DOCS ROUTES (2):
+   GET             /docs
+   GET             /openapi.json
+      ↳ endpoint: api-docs.openapi_json
+
+📁 APPOINTMENTS ROUTES (10):
+   GET             /api/appointments/
+      ↳ endpoint: appointments.get_appointments
+   POST            /api/appointments/
+      ↳ endpoint: appointments.create_appointment
+   GET             /api/appointments/<int:appointment_id>
+      ↳ endpoint: appointments.get_appointment
+   PUT             /api/appointments/<int:appointment_id>
+      ↳ endpoint: appointments.update_appointment
+   DELETE          /api/appointments/<int:appointment_id>
+      ↳ endpoint: appointments.delete_appointment
+   POST            /api/appointments/<int:appointment_id>/cancel
+      ↳ endpoint: appointments.cancel_appointment
+   POST            /api/appointments/<int:appointment_id>/complete
+      ↳ endpoint: appointments.complete_appointment
+   GET             /api/appointments/availability
+      ↳ endpoint: appointments.check_availability
+   GET             /api/appointments/today
+      ↳ endpoint: appointments.get_today_appointments
+   GET             /api/appointments/upcoming
+      ↳ endpoint: appointments.get_upcoming_appointments
+
+📁 AUDIT ROUTES (5):
+   GET,PUT         /api/audit/config
+      ↳ endpoint: audit.manage_audit_config
+   GET             /api/audit/logs
+      ↳ endpoint: audit.get_audit_logs
+   GET             /api/audit/logs/export
+      ↳ endpoint: audit.export_audit_logs
+   GET             /api/audit/stats
+      ↳ endpoint: audit.get_audit_statistics
+   GET             /api/audit/users/<int:user_id>/activity
+      ↳ endpoint: audit.get_user_activity
+
+📁 AUTH ROUTES (20):
+   GET,POST        /api/auth/admin-direct-login
+      ↳ endpoint: auth.admin_direct_login
+   POST            /api/auth/change-password
+      ↳ endpoint: auth.change_password
+   GET             /api/auth/debug-auth-setup
+      ↳ endpoint: auth.debug_auth_setup
+   GET             /api/auth/debug-routes
+      ↳ endpoint: auth.debug_routes
+   POST            /api/auth/forgot-password
+      ↳ endpoint: auth.forgot_password
+   GET             /api/auth/google/callback
+      ↳ endpoint: auth.google_callback
+   GET             /api/auth/google/login
+      ↳ endpoint: auth.google_login
+   GET             /api/auth/health
+      ↳ endpoint: auth.health_check
+   POST            /api/auth/login
+      ↳ endpoint: auth.login
+   GET,POST        /api/auth/login-form
+      ↳ endpoint: auth.login_form
+   POST            /api/auth/logout
+      ↳ endpoint: auth.logout_route
+   POST            /api/auth/logout-all
+      ↳ endpoint: auth.logout_all_route
+   GET             /api/auth/me
+      ↳ endpoint: auth.get_current_user_route
+   POST            /api/auth/refresh
+      ↳ endpoint: auth.refresh_tokens
+   POST            /api/auth/register
+      ↳ endpoint: auth.register
+   POST            /api/auth/reset-password
+      ↳ endpoint: auth.reset_password
+   GET             /api/auth/security/attempts
+      ↳ endpoint: auth.get_login_attempts_route
+   GET             /api/auth/security/stats
+      ↳ endpoint: auth.get_security_stats_route
+   GET             /api/auth/sessions
+      ↳ endpoint: auth.get_sessions
+   DELETE          /api/auth/sessions/<int:session_id>
+      ↳ endpoint: auth.revoke_session
+
+📁 BILLING ROUTES (10):
+   GET             /api/billing/dashboard
+      ↳ endpoint: billing.billing_dashboard
+   POST            /api/billing/insurance-claims
+      ↳ endpoint: billing.create_insurance_claim
+   PUT             /api/billing/insurance-claims/<int:claim_id>
+      ↳ endpoint: billing.update_insurance_claim
+   GET             /api/billing/invoices
+      ↳ endpoint: billing.get_invoices
+   POST            /api/billing/invoices
+      ↳ endpoint: billing.create_invoice
+   GET             /api/billing/invoices/<int:invoice_id>
+      ↳ endpoint: billing.get_invoice
+   PUT             /api/billing/invoices/<int:invoice_id>
+      ↳ endpoint: billing.update_invoice
+   DELETE          /api/billing/invoices/<int:invoice_id>
+      ↳ endpoint: billing.delete_invoice
+   POST            /api/billing/payments
+      ↳ endpoint: billing.create_payment
+   DELETE          /api/billing/payments/<int:payment_id>
+      ↳ endpoint: billing.delete_payment
+
+📁 CLINICAL ROUTES (10):
+   GET             /api/clinical/dashboard/patient/<int:patient_id>
+      ↳ endpoint: clinical.patient_clinical_dashboard
+   GET             /api/clinical/records
+      ↳ endpoint: clinical.get_medical_records
+   POST            /api/clinical/records
+      ↳ endpoint: clinical.create_medical_record
+   GET             /api/clinical/records/<int:record_id>
+      ↳ endpoint: clinical.get_medical_record
+   PUT             /api/clinical/records/<int:record_id>
+      ↳ endpoint: clinical.update_medical_record
+   DELETE          /api/clinical/records/<int:record_id>
+      ↳ endpoint: clinical.delete_medical_record
+   POST            /api/clinical/records/<int:record_id>/attachments
+      ↳ endpoint: clinical.upload_medical_attachment
+   DELETE          /api/clinical/records/<int:record_id>/attachments/<attachment_id>
+      ↳ endpoint: clinical.delete_medical_attachment
+   POST            /api/clinical/records/<int:record_id>/lock
+      ↳ endpoint: clinical.lock_medical_record
+   GET             /api/clinical/search
+      ↳ endpoint: clinical.search_clinical_data
+
+📁 DASHBOARD ROUTES (11):
+   GET             /api/dashboard/data/appointment-stats
+      ↳ endpoint: dashboard.get_appointment_stats
+   GET             /api/dashboard/data/financial-overview
+      ↳ endpoint: dashboard.get_financial_overview
+   GET             /api/dashboard/data/patient-metrics
+      ↳ endpoint: dashboard.get_patient_metrics
+   GET             /api/dashboard/data/widget/<widget_type>
+      ↳ endpoint: dashboard.get_widget_data
+   GET             /api/dashboard/layout
+      ↳ endpoint: dashboard.get_dashboard_layout
+   PUT             /api/dashboard/layout
+      ↳ endpoint: dashboard.update_dashboard_layout
+   GET             /api/dashboard/widgets
+      ↳ endpoint: dashboard.get_widgets
+   POST            /api/dashboard/widgets
+      ↳ endpoint: dashboard.create_widget
+   PUT             /api/dashboard/widgets/<int:widget_id>
+      ↳ endpoint: dashboard.update_widget
+   DELETE          /api/dashboard/widgets/<int:widget_id>
+      ↳ endpoint: dashboard.delete_widget
+   POST            /api/dashboard/widgets/reset
+      ↳ endpoint: dashboard.reset_widgets
+
+📁 FAMILY_MEMBERS ROUTES (9):
+   GET             /api/family_members
+      ↳ endpoint: family_members.list_family_members
+   POST            /api/family_members
+      ↳ endpoint: family_members.create_family_member
+   GET             /api/family_members/<int:fm_id>
+      ↳ endpoint: family_members.get_family_member
+   PUT             /api/family_members/<int:fm_id>
+      ↳ endpoint: family_members.update_family_member
+   DELETE          /api/family_members/<int:fm_id>
+      ↳ endpoint: family_members.delete_family_member
+   GET             /api/family_members/<int:fm_id>/insurance
+      ↳ endpoint: family_members.get_family_member_insurance
+   GET             /api/family_members/<int:fm_id>/relationships
+      ↳ endpoint: family_members.get_family_relationships
+   POST            /api/family_members/<int:fm_id>/relationships
+      ↳ endpoint: family_members.create_family_relationship
+   DELETE          /api/family_members/relationships/<int:relationship_id>
+      ↳ endpoint: family_members.delete_family_relationship
+
+📁 FILES ROUTES (2):
+   GET             /api/files/
+      ↳ endpoint: files.get_files
+   POST            /api/files/upload
+      ↳ endpoint: files.upload_file
+
+📁 HEALTH ROUTES (6):
+   GET             /api/health/
+      ↳ endpoint: health.health_check
+   GET             /api/health/detailed
+      ↳ endpoint: health.detailed_health
+   GET             /api/health/liveness
+      ↳ endpoint: health.liveness_probe
+   GET             /api/health/metrics
+      ↳ endpoint: health.metrics
+   GET             /api/health/readiness
+      ↳ endpoint: health.readiness_probe
+   GET             /api/health/status
+      ↳ endpoint: health.status
+
+📁 INSURANCE ROUTES (8):
+   POST            /api/insurance/coverage/check
+      ↳ endpoint: insurance.check_insurance_coverage
+   GET             /api/insurance/plans
+      ↳ endpoint: insurance.list_insurance_plans
+   POST            /api/insurance/plans
+      ↳ endpoint: insurance.create_insurance_plan
+   GET             /api/insurance/plans/<int:plan_id>
+      ↳ endpoint: insurance.get_insurance_plan
+   PUT             /api/insurance/plans/<int:plan_id>
+      ↳ endpoint: insurance.update_insurance_plan
+   DELETE          /api/insurance/plans/<int:plan_id>
+      ↳ endpoint: insurance.delete_insurance_plan
+   GET             /api/insurance/plans/<int:plan_id>/coverage
+      ↳ endpoint: insurance.get_insurance_coverage
+   POST            /api/insurance/plans/<int:plan_id>/verify
+      ↳ endpoint: insurance.verify_insurance_plan
+
+📁 INTEGRATIONS ROUTES (10):
+   GET             /api/integrations/
+      ↳ endpoint: integrations.get_integrations
+   GET             /api/integrations/<integration_type>
+      ↳ endpoint: integrations.get_integration_detail
+   POST            /api/integrations/<integration_type>
+      ↳ endpoint: integrations.create_update_integration
+   DELETE          /api/integrations/<integration_type>
+      ↳ endpoint: integrations.delete_integration
+   GET             /api/integrations/<integration_type>/oauth/callback
+      ↳ endpoint: integrations.oauth_callback
+   GET             /api/integrations/<integration_type>/oauth/init
+      ↳ endpoint: integrations.init_oauth_integration
+   POST            /api/integrations/<integration_type>/sync
+      ↳ endpoint: integrations.trigger_sync
+   POST            /api/integrations/<integration_type>/test
+      ↳ endpoint: integrations.test_integration
+   GET             /api/integrations/<integration_type>/webhooks
+      ↳ endpoint: integrations.get_integration_webhooks
+   POST            /api/integrations/<integration_type>/webhooks
+      ↳ endpoint: integrations.create_webhook
+
+📁 INVENTORY ROUTES (9):
+   GET             /api/inventory/items
+      ↳ endpoint: inventory.get_inventory_items
+   POST            /api/inventory/items
+      ↳ endpoint: inventory.create_inventory_item
+   GET             /api/inventory/items/<int:item_id>
+      ↳ endpoint: inventory.get_inventory_item
+   PUT             /api/inventory/items/<int:item_id>
+      ↳ endpoint: inventory.update_inventory_item
+   DELETE          /api/inventory/items/<int:item_id>
+      ↳ endpoint: inventory.delete_inventory_item
+   GET             /api/inventory/reports/summary
+      ↳ endpoint: inventory.get_inventory_summary
+   GET             /api/inventory/reports/valuation
+      ↳ endpoint: inventory.get_inventory_valuation
+   GET             /api/inventory/transactions
+      ↳ endpoint: inventory.get_inventory_transactions
+   POST            /api/inventory/transactions
+      ↳ endpoint: inventory.create_inventory_transaction
+
+📁 LABS ROUTES (9):
+   GET             /api/labs/orders
+      ↳ endpoint: labs.get_lab_orders
+   POST            /api/labs/orders
+      ↳ endpoint: labs.create_lab_order
+   GET             /api/labs/orders/<int:order_id>
+      ↳ endpoint: labs.get_lab_order
+   PUT             /api/labs/orders/<int:order_id>
+      ↳ endpoint: labs.update_lab_order
+   POST            /api/labs/orders/<int:order_id>/approve
+      ↳ endpoint: labs.approve_lab_results
+   POST            /api/labs/orders/<int:order_id>/reject
+      ↳ endpoint: labs.reject_lab_results
+   POST            /api/labs/orders/<int:order_id>/results
+      ↳ endpoint: labs.add_lab_results
+   PUT             /api/labs/orders/<int:order_id>/status
+      ↳ endpoint: labs.update_lab_order_status
+   GET             /api/labs/stats
+      ↳ endpoint: labs.get_lab_stats
+
+📁 MAIN ROUTES (3):
+   GET             /
+   GET             /health
+   GET             /healthz
+
+📁 NOTIFICATIONS ROUTES (10):
+   GET             /api/notifications/
+      ↳ endpoint: notifications.get_notifications
+   GET             /api/notifications/<int:notification_id>
+      ↳ endpoint: notifications.get_notification
+   POST            /api/notifications/<int:notification_id>/read
+      ↳ endpoint: notifications.mark_as_read
+   POST            /api/notifications/<int:notification_id>/unread
+      ↳ endpoint: notifications.mark_as_unread
+   POST            /api/notifications/bulk-action
+      ↳ endpoint: notifications.bulk_notification_actions
+   POST            /api/notifications/clear-all
+      ↳ endpoint: notifications.clear_all_notifications
+   GET,PUT         /api/notifications/preferences
+      ↳ endpoint: notifications.manage_notification_preferences
+   POST            /api/notifications/read-all
+      ↳ endpoint: notifications.mark_all_as_read
+   POST            /api/notifications/send
+      ↳ endpoint: notifications.send_notification
+   GET             /api/notifications/stats
+      ↳ endpoint: notifications.get_notification_statistics
+
+📁 ORGANIZATIONS ROUTES (10):
+   GET             /api/organizations/
+      ↳ endpoint: organizations.get_organizations
+   POST            /api/organizations/
+      ↳ endpoint: organizations.create_organization
+   GET             /api/organizations/<org_id>
+      ↳ endpoint: organizations.get_organization
+   PUT             /api/organizations/<org_id>
+      ↳ endpoint: organizations.update_organization
+   DELETE          /api/organizations/<org_id>
+      ↳ endpoint: organizations.delete_organization
+   GET,PUT         /api/organizations/<org_id>/settings
+      ↳ endpoint: organizations.manage_organization_settings
+   GET             /api/organizations/<org_id>/stats
+      ↳ endpoint: organizations.get_organization_stats
+   PUT             /api/organizations/<org_id>/subscription
+      ↳ endpoint: organizations.update_subscription
+   GET             /api/organizations/<org_id>/users
+      ↳ endpoint: organizations.get_organization_users
+   GET             /api/organizations/current
+      ↳ endpoint: organizations.get_current_organization
+
+📁 PATIENTS ROUTES (9):
+   GET             /api/patients/
+      ↳ endpoint: patients.get_patients
+   POST            /api/patients/
+      ↳ endpoint: patients.create_patient
+   GET             /api/patients/<int:patient_id>
+      ↳ endpoint: patients.get_patient
+   PUT             /api/patients/<int:patient_id>
+      ↳ endpoint: patients.update_patient
+   DELETE          /api/patients/<int:patient_id>
+      ↳ endpoint: patients.delete_patient
+   GET,POST,PUT    /api/patients/<int:patient_id>/medical-history
+      ↳ endpoint: patients.manage_medical_history
+   POST            /api/patients/<int:patient_id>/reactivate
+      ↳ endpoint: patients.reactivate_patient
+   POST            /api/patients/import
+      ↳ endpoint: patients.import_patients
+   GET             /api/patients/stats
+      ↳ endpoint: patients.get_patient_statistics
+
+📁 PRESCRIPTIONS ROUTES (10):
+   GET             /api/prescriptions/
+      ↳ endpoint: prescriptions.get_prescriptions
+   POST            /api/prescriptions/
+      ↳ endpoint: prescriptions.create_prescription
+   GET             /api/prescriptions/<int:prescription_id>
+      ↳ endpoint: prescriptions.get_prescription
+   PUT             /api/prescriptions/<int:prescription_id>
+      ↳ endpoint: prescriptions.update_prescription
+   DELETE          /api/prescriptions/<int:prescription_id>
+      ↳ endpoint: prescriptions.delete_prescription
+   POST            /api/prescriptions/<int:prescription_id>/approve
+      ↳ endpoint: prescriptions.approve_prescription
+   POST            /api/prescriptions/<int:prescription_id>/cancel
+      ↳ endpoint: prescriptions.cancel_prescription
+   POST            /api/prescriptions/<int:prescription_id>/dispense
+      ↳ endpoint: prescriptions.dispense_prescription
+   GET             /api/prescriptions/patient/<int:patient_id>
+      ↳ endpoint: prescriptions.get_patient_prescriptions
+   GET             /api/prescriptions/stats
+      ↳ endpoint: prescriptions.get_prescription_statistics
+
+📁 REPORTS ROUTES (10):
+   GET             /api/reports/analytics
+      ↳ endpoint: reports.get_analytics_reports
+   POST            /api/reports/analytics
+      ↳ endpoint: reports.create_analytics_report
+   GET             /api/reports/analytics/appointments
+      ↳ endpoint: reports.get_appointment_analytics
+   GET             /api/reports/analytics/export
+      ↳ endpoint: reports.export_analytics_report
+   GET             /api/reports/analytics/patient-activity
+      ↳ endpoint: reports.get_patient_activity_analytics
+   GET             /api/reports/financial
+      ↳ endpoint: reports.get_financial_reports
+   POST            /api/reports/financial
+      ↳ endpoint: reports.create_financial_report
+   GET             /api/reports/financial/aging
+      ↳ endpoint: reports.get_aging_report
+   GET             /api/reports/financial/export
+      ↳ endpoint: reports.export_financial_report
+   GET             /api/reports/financial/summary
+      ↳ endpoint: reports.get_financial_summary
+
+📁 SETTINGS ROUTES (9):
+   GET             /api/settings/
+      ↳ endpoint: settings.get_settings
+   GET             /api/settings/audit
+      ↳ endpoint: settings.get_settings_audit_log
+   GET,PUT         /api/settings/notifications
+      ↳ endpoint: settings.manage_notification_settings
+   GET,PUT         /api/settings/organization
+      ↳ endpoint: settings.manage_organization_settings
+   GET,PUT         /api/settings/organization/practice
+      ↳ endpoint: settings.manage_practice_settings
+   GET,PUT         /api/settings/preferences
+      ↳ endpoint: settings.manage_user_preferences
+   POST            /api/settings/reset/organization
+      ↳ endpoint: settings.reset_organization_settings
+   POST            /api/settings/reset/user
+      ↳ endpoint: settings.reset_user_settings
+   GET,PUT         /api/settings/user
+      ↳ endpoint: settings.manage_user_settings
+
+📁 TELEMEDICINE ROUTES (10):
+   GET             /api/telemedicine/availability
+      ↳ endpoint: telemedicine.check_availability
+   GET             /api/telemedicine/sessions
+      ↳ endpoint: telemedicine.get_sessions
+   POST            /api/telemedicine/sessions
+      ↳ endpoint: telemedicine.create_session
+   GET             /api/telemedicine/sessions/<int:session_id>
+      ↳ endpoint: telemedicine.get_session
+   PUT             /api/telemedicine/sessions/<int:session_id>
+      ↳ endpoint: telemedicine.update_session
+   POST            /api/telemedicine/sessions/<int:session_id>/cancel
+      ↳ endpoint: telemedicine.cancel_session
+   POST            /api/telemedicine/sessions/<int:session_id>/end
+      ↳ endpoint: telemedicine.end_session
+   POST            /api/telemedicine/sessions/<int:session_id>/join
+      ↳ endpoint: telemedicine.join_session
+   POST            /api/telemedicine/sessions/<int:session_id>/start
+      ↳ endpoint: telemedicine.start_session
+   GET             /api/telemedicine/stats
+      ↳ endpoint: telemedicine.get_telehealth_statistics
+
+📁 USERS ROUTES (11):
+   POST            /api/users/
+      ↳ endpoint: users.create_user
+   GET             /api/users/
+      ↳ endpoint: users.list_users
+   DELETE          /api/users/<int:user_id>
+      ↳ endpoint: users.delete_user
+   GET             /api/users/<int:user_id>
+      ↳ endpoint: users.get_user
+   PUT             /api/users/<int:user_id>
+      ↳ endpoint: users.update_user
+   GET             /api/users/<int:user_id>/profile
+      ↳ endpoint: users.get_profile
+   GET             /api/users/me
+      ↳ endpoint: users.get_me
+   PUT             /api/users/me
+      ↳ endpoint: users.update_me
+   PUT             /api/users/me/password
+      ↳ endpoint: users.change_password
+   PUT             /api/users/me/settings
+      ↳ endpoint: users.update_settings
+   GET             /api/users/me/settings
+      ↳ endpoint: users.get_settings
+
+📁 WIDGET_API ROUTES (7):
+   DELETE          /api/widget/<widget_id>
+      ↳ endpoint: widget_api.remove_widget
+   GET             /api/widget/<widget_id>/data
+      ↳ endpoint: widget_api.get_widget_data
+   GET             /api/widget/available
+      ↳ endpoint: widget_api.get_available_widgets
+   POST,PUT        /api/widget/config
+      ↳ endpoint: widget_api.manage_widget_config
+   GET             /api/widget/dashboard
+      ↳ endpoint: widget_api.get_dashboard_widgets
+   GET,PUT         /api/widget/layout
+      ↳ endpoint: widget_api.manage_dashboard_layout
+   POST            /api/widget/refresh
+      ↳ endpoint: widget_api.refresh_widgets
+
+==================================================
+🔐 AUTHENTICATION STATUS
+------------------------------
+✅ Session cookie name: session
+✅ Secret key set: True
+✅ Debug mode: False
+✅ Testing mode: False
+
+🔍 Testing admin login endpoint...
+   GET /api/auth/admin-direct-login: 200
+   POST /api/auth/admin-direct-login: 200
+🔐 BEFORE_REQUEST: admin.dashboard - /admin/
+❌ User not authenticated in before_request
+🔑 Redirecting to login: /api/auth/admin-direct-login?next=http://localhost/admin/
+   GET /admin/: 302
+   ↳ Redirects to: /api/auth/admin-direct-login?next=http://localhost/admin/
+
+🔍 Session contents after login attempt:
+   _flashes: [('error', 'Invalid admin credentials or not an admin user')]
+
+============================================================
+✅ Report complete! Check 'scripts/check_routes_schema_tables.txt'
+============================================================

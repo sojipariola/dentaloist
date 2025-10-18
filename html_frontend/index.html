@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DentalSys</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/themes/light.css" id="theme-link">
+</head>
+<body>
+    <script>
+        const user = localStorage.getItem('user');
+        if (user) {
+            const parsed = JSON.parse(user);
+            const rolePageMap = {
+                'dentist': 'dashboard/dentist/appointments.html',
+                'org_admin': 'dashboard/admin/patients.html',
+                'lab_technician': 'dashboard/lab/lab_orders.html',
+                'family_member': 'dashboard/family/patient_view.html',
+                'billing_staff': 'dashboard/billing_staff/invoices.html'
+            };
+            window.location.href = rolePageMap[parsed.role] || 'login.html';
+        } else {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

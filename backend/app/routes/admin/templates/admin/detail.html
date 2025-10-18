@@ -1,0 +1,62 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="detail-container">
+    <div class="detail-header">
+        <h1>{{ view.name }} Details</h1>
+        <div class="header-actions">
+            {% if view.can_edit %}
+            <a href="{{ url_for('admin.edit_view', endpoint=endpoint, id=item.id) }}" class="btn btn-primary">
+                <i class="material-icons">edit</i>
+                Edit
+            </a>
+            {% endif %}
+            <a href="{{ url_for('admin.list_view', endpoint=endpoint) }}" class="btn btn-outline-secondary">
+                <i class="material-icons">arrow_back</i>
+                Back to List
+            </a>
+        </div>
+    </div>
+
+    <div class="detail-content">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="material-icons">info</i>
+                    {{ view.name }} #{{ item.id }}
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    {% for column in columns %}
+                    <div class="col-md-6 mb-3">
+                        <strong>{{ column|replace('_', ' ')|title }}:</strong>
+                        <div class="mt-1">
+                            {% set value = getattr(item, column) %}
+                            {% if column in formatters %}
+                                {{ formatters[column](None, item, column)|safe }}
+                            {% else %}
+                                {% if value is none %}
+                                    <span class="text-muted">—</span>
+                                {% elif value is string %}
+                                    {{ value }}
+                                {% elif value is iterable and value is not string %}
+                                    <span class="text-muted">[List]</span>
+                                {% else %}
+                                    {{ value }}
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">
+                    Last updated: {{ item.updated_at.strftime('%Y-%m-%d %H:%M') if item.updated_at else 'Never' }}
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

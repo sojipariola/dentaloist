@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dentaloist Admin</title>
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Unified CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+    <!-- Sidebar Toggle for Mobile -->
+    <button class="sidebar-toggle" onclick="toggleSidebar()">
+        <i class="material-icons">menu</i>
+    </button>
+
+    <!-- Accordion Sidebar -->
+    {% include 'admin/partials/sidebar.html' %}
+
+    <!-- Main Content -->
+    <div class="main-content-with-sidebar" id="mainContent">
+        <!-- Top Navigation Bar -->
+        {% include 'admin/partials/navbar.html' %}
+
+        <!-- Page Content -->
+        <div class="page-content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <!-- Unified JavaScript -->
+    <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

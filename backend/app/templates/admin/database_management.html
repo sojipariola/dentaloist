@@ -1,0 +1,121 @@
+<!-- backend/app/templates/admin/database_management.html -->
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <h2>🗃️ Database Management</h2>
+    
+    <div class="row">
+        <!-- Quick Actions -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Quick Actions</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2">
+                        <a href="{{ url_for('admin.database_schema') }}" class="btn btn-outline-primary">
+                            <i class="fa fa-sitemap"></i> Database Schema
+                        </a>
+                        <a href="{{ url_for('admin.database_stats') }}" class="btn btn-outline-info">
+                            <i class="fa fa-chart-bar"></i> Database Statistics
+                        </a>
+                        <button class="btn btn-outline-success" onclick="executeCliCommand('check-db')">
+                            <i class="fa fa-check"></i> Check Database
+                        </button>
+                        <button class="btn btn-outline-warning" onclick="executeCliCommand('init-lookups')">
+                            <i class="fa fa-list"></i> Initialize Lookups
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- System Information -->
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5>System Information</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Database Stats</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Total Tables:</strong> <span id="table-count">Loading...</span></li>
+                                <li><strong>Total Records:</strong> <span id="record-count">Loading...</span></li>
+                                <li><strong>Last Check:</strong> <span id="last-check">-</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>CLI Commands</h6>
+                            <div class="list-group">
+                                <button class="list-group-item list-group-item-action" onclick="executeCliCommand('init-db')">
+                                    Initialize Database
+                                </button>
+                                <button class="list-group-item list-group-item-action" onclick="executeCliCommand('demo-data')">
+                                    Create Demo Data
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Command Output -->
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h5>Command Output</h5>
+                </div>
+                <div class="card-body">
+                    <pre id="command-output" class="bg-light p-3" style="min-height: 200px; max-height: 400px; overflow-y: auto;">
+Ready for commands...
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function executeCliCommand(command) {
+    const output = document.getElementById('command-output');
+    output.textContent = `Executing: ${command}...\n`;
+    
+    fetch('/admin/api/database/execute-cli', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ command: command })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            output.textContent += `✅ Success: ${data.result}\n`;
+        } else {
+            output.textContent += `❌ Error: ${data.error}\n`;
+        }
+        updateDatabaseStats();
+    })
+    .catch(error => {
+        output.textContent += `❌ Network error: ${error}\n`;
+    });
+}
+
+function updateDatabaseStats() {
+    fetch('/admin/api/database/stats')
+    .then(response => response.json())
+    .then(data => {
+        if (data.basic) {
+            document.getElementById('table-count').textContent = data.basic.total_tables;
+            document.getElementById('record-count').textContent = data.basic.total_records.toLocaleString();
+            document.getElementById('last-check').textContent = new Date().toLocaleTimeString();
+        }
+    });
+}
+
+// Load initial stats
+updateDatabaseStats();
+</script>
+{% endblock %}

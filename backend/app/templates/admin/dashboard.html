@@ -1,0 +1,360 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="dashboard-container">
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <div class="welcome-content">
+            <h1 class="welcome-title">Welcome to Dentaloist Admin</h1>
+            <p class="welcome-subtitle">Manage your dental practice efficiently with real-time insights and tools</p>
+        </div>
+        <div class="welcome-actions">
+            <button class="btn-refresh" onclick="window.adminDashboard.refreshStats()">
+                <i class="material-icons">refresh</i>
+                Refresh Data
+            </button>
+        </div>
+    </div> 
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+        <div class="stat-card stat-primary">
+            <div class="stat-icon">
+                <i class="material-icons">people</i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value" id="stat-users">{{ stats.total_users if stats else 0 }}</div>
+                <div class="stat-label">Total Users</div>
+                <div class="stat-trend positive">
+                    <i class="material-icons">trending_up</i>
+                    <span>Active</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stat-card stat-success">
+            <div class="stat-icon">
+                <i class="material-icons">personal_injury</i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value" id="stat-patients">{{ stats.total_patients if stats else 0 }}</div>
+                <div class="stat-label">Total Patients</div>
+                <div class="stat-trend positive">
+                    <i class="material-icons">trending_up</i>
+                    <span>Registered</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stat-card stat-warning">
+            <div class="stat-icon">
+                <i class="material-icons">event</i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value" id="stat-appointments">{{ stats.total_appointments if stats else 0 }}</div>
+                <div class="stat-label">Appointments</div>
+                <div class="stat-trend positive">
+                    <i class="material-icons">trending_up</i>
+                    <span>Scheduled</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stat-card stat-danger">
+            <div class="stat-icon">
+                <i class="material-icons">business</i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value" id="stat-organizations">{{ stats.total_organizations if stats else 0 }}</div>
+                <div class="stat-label">Organizations</div>
+                <div class="stat-trend positive">
+                    <i class="material-icons">trending_up</i>
+                    <span>Active</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="content-grid">
+        <!-- Left Column: Quick Actions & System Status -->
+        <div class="main-content">
+            <!-- Quick Actions -->
+            <div class="card quick-actions-card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <i class="material-icons">flash_on</i>
+                        Quick Actions
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <div class="action-grid">
+                        <!-- Top 4 Quick Actions from Menu -->
+                        {% set quick_actions = [] %}
+                        {% for category, views in admin_manager.get_menu().items() %}
+                            {% for view_item in views %}
+                                {% if quick_actions|length < 4 %}
+                                    {% set _ = quick_actions.append(view_item) %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                        
+                        {% for view_item in quick_actions %}
+                        <a href="{{ url_for('admin.list_view', model_name=view_item.model_name) }}" class="action-item">
+                            <div class="action-icon">
+                                <i class="material-icons">list_alt</i>
+                            </div>
+                            <div class="action-content">
+                                <div class="action-title">Manage {{ view_item.name }}</div>
+                                <div class="action-description">View and manage all {{ view_item.name|lower }}</div>
+                            </div>
+                            <i class="material-icons action-arrow">arrow_forward</i>
+                        </a>
+                        {% endfor %}
+                        
+                        <!-- Additional Quick Actions -->
+                        <a href="{{ url_for('admin.create_view', model_name='user') }}" class="action-item highlight">
+                            <div class="action-icon">
+                                <i class="material-icons">person_add</i>
+                            </div>
+                            <div class="action-content">
+                                <div class="action-title">Add New User</div>
+                                <div class="action-description">Create a new user account</div>
+                            </div>
+                            <i class="material-icons action-arrow">arrow_forward</i>
+                        </a>
+                        
+                        <a href="{{ url_for('admin.create_view', model_name='patient') }}" class="action-item highlight">
+                            <div class="action-icon">
+                                <i class="material-icons">person_add</i>
+                            </div>
+                            <div class="action-content">
+                                <div class="action-title">Add New Patient</div>
+                                <div class="action-description">Register a new patient</div>
+                            </div>
+                            <i class="material-icons action-arrow">arrow_forward</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Status -->
+            <div class="card system-status-card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <i class="material-icons">monitor_heart</i>
+                        System Status
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <div class="status-grid">
+                        <div class="status-item online">
+                            <div class="status-icon">
+                                <i class="material-icons">storage</i>
+                            </div>
+                            <div class="status-content">
+                                <div class="status-title">Database</div>
+                                <div class="status-value">Online</div>
+                            </div>
+                        </div>
+                        <div class="status-item online">
+                            <div class="status-icon">
+                                <i class="material-icons">api</i>
+                            </div>
+                            <div class="status-content">
+                                <div class="status-title">API</div>
+                                <div class="status-value">Active</div>
+                            </div>
+                        </div>
+                        <div class="status-item online">
+                            <div class="status-icon">
+                                <i class="material-icons">security</i>
+                            </div>
+                            <div class="status-content">
+                                <div class="status-title">Security</div>
+                                <div class="status-value">Secure</div>
+                            </div>
+                        </div>
+                        <div class="status-item warning">
+                            <div class="status-icon">
+                                <i class="material-icons">cloud</i>
+                            </div>
+                            <div class="status-content">
+                                <div class="status-title">Storage</div>
+                                <div class="status-value">78% Used</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Recent Activity & Quick Stats -->
+        <div class="sidebar">
+            <!-- Recent Activity -->
+            <div class="card activity-card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <i class="material-icons">history</i>
+                        Recent Activity
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <div class="activity-list">
+                        {% for activity in recent_activity %}
+                        <div class="activity-item">
+                            <div class="activity-icon {{ activity.type }}">
+                                <i class="material-icons">{{ activity.icon }}</i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-message">{{ activity.message }}</div>
+                                <div class="activity-time">{{ activity.timestamp }}</div>
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="activity-item">
+                            <div class="activity-icon info">
+                                <i class="material-icons">info</i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-message">No recent activity</div>
+                                <div class="activity-time">Just now</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="card quick-stats-card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <i class="material-icons">analytics</i>
+                        Quick Stats
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <div class="quick-stats">
+                        <div class="quick-stat">
+                            <div class="quick-stat-label">Today's Appointments</div>
+                            <div class="quick-stat-value">{{ stats.today_appointments|default(0) }}</div>
+                        </div>
+                        <div class="quick-stat">
+                            <div class="quick-stat-label">Active Sessions</div>
+                            <div class="quick-stat-value">{{ stats.active_sessions|default(24) }}</div>
+                        </div>
+                        <div class="quick-stat">
+                            <div class="quick-stat-label">System Uptime</div>
+                            <div class="quick-stat-value">99.8%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Dashboard specific JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Ensure adminDashboard is available
+    if (window.adminDashboard) {
+        console.log('AdminDashboard loaded successfully');
+        
+        // Add any dashboard-specific initialization here
+        const refreshBtn = document.querySelector('.btn-refresh');
+        if (refreshBtn) {
+            // Remove any existing click listeners and add the correct one
+            refreshBtn.onclick = function() {
+                window.adminDashboard.refreshStats();
+            };
+        }
+    } else {
+        console.error('AdminDashboard not found');
+        
+        // Fallback refresh function
+        const refreshBtn = document.querySelector('.btn-refresh');
+        if (refreshBtn) {
+            refreshBtn.onclick = async function() {
+                const btn = this;
+                const originalText = btn.innerHTML;
+                
+                btn.innerHTML = '<i class="material-icons spin">refresh</i> Refreshing...';
+                btn.disabled = true;
+                
+                try {
+                    const response = await fetch('{{ url_for("admin.api_stats") }}');
+                    const data = await response.json();
+                    
+                    if (data.error) {
+                        throw new Error(data.message || data.error);
+                    }
+                    
+                    // Simple counter update without animation
+                    document.getElementById('stat-users').textContent = data.total_users || 0;
+                    document.getElementById('stat-patients').textContent = data.total_patients || 0;
+                    document.getElementById('stat-appointments').textContent = data.total_appointments || 0;
+                    document.getElementById('stat-organizations').textContent = data.total_organizations || 0;
+                    
+                    showNotification('Stats updated successfully', 'success');
+                    
+                } catch (error) {
+                    console.error('Failed to refresh stats:', error);
+                    showNotification('Failed to refresh stats: ' + error.message, 'error');
+                } finally {
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }, 1000);
+                }
+            };
+        }
+    }
+});
+
+// Simple notification function as fallback
+function showNotification(message, type = 'info') {
+    // Create a simple notification
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'error' ? '#e74c3c' : type === 'success' ? '#27ae60' : '#3498db'};
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        z-index: 1000;
+    `;
+    notification.textContent = message;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+        }
+    }, 3000);
+}
+
+// Add spin animation if not already in CSS
+if (!document.querySelector('style[data-spin]')) {
+    const spinStyle = document.createElement('style');
+    spinStyle.setAttribute('data-spin', 'true');
+    spinStyle.textContent = `
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .spin {
+            animation: spin 1s linear infinite;
+        }
+    `;
+    document.head.appendChild(spinStyle);
+}
+</script>
+{% endblock %}

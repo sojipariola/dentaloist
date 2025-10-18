@@ -1,0 +1,46 @@
+{
+  // Tailwind CSS IntelliSense settings
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascriptreact",
+    "javascript": "javascript",
+    "javascriptreact": "javascriptreact"
+  },
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.experimental.classRegex": [
+    "tw`([^`]*)",
+    "tw=\"([^\"]*)",
+    "className=\"([^\"]*)"
+  ],
+
+  // Editor settings
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.minimap.enabled": false,
+
+  // TypeScript & JavaScript
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "javascript.validate.enable": true,
+  "typescript.validate.enable": true,
+
+  // Files & Exclude
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/.next": true
+  },
+
+  // ESLint
+  "eslint.validate": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
+
+  // Prettier
+  "prettier.enableDebugLogs": false,
+  "prettier.requireConfig": true
+}

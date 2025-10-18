@@ -1,0 +1,293 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="list-container">
+    <div class="list-header">
+        <h1>{{ view.name }} Management</h1>
+        <div class="header-actions">
+            {% if view.can_export %}
+                <a href="{{ url_for('admin.export_view', endpoint=endpoint) }}" class="btn btn-outline-primary">
+                    <i class="material-icons">download</i>
+                    Export
+                </a>
+                {% endif %}
+
+                {% if view.can_create %}
+                <a href="{{ url_for('admin.create_view', endpoint=endpoint) }}" class="btn btn-primary">
+                    <i class="material-icons">add</i>
+                    Create New
+                </a>
+                {% endif %}
+
+                <!-- In the action buttons for each row: -->
+                {% if view.can_view_details %}
+                <a href="{{ url_for('admin.detail_view', endpoint=endpoint, id=item.id) }}" 
+                class="btn btn-outline-info" title="View Details">
+                    <i class="material-icons" style="font-size: 16px;">visibility</i>
+                </a>
+                {% endif %}
+
+                {% if view.can_edit %}
+                <a href="{{ url_for('admin.edit_view', endpoint=endpoint, id=item.id) }}" 
+                class="btn btn-outline-primary" title="Edit">
+                    <i class="material-icons" style="font-size: 16px;">edit</i>
+                </a>
+                {% endif %}
+
+                <!-- In the empty state: -->
+                {% if view.can_create %}
+                <a href="{{ url_for('admin.create_view', endpoint=endpoint) }}" class="btn btn-primary mt-2">
+                    Create {{ view.name }}
+                </a>
+                {% endif %}
+        </div>
+    </div>
+
+    <!-- Search and Filters -->
+    <div class="list-toolbar">
+        <form method="GET" class="search-form">
+            <div class="search-container">
+                <input type="text" name="search" value="{{ search }}" placeholder="Search..." class="form-control search-input">
+                <button type="submit" class="btn btn-outline-secondary search-btn">
+                    <i class="material-icons">search</i>
+                </button>
+            </div>
+        </form>
+        
+        <div class="toolbar-actions">
+            {% if view.can_set_page_size %}
+            <select class="form-select page-size-select" onchange="updatePageSize(this.value)">
+                <option value="25" {% if view.page_size == 25 %}selected{% endif %}>25 per page</option>
+                <option value="50" {% if view.page_size == 50 %}selected{% endif %}>50 per page</option>
+                <option value="100" {% if view.page_size == 100 %}selected{% endif %}>100 per page</option>
+            </select>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Items Table -->
+    <div class="table-container">
+        <form id="bulk-form" method="POST" action="{{ url_for('admin.bulk_action', endpoint=endpoint) }}">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover data-table">
+                    <thead class="table-dark">
+                        <tr>
+                            {% if view.can_delete or view.can_export %}
+                            <th width="30">
+                                <input type="checkbox" id="select-all" class="form-check-input">
+                            </th>
+                            {% endif %}
+                            
+                            {% for column in columns %}
+                            <th>
+                                <a href="?sort={{ column }}&order={{ 'asc' if request.args.get('sort') == column and request.args.get('order') == 'desc' else 'desc' }}&search={{ search }}&page={{ pagination.page }}" 
+                                   class="text-white text-decoration-none">
+                                    {{ column|replace('_', ' ')|title }}
+                                    {% if request.args.get('sort') == column %}
+                                        <i class="material-icons" style="font-size: 16px;">
+                                            {{ 'arrow_drop_up' if request.args.get('order') == 'asc' else 'arrow_drop_down' }}
+                                        </i>
+                                    {% endif %}
+                                </a>
+                            </th>
+                            {% endfor %}
+                            
+                            <th width="200" class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in pagination.items %}
+                        <tr>
+                            {% if view.can_delete or view.can_export %}
+                            <td>
+                                <input type="checkbox" name="rowid" value="{{ item.id }}" class="form-check-input row-select">
+                            </td>
+                            {% endif %}
+                            
+                            {% for column in columns %}
+                            <td>
+                                {% set value = getattr(item, column) %}
+                                {% if column in formatters %}
+                                    {{ formatters[column](None, item, column)|safe }}
+                                {% else %}
+                                    {% if value is none %}
+                                        <span class="text-muted">—</span>
+                                    {% elif value is string %}
+                                        {{ value|truncate(50) }}
+                                    {% elif value is iterable and value is not string %}
+                                        <span class="text-muted">[List]</span>
+                                    {% else %}
+                                        {{ value }}
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            {% endfor %}
+                            
+                            <td class="text-center">
+                                <div class="btn-group btn-group-sm">
+                                    {% if view.can_view_details %}
+                                    <a href="{{ url_for('admin.detail_view', endpoint=endpoint, id=item.id) }}" 
+                                       class="btn btn-outline-info" title="View Details">
+                                        <i class="material-icons" style="font-size: 16px;">visibility</i>
+                                    </a>
+                                    {% endif %}
+                                    
+                                    {% if view.can_edit %}
+                                    <a href="{{ url_for('admin.edit_view', endpoint=endpoint, id=item.id) }}" 
+                                       class="btn btn-outline-primary" title="Edit">
+                                        <i class="material-icons" style="font-size: 16px;">edit</i>
+                                    </a>
+                                    {% endif %}
+                                    
+                                    {% if view.can_delete %}
+                                    <button type="button" class="btn btn-outline-danger" 
+                                            onclick="deleteItem({{ item.id }})" title="Delete">
+                                        <i class="material-icons" style="font-size: 16px;">delete</i>
+                                    </button>
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            {% set extra_columns = 1 %}
+                            {% if view.can_delete or view.can_export %}
+                                {% set extra_columns = 2 %}
+                            {% endif %}
+                            <td colspan="{{ columns|length + extra_columns }}" class="text-center py-5">
+                                <div class="empty-state">
+                                    <i class="material-icons text-muted" style="font-size: 64px;">inbox</i>
+                                    <h3 class="text-muted mt-3">No {{ view.name }} found</h3>
+                                    <p class="text-muted">Get started by creating a new {{ view.name }}</p>
+                                    {% if view.can_create %}
+                                    <a href="{{ url_for('admin.create_view', endpoint=endpoint) }}" class="btn btn-primary mt-2">
+                                        Create {{ view.name }}
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Bulk Actions -->
+            {% if view.can_delete or view.can_export %}
+            <div class="bulk-actions mt-3 p-3 bg-light rounded" id="bulk-actions" style="display: none;">
+                <div class="d-flex align-items-center gap-3">
+                    <span id="selected-count" class="fw-bold">0 items selected</span>
+                    <select name="action" class="form-select action-select" style="width: auto;">
+                        <option value="">Choose action...</option>
+                        {% if view.can_delete %}
+                        <option value="delete">Delete selected</option>
+                        {% endif %}
+                        {% if view.can_export %}
+                        <option value="export">Export selected</option>
+                        {% endif %}
+                    </select>
+                    <button type="submit" class="btn btn-primary">Apply</button>
+                </div>
+            </div>
+            {% endif %}
+        </form>
+    </div>
+
+    <!-- Pagination -->
+    {% if pagination.pages > 1 %}
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            {% if pagination.has_prev %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ pagination.prev_num }}&search={{ search }}&sort={{ request.args.get('sort', 'id') }}&order={{ request.args.get('order', 'desc') }}">
+                    <i class="material-icons" style="font-size: 16px;">chevron_left</i>
+                </a>
+            </li>
+            {% endif %}
+
+            {% for page_num in pagination.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
+                {% if page_num %}
+                    <li class="page-item {% if page_num == pagination.page %}active{% endif %}">
+                        <a class="page-link" href="?page={{ page_num }}&search={{ search }}&sort={{ request.args.get('sort', 'id') }}&order={{ request.args.get('order', 'desc') }}">
+                            {{ page_num }}
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link">...</span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            {% if pagination.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ pagination.next_num }}&search={{ search }}&sort={{ request.args.get('sort', 'id') }}&order={{ request.args.get('order', 'desc') }}">
+                    <i class="material-icons" style="font-size: 16px;">chevron_right</i>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function deleteItem(id) {
+    if (confirm('Are you sure you want to delete this item?')) {
+        const formData = new FormData();
+        formData.append('id', id);
+        
+        fetch(`{{ url_for('admin.delete_view', endpoint=endpoint) }}`, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload();
+            } else {
+                alert('Error: ' + data.error);
+            }
+        })
+        .catch(error => {
+            alert('Error: ' + error);
+        });
+    }
+}
+
+function updatePageSize(size) {
+    const url = new URL(window.location.href);
+    url.searchParams.set('per_page', size);
+    window.location.href = url.toString();
+}
+
+// Bulk selection
+{% if view.can_delete or view.can_export %}
+document.getElementById('select-all').addEventListener('change', function() {
+    const checkboxes = document.querySelectorAll('.row-select');
+    checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+    updateBulkActions();
+});
+
+document.querySelectorAll('.row-select').forEach(checkbox => {
+    checkbox.addEventListener('change', updateBulkActions);
+});
+
+function updateBulkActions() {
+    const selected = document.querySelectorAll('.row-select:checked');
+    const bulkActions = document.getElementById('bulk-actions');
+    const selectedCount = document.getElementById('selected-count');
+    
+    if (selected.length > 0) {
+        bulkActions.style.display = 'block';
+        selectedCount.textContent = `${selected.length} items selected`;
+    } else {
+        bulkActions.style.display = 'none';
+    }
+}
+{% endif %}
+</script>
+{% endblock %}
+

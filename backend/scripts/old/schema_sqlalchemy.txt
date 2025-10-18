@@ -1,0 +1,1518 @@
+=== DATABASE SCHEMA ===
+
+--- allergies ---
+  patient_id                INTEGER                        NOT NULL
+  allergen                  VARCHAR(100)                   NOT NULL
+  reaction                  VARCHAR(255)                   NULL
+  severity_id               INTEGER                        NULL
+  onset_date                DATE                           NULL
+  is_active                 BOOLEAN                        NULL
+  notes                     TEXT                           NULL
+  recorded_by               INTEGER                        NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  PK: id
+  FK: patient_id -> patients(id)
+  FK: severity_id -> allergy_severities(id)
+  FK: recorded_by -> users(id)
+
+--- allergy_severities ---
+  requires_emergency_care   BOOLEAN                        NULL
+  risk_level                VARCHAR(20)                    NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- analytics_dashboards ---
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  organization_id           VARCHAR(50)                    NOT NULL
+  layout_type               VARCHAR(20)                    NULL
+  is_default                BOOLEAN                        NULL
+  is_public                 BOOLEAN                        NULL
+  refresh_interval          INTEGER                        NULL
+  allowed_roles             JSON                           NULL
+  required_permissions      JSON                           NULL
+  theme                     VARCHAR(50)                    NULL
+  custom_css                TEXT                           NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: organization_id -> organizations(public_id)
+
+--- analytics_widgets ---
+  dashboard_id              INTEGER                        NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  title                     VARCHAR(200)                   NOT NULL
+  widget_type_id            INTEGER                        NOT NULL
+  data_source               VARCHAR(200)                   NOT NULL
+  query_parameters          JSON                           NULL
+  refresh_interval          INTEGER                        NULL
+  position_x                INTEGER                        NULL
+  position_y                INTEGER                        NULL
+  width                     INTEGER                        NULL
+  height                    INTEGER                        NULL
+  configuration             JSON                           NULL
+  filters                   JSON                           NULL
+  is_visible                BOOLEAN                        NULL
+  is_enabled                BOOLEAN                        NULL
+  cached_data               JSON                           NULL
+  cached_at                 DATETIME                       NULL
+  cache_ttl                 INTEGER                        NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: dashboard_id -> analytics_dashboards(id)
+  FK: widget_type_id -> widget_types(id)
+
+--- appointment_statuses ---
+  name                      VARCHAR(50)                    NOT NULL
+  description               TEXT                           NULL
+  allows_editing            BOOLEAN                        NULL
+  is_final_status           BOOLEAN                        NULL
+  code                      VARCHAR(20)                    NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- appointment_types ---
+  default_duration          INTEGER                        NULL
+  requires_specialist       BOOLEAN                        NULL
+  category                  VARCHAR(50)                    NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- claim_statuses ---
+  is_active                 BOOLEAN                        NULL
+  requires_action           BOOLEAN                        NULL
+  allows_resubmission       BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  PK: id
+
+--- currencies ---
+  symbol                    VARCHAR(10)                    NULL
+  code                      VARCHAR(3)                     NOT NULL
+  decimal_places            INTEGER                        NULL
+  is_active                 BOOLEAN                        NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  PK: id
+
+--- email_logs ---
+  recipient_email           VARCHAR(255)                   NOT NULL
+  recipient_name            VARCHAR(100)                   NULL
+  subject                   VARCHAR(255)                   NOT NULL
+  body                      TEXT                           NULL
+  body_html                 TEXT                           NULL
+  sender_email              VARCHAR(255)                   NOT NULL
+  sender_name               VARCHAR(100)                   NULL
+  template_id               VARCHAR(100)                   NULL
+  email_type                VARCHAR(50)                    NULL
+  status                    VARCHAR(20)                    NULL
+  status_message            TEXT                           NULL
+  provider                  VARCHAR(50)                    NULL
+  provider_message_id       VARCHAR(255)                   NULL
+  sent_at                   DATETIME                       NULL
+  delivered_at              DATETIME                       NULL
+  opened_at                 DATETIME                       NULL
+  headers                   JSON                           NULL
+  attachments_count         INTEGER                        NULL
+  retry_count               INTEGER                        NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- expense_categories ---
+  is_tax_deductible         BOOLEAN                        NULL
+  requires_approval         BOOLEAN                        NULL
+  budget_category           VARCHAR(50)                    NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- expenses ---
+  organization_id           VARCHAR(50)                    NOT NULL
+  category_id               INTEGER                        NOT NULL
+  payment_method_id         INTEGER                        NULL
+  amount                    NUMERIC(10, 2)                 NOT NULL
+  description               TEXT                           NULL
+  expense_date              DATE                           NOT NULL
+  vendor_name               VARCHAR(200)                   NULL
+  vendor_invoice_number     VARCHAR(100)                   NULL
+  payment_date              DATE                           NULL
+  is_recurring              BOOLEAN                        NULL
+  recurrence_pattern        VARCHAR(50)                    NULL
+  is_tax_deductible         BOOLEAN                        NULL
+  tax_amount                NUMERIC(10, 2)                 NULL
+  status                    VARCHAR(20)                    NULL
+  approved_by               INTEGER                        NULL
+  approved_date             DATETIME                       NULL
+  incurred_by               INTEGER                        NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: organization_id -> organizations(public_id)
+  FK: category_id -> expense_categories(id)
+  FK: payment_method_id -> payment_methods(id)
+  FK: approved_by -> users(id)
+  FK: incurred_by -> users(id)
+
+--- family_members ---
+  user_id                   INTEGER                        NOT NULL
+  organization_id           VARCHAR(50)                    NOT NULL
+  patient_id                INTEGER                        NULL
+  family_user_id            INTEGER                        NOT NULL
+  created_by                INTEGER                        NULL
+  first_name                VARCHAR(100)                   NOT NULL
+  last_name                 VARCHAR(100)                   NOT NULL
+  relationship_type         VARCHAR(50)                    NULL
+  emergency_contact         BOOLEAN                        NULL
+  primary_contact           BOOLEAN                        NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: user_id -> users(id)
+  FK: organization_id -> organizations(public_id)
+  FK: patient_id -> patients(id)
+  FK: family_user_id -> users(id)
+  FK: created_by -> users(id)
+
+--- financial_reports ---
+  organization_id           VARCHAR(50)                    NOT NULL
+  title                     VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  report_type               VARCHAR(50)                    NOT NULL
+  parameters                JSON                           NULL
+  data                      JSON                           NULL
+  summary                   JSON                           NULL
+  generated_at              DATETIME                       NULL
+  period_start              DATETIME                       NULL
+  period_end                DATETIME                       NULL
+  file_url                  VARCHAR(255)                   NULL
+  is_template               BOOLEAN                        NULL
+  is_public                 BOOLEAN                        NULL
+  shared_with               JSON                           NULL
+  created_by                INTEGER                        NOT NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: organization_id -> organizations(public_id)
+  FK: created_by -> users(id)
+
+--- genders ---
+  pronoun                   VARCHAR(50)                    NULL
+  is_active                 BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  PK: id
+
+--- industry_types ---
+  category                  VARCHAR(50)                    NULL
+  requires_license          BOOLEAN                        NULL
+  special_requirements      JSON                           NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- integration_statuses ---
+  allows_sync               BOOLEAN                        NULL
+  requires_attention        BOOLEAN                        NULL
+  retry_allowed             BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- inventory_adjustment_types ---
+  stock_impact              VARCHAR(10)                    NULL
+  requires_reason           BOOLEAN                        NULL
+  requires_approval         BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- inventory_adjustments ---
+  item_id                   INTEGER                        NOT NULL
+  adjustment_type_id        INTEGER                        NOT NULL
+  quantity                  INTEGER                        NOT NULL
+  reason                    TEXT                           NULL
+  adjusted_by               INTEGER                        NOT NULL
+  adjustment_date           DATETIME                       NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: item_id -> inventory_items(id)
+  FK: adjustment_type_id -> inventory_adjustment_types(id)
+  FK: adjusted_by -> users(id)
+
+--- inventory_items ---
+  organization_id           VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(200)                   NOT NULL
+  category                  VARCHAR(100)                   NOT NULL
+  sku                       VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  unit_price                VARCHAR(50)                    NOT NULL
+  quantity                  INTEGER                        NOT NULL
+  min_quantity              INTEGER                        NOT NULL
+  max_quantity              INTEGER                        NOT NULL
+  cost                      NUMERIC(10, 2)                 NOT NULL
+  price                     NUMERIC(10, 2)                 NOT NULL
+  supplier_id               INTEGER                        NULL
+  location                  VARCHAR(100)                   NULL
+  reorder_point             INTEGER                        NULL
+  lead_time_days            INTEGER                        NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: organization_id -> organizations(public_id)
+  FK: supplier_id -> suppliers(id)
+
+--- inventory_transaction_types ---
+  affects_stock             BOOLEAN                        NULL
+  stock_direction           VARCHAR(10)                    NULL
+  requires_approval         BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- inventory_transactions ---
+  item_id                   INTEGER                        NOT NULL
+  transaction_type_id       INTEGER                        NOT NULL
+  quantity                  INTEGER                        NOT NULL
+  product_id                INTEGER                        NOT NULL
+  old_stock_level           INTEGER                        NOT NULL
+  new_stock_level           INTEGER                        NOT NULL
+  unit_cost                 NUMERIC(10, 2)                 NOT NULL
+  total_cost                NUMERIC(10, 2)                 NOT NULL
+  reference_type            VARCHAR(50)                    NULL
+  reference_id              INTEGER                        NULL
+  notes                     TEXT                           NULL
+  performed_by              INTEGER                        NOT NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: item_id -> inventory_items(id)
+  FK: transaction_type_id -> inventory_transaction_types(id)
+  FK: product_id -> products(id)
+  FK: performed_by -> users(id)
+
+--- invoice_statuses ---
+  is_final                  BOOLEAN                        NULL
+  allows_editing            BOOLEAN                        NULL
+  send_notifications        BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- kpi_history ---
+  kpi_id                    INTEGER                        NOT NULL
+  value                     FLOAT                          NOT NULL
+  calculated_at             DATETIME                       NOT NULL
+  period_start              DATETIME                       NOT NULL
+  period_end                DATETIME                       NOT NULL
+  data_points               INTEGER                        NULL
+  confidence_score          FLOAT                          NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: kpi_id -> kpis(id)
+
+--- kpis ---
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  organization_id           VARCHAR(50)                    NOT NULL
+  category                  VARCHAR(50)                    NOT NULL
+  calculation_query         TEXT                           NOT NULL
+  target_value              FLOAT                          NULL
+  target_type               VARCHAR(20)                    NULL
+  target_range_min          FLOAT                          NULL
+  target_range_max          FLOAT                          NULL
+  unit                      VARCHAR(20)                    NULL
+  format_type               VARCHAR(20)                    NULL
+  decimal_places            INTEGER                        NULL
+  alert_enabled             BOOLEAN                        NULL
+  alert_condition           VARCHAR(20)                    NULL
+  alert_threshold           FLOAT                          NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: organization_id -> organizations(public_id)
+
+--- login_attempts ---
+  user_id                   INTEGER                        NULL
+  username                  VARCHAR(255)                   NOT NULL
+  ip_address                VARCHAR(45)                    NOT NULL
+  user_agent                TEXT                           NULL
+  success                   BOOLEAN                        NULL
+  attempt_type              VARCHAR(20)                    NULL
+  failure_reason            VARCHAR(100)                   NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: user_id -> users(id)
+
+--- medication_routes ---
+  administration_instructions TEXT                           NULL
+  requires_training         BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- note_types ---
+  requires_soap_format      BOOLEAN                        NULL
+  template                  TEXT                           NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- notes ---
+  patient_id                INTEGER                        NOT NULL
+  created_by                INTEGER                        NOT NULL
+  content                   TEXT                           NOT NULL
+  tags                      JSON                           NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: patient_id -> patients(id)
+  FK: created_by -> users(id)
+
+--- notification_types ---
+  priority                  VARCHAR(20)                    NULL
+  auto_expire_days          INTEGER                        NULL
+  requires_action           BOOLEAN                        NULL
+  template                  TEXT                           NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- organization_types ---
+  max_users                 INTEGER                        NULL
+  max_patients              INTEGER                        NULL
+  features_available        JSON                           NULL
+  requires_verification     BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- organizations ---
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  address                   VARCHAR(200)                   NULL
+  city                      VARCHAR(100)                   NULL
+  state                     VARCHAR(100)                   NULL
+  postal_code               VARCHAR(20)                    NULL
+  country                   VARCHAR(100)                   NULL
+  phone                     VARCHAR(20)                    NULL
+  email                     VARCHAR(120)                   NULL
+  website                   VARCHAR(200)                   NULL
+  organization_type_id      INTEGER                        NOT NULL
+  tax_id                    VARCHAR(100)                   NULL
+  business_type             VARCHAR(50)                    NULL
+  industry                  VARCHAR(100)                   NULL
+  max_staff                 INTEGER                        NULL
+  max_patients              INTEGER                        NULL
+  status                    VARCHAR(20)                    NULL
+  is_verified               BOOLEAN                        NULL
+  tenant_id                 INTEGER                        NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: organization_type_id -> organization_types(id)
+  FK: tenant_id -> tenants(id)
+
+--- password_history ---
+  user_id                   INTEGER                        NOT NULL
+  password_hash             VARCHAR(255)                   NOT NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: user_id -> users(id)
+
+--- patients ---
+  organization_id           VARCHAR(50)                    NOT NULL
+  first_name                VARCHAR(50)                    NOT NULL
+  last_name                 VARCHAR(50)                    NOT NULL
+  email                     VARCHAR(120)                   NULL
+  phone                     VARCHAR(20)                    NULL
+  date_of_birth             DATE                           NULL
+  gender                    VARCHAR(20)                    NULL
+  address                   JSON                           NULL
+  emergency_contact         JSON                           NULL
+  medical_history           JSON                           NULL
+  allergies                 JSON                           NULL
+  medications               JSON                           NULL
+  insurance_info            JSON                           NULL
+  dental_history            JSON                           NULL
+  oral_hygiene              VARCHAR(50)                    NULL
+  last_dental_visit         DATE                           NULL
+  next_recall_date          DATE                           NULL
+  status                    VARCHAR(20)                    NULL
+  preferred_language        VARCHAR(50)                    NULL
+  communication_preferences JSON                           NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: organization_id -> organizations(public_id)
+
+--- payment_methods ---
+  category                  VARCHAR(50)                    NULL
+  requires_processing       BOOLEAN                        NULL
+  processing_fee_percentage NUMERIC(5, 2)                  NULL
+  is_online                 BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- payment_statuses ---
+  is_completed              BOOLEAN                        NULL
+  allows_refund             BOOLEAN                        NULL
+  requires_action           BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- permission_categories ---
+  module                    VARCHAR(50)                    NULL
+  sort_order                INTEGER                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- permissions ---
+  name                      VARCHAR(50)                    NOT NULL
+  description               VARCHAR(255)                   NULL
+  category                  VARCHAR(50)                    NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- priority_levels ---
+  escalation_hours          INTEGER                        NULL
+  requires_immediate_attention BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- product_categories ---
+  organization_id           VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  parent_category_id        INTEGER                        NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: organization_id -> organizations(public_id)
+  FK: parent_category_id -> product_categories(id)
+
+--- product_images ---
+  product_id                INTEGER                        NOT NULL
+  image_url                 VARCHAR(500)                   NOT NULL
+  caption                   VARCHAR(200)                   NULL
+  is_primary                BOOLEAN                        NULL
+  sort_order                INTEGER                        NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: product_id -> products(id)
+
+--- product_price_history ---
+  product_id                INTEGER                        NOT NULL
+  old_price                 NUMERIC(10, 2)                 NOT NULL
+  new_price                 NUMERIC(10, 2)                 NOT NULL
+  changed_by                INTEGER                        NOT NULL
+  change_reason             TEXT                           NULL
+  effective_date            DATETIME                       NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: product_id -> products(id)
+  FK: changed_by -> users(id)
+
+--- product_types ---
+  category                  VARCHAR(50)                    NULL
+  requires_lot_tracking     BOOLEAN                        NULL
+  requires_expiration       BOOLEAN                        NULL
+  is_medical                BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- products ---
+  organization_id           VARCHAR(50)                    NOT NULL
+  supplier_id               INTEGER                        NULL
+  category_id               INTEGER                        NULL
+  product_type_id           INTEGER                        NOT NULL
+  sku                       VARCHAR(100)                   NOT NULL
+  name                      VARCHAR(200)                   NOT NULL
+  description               TEXT                           NULL
+  brand                     VARCHAR(100)                   NULL
+  model                     VARCHAR(100)                   NULL
+  unit_of_measure           VARCHAR(50)                    NOT NULL
+  unit_size                 VARCHAR(50)                    NULL
+  weight                    NUMERIC(10, 2)                 NULL
+  dimensions                VARCHAR(100)                   NULL
+  cost_price                NUMERIC(10, 2)                 NOT NULL
+  selling_price             NUMERIC(10, 2)                 NOT NULL
+  current_price             NUMERIC(10, 2)                 NOT NULL
+  tax_rate                  NUMERIC(5, 2)                  NULL
+  discount_percentage       NUMERIC(5, 2)                  NULL
+  min_stock_level           INTEGER                        NULL
+  max_stock_level           INTEGER                        NULL
+  reorder_point             INTEGER                        NULL
+  current_stock             INTEGER                        NULL
+  reserved_stock            INTEGER                        NULL
+  average_consumption       INTEGER                        NULL
+  is_medical                BOOLEAN                        NULL
+  requires_prescription     BOOLEAN                        NULL
+  active_ingredients        TEXT                           NULL
+  dosage_form               VARCHAR(100)                   NULL
+  strength                  VARCHAR(100)                   NULL
+  expiration_alert_days     INTEGER                        NULL
+  shelf_life_months         INTEGER                        NULL
+  requires_refrigeration    BOOLEAN                        NULL
+  status                    VARCHAR(20)                    NULL
+  is_taxable                BOOLEAN                        NULL
+  is_returnable             BOOLEAN                        NULL
+  return_period_days        INTEGER                        NULL
+  barcode                   VARCHAR(100)                   NULL
+  manufacturer_code         VARCHAR(100)                   NULL
+  supplier_code             VARCHAR(100)                   NULL
+  ndc_code                  VARCHAR(100)                   NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: organization_id -> organizations(public_id)
+  FK: supplier_id -> suppliers(id)
+  FK: category_id -> product_categories(id)
+  FK: product_type_id -> product_types(id)
+
+--- purchase_order_statuses ---
+  allows_editing            BOOLEAN                        NULL
+  is_final                  BOOLEAN                        NULL
+  send_notifications        BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- purchase_orders ---
+  supplier_id               INTEGER                        NOT NULL
+  organization_id           VARCHAR(50)                    NOT NULL
+  status_id                 INTEGER                        NOT NULL
+  po_number                 VARCHAR(50)                    NOT NULL
+  order_date                DATETIME                       NULL
+  expected_delivery_date    DATETIME                       NULL
+  actual_delivery_date      DATETIME                       NULL
+  tracking_number           VARCHAR(100)                   NULL
+  shipping_method           VARCHAR(100)                   NULL
+  subtotal                  NUMERIC(10, 2)                 NULL
+  tax_amount                NUMERIC(10, 2)                 NULL
+  shipping_cost             NUMERIC(10, 2)                 NULL
+  total_amount              NUMERIC(10, 2)                 NOT NULL
+  notes                     TEXT                           NULL
+  terms_and_conditions      TEXT                           NULL
+  created_by                INTEGER                        NOT NULL
+  approved_by               INTEGER                        NULL
+  approved_at               DATETIME                       NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: supplier_id -> suppliers(id)
+  FK: organization_id -> organizations(public_id)
+  FK: status_id -> purchase_order_statuses(id)
+  FK: created_by -> users(id)
+  FK: approved_by -> users(id)
+
+--- rate_limits ---
+  key                       VARCHAR(255)                   NOT NULL
+  timestamp                 FLOAT                          NOT NULL
+  expires_at                FLOAT                          NOT NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- report_runs ---
+  schedule_id               INTEGER                        NOT NULL
+  status                    VARCHAR(20)                    NULL
+  started_at                DATETIME                       NULL
+  completed_at              DATETIME                       NULL
+  duration_seconds          INTEGER                        NULL
+  file_url                  VARCHAR(500)                   NULL
+  file_size                 INTEGER                        NULL
+  record_count              INTEGER                        NULL
+  error_message             TEXT                           NULL
+  stack_trace               TEXT                           NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: schedule_id -> report_schedules(id)
+
+--- report_schedules ---
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  organization_id           VARCHAR(50)                    NOT NULL
+  report_type_id            INTEGER                        NOT NULL
+  parameters                JSON                           NULL
+  output_format             VARCHAR(20)                    NULL
+  schedule_type             VARCHAR(20)                    NOT NULL
+  schedule_config           JSON                           NULL
+  timezone                  VARCHAR(50)                    NULL
+  recipients                JSON                           NOT NULL
+  subject_template          VARCHAR(200)                   NULL
+  message_template          TEXT                           NULL
+  is_active                 BOOLEAN                        NULL
+  last_run                  DATETIME                       NULL
+  next_run                  DATETIME                       NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  PK: id
+  FK: organization_id -> organizations(public_id)
+  FK: report_type_id -> report_types(id)
+
+--- report_types ---
+  category                  VARCHAR(50)                    NULL
+  requires_parameters       BOOLEAN                        NULL
+  data_retention_days       INTEGER                        NULL
+  template_available        BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- role_permissions ---
+  role_id                   INTEGER                        NOT NULL
+  permission_id             INTEGER                        NOT NULL
+  granted_at                DATETIME                       NULL
+  PK: role_id, permission_id
+  FK: role_id -> roles(id)
+  FK: permission_id -> permissions(id)
+
+--- roles ---
+  name                      VARCHAR(50)                    NOT NULL
+  description               TEXT                           NULL
+  is_system_role            BOOLEAN                        NULL
+  organization_id           VARCHAR(50)                    NOT NULL
+  is_default                BOOLEAN                        NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: organization_id -> organizations(public_id)
+
+--- security_event_types ---
+  severity                  VARCHAR(20)                    NULL
+  requires_notification     BOOLEAN                        NULL
+  log_level                 VARCHAR(20)                    NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- security_events ---
+  user_id                   INTEGER                        NOT NULL
+  event_type_id             INTEGER                        NOT NULL
+  description               TEXT                           NULL
+  ip_address                VARCHAR(45)                    NULL
+  user_agent                TEXT                           NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: user_id -> users(id)
+  FK: event_type_id -> security_event_types(id)
+
+--- staff ---
+  organization_id           VARCHAR(50)                    NOT NULL
+  user_id                   INTEGER                        NOT NULL
+  staff_id                  INTEGER                        NULL
+  staff_number              VARCHAR(50)                    NOT NULL
+  job_title                 VARCHAR(100)                   NOT NULL
+  department                VARCHAR(100)                   NULL
+  specialization            VARCHAR(100)                   NULL
+  license_number            VARCHAR(100)                   NULL
+  license_expiry            DATE                           NULL
+  hire_date                 DATE                           NOT NULL
+  termination_date          DATE                           NULL
+  salary                    NUMERIC(10, 2)                 NULL
+  employment_type           VARCHAR(20)                    NOT NULL
+  status                    VARCHAR(20)                    NULL
+  employee_id               VARCHAR(20)                    NULL
+  work_email                VARCHAR(120)                   NULL
+  work_phone                VARCHAR(20)                    NULL
+  emergency_contact_name    VARCHAR(100)                   NULL
+  emergency_contact_phone   VARCHAR(20)                    NULL
+  emergency_contact_relationship VARCHAR(50)                    NULL
+  office_location           VARCHAR(200)                   NULL
+  office_hours              VARCHAR(100)                   NULL
+  qualifications            TEXT                           NULL
+  certifications            TEXT                           NULL
+  languages_spoken          TEXT                           NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  PK: id
+  FK: organization_id -> organizations(public_id)
+  FK: user_id -> users(id)
+  FK: staff_id -> staff(id)
+
+--- subscription_plans ---
+  price_monthly             NUMERIC(10, 2)                 NULL
+  price_yearly              NUMERIC(10, 2)                 NULL
+  max_users                 INTEGER                        NULL
+  max_patients              INTEGER                        NULL
+  features                  JSON                           NULL
+  is_active                 BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  PK: id
+
+--- subscriptions ---
+  organization_id           VARCHAR(50)                    NOT NULL
+  plan_id                   INTEGER                        NOT NULL
+  price                     NUMERIC(10, 2)                 NULL
+  start_date                DATETIME                       NULL
+  end_date                  DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  stripe_subscription_id    VARCHAR(100)                   NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  PK: id
+  FK: organization_id -> organizations(public_id)
+  FK: plan_id -> subscription_plans(id)
+
+--- suppliers ---
+  organization_id           VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  contact_name              VARCHAR(100)                   NULL
+  contact_email             VARCHAR(100)                   NULL
+  contact_phone             VARCHAR(20)                    NULL
+  address                   VARCHAR(255)                   NULL
+  city                      VARCHAR(100)                   NULL
+  state                     VARCHAR(100)                   NULL
+  postal_code               VARCHAR(20)                    NULL
+  country                   VARCHAR(100)                   NULL
+  tax_id                    VARCHAR(100)                   NULL
+  payment_terms             VARCHAR(100)                   NULL
+  lead_time_days            INTEGER                        NULL
+  rating                    INTEGER                        NULL
+  is_preferred              BOOLEAN                        NULL
+  is_active                 BOOLEAN                        NULL
+  website                   VARCHAR(200)                   NULL
+  notes                     TEXT                           NULL
+  categories_served         JSON                           NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  PK: id
+  FK: organization_id -> organizations(public_id)
+
+--- tenant_audit_logs ---
+  tenant_id                 INTEGER                        NOT NULL
+  user_id                   INTEGER                        NOT NULL
+  action                    VARCHAR(100)                   NOT NULL
+  resource_type             VARCHAR(100)                   NULL
+  resource_id               VARCHAR(50)                    NULL
+  details                   JSON                           NULL
+  ip_address                VARCHAR(45)                    NULL
+  user_agent                VARCHAR(500)                   NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: tenant_id -> tenants(id)
+  FK: user_id -> users(id)
+
+--- tenant_invitations ---
+  tenant_id                 INTEGER                        NOT NULL
+  email                     VARCHAR(120)                   NOT NULL
+  role                      VARCHAR(50)                    NOT NULL
+  token                     VARCHAR(100)                   NOT NULL
+  invited_by                INTEGER                        NOT NULL
+  expires_at                DATETIME                       NOT NULL
+  accepted_at               DATETIME                       NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: tenant_id -> tenants(id)
+  FK: invited_by -> users(id)
+
+--- tenant_statuses ---
+  allows_login              BOOLEAN                        NULL
+  requires_action           BOOLEAN                        NULL
+  is_trial_status           BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- tenants ---
+  name                      VARCHAR(200)                   NOT NULL
+  domain                    VARCHAR(50)                    NULL
+  subdomain                 VARCHAR(50)                    NULL
+  display_name              VARCHAR(200)                   NULL
+  description               TEXT                           NULL
+  industry_id               INTEGER                        NOT NULL
+  contact_email             VARCHAR(120)                   NOT NULL
+  contact_phone             VARCHAR(20)                    NULL
+  website                   VARCHAR(200)                   NULL
+  address_line1             VARCHAR(200)                   NULL
+  address_line2             VARCHAR(200)                   NULL
+  city                      VARCHAR(100)                   NULL
+  state                     VARCHAR(100)                   NULL
+  postal_code               VARCHAR(20)                    NULL
+  country                   VARCHAR(100)                   NULL
+  timezone                  VARCHAR(50)                    NULL
+  subscription_plan_id      INTEGER                        NOT NULL
+  status_id                 INTEGER                        NOT NULL
+  stripe_customer_id        VARCHAR(100)                   NULL
+  stripe_subscription_id    VARCHAR(100)                   NULL
+  trial_ends_at             DATETIME                       NULL
+  subscription_ends_at      DATETIME                       NULL
+  billing_cycle_start       DATETIME                       NULL
+  billing_cycle_end         DATETIME                       NULL
+  max_organizations         INTEGER                        NULL
+  max_users                 INTEGER                        NULL
+  max_patients              INTEGER                        NULL
+  max_storage_mb            INTEGER                        NULL
+  features_enabled          JSON                           NULL
+  logo_url                  VARCHAR(500)                   NULL
+  favicon_url               VARCHAR(500)                   NULL
+  theme_settings            JSON                           NULL
+  custom_domain             VARCHAR(200)                   NULL
+  settings                  JSON                           NULL
+  business_hours            JSON                           NULL
+  holiday_schedule          JSON                           NULL
+  privacy_policy_url        VARCHAR(500)                   NULL
+  terms_of_service_url      VARCHAR(500)                   NULL
+  data_retention_days       INTEGER                        NULL
+  compliance_settings       JSON                           NULL
+  activated_at              DATETIME                       NULL
+  activated_by              INTEGER                        NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: industry_id -> industry_types(id)
+  FK: subscription_plan_id -> subscription_plans(id)
+  FK: status_id -> tenant_statuses(id)
+
+--- transaction_types ---
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  category                  VARCHAR(50)                    NOT NULL
+  is_system                 BOOLEAN                        NULL
+  requires_verification     BOOLEAN                        NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- treatment_priorities ---
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- treatment_rooms ---
+  organization_id           VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  room_number               VARCHAR(20)                    NULL
+  description               TEXT                           NULL
+  room_type                 VARCHAR(50)                    NULL
+  equipment                 TEXT                           NULL
+  status                    VARCHAR(20)                    NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: organization_id -> organizations(public_id)
+
+--- treatment_statuses ---
+  allows_modification       BOOLEAN                        NULL
+  is_completed_status       BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- treatment_types ---
+  category                  VARCHAR(50)                    NULL
+  complexity_level          VARCHAR(20)                    NULL
+  typical_duration          INTEGER                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- treatments ---
+  tenant_id                 INTEGER                        NOT NULL
+  patient_id                INTEGER                        NOT NULL
+  dentist_id                INTEGER                        NOT NULL
+  assistant_id              INTEGER                        NULL
+  treatment_type_id         INTEGER                        NOT NULL
+  status_id                 INTEGER                        NOT NULL
+  priority_id               INTEGER                        NOT NULL
+  name                      VARCHAR(200)                   NOT NULL
+  description               TEXT                           NULL
+  procedure_code            VARCHAR(50)                    NULL
+  diagnosis_codes           JSON                           NULL
+  scheduled_date            DATETIME                       NOT NULL
+  estimated_duration        INTEGER                        NULL
+  actual_start_time         DATETIME                       NULL
+  actual_end_time           DATETIME                       NULL
+  actual_duration           INTEGER                        NULL
+  tooth_numbers             JSON                           NULL
+  surfaces                  JSON                           NULL
+  anesthesia_used           JSON                           NULL
+  complications             TEXT                           NULL
+  post_treatment_instructions TEXT                           NULL
+  cost_estimate             NUMERIC(10, 2)                 NULL
+  actual_cost               NUMERIC(10, 2)                 NULL
+  insurance_covered         NUMERIC(10, 2)                 NULL
+  patient_responsibility    NUMERIC(10, 2)                 NULL
+  duration                  INTEGER                        NULL
+  price                     NUMERIC(10, 2)                 NULL
+  category                  VARCHAR(50)                    NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: tenant_id -> tenants(id)
+  FK: patient_id -> patients(id)
+  FK: dentist_id -> users(id)
+  FK: assistant_id -> users(id)
+  FK: treatment_type_id -> treatment_types(id)
+  FK: status_id -> treatment_statuses(id)
+  FK: priority_id -> treatment_priorities(id)
+
+--- user_oauths ---
+  user_id                   INTEGER                        NOT NULL
+  provider                  VARCHAR(50)                    NOT NULL
+  provider_user_id          VARCHAR(100)                   NOT NULL
+  access_token              VARCHAR(255)                   NOT NULL
+  refresh_token             VARCHAR(255)                   NULL
+  token_expiry              DATETIME                       NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: user_id -> users(id)
+
+--- user_roles ---
+  is_system_role            BOOLEAN                        NULL
+  access_level              VARCHAR(20)                    NULL
+  can_manage_users          BOOLEAN                        NULL
+  can_access_reports        BOOLEAN                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- user_roles_association ---
+  user_id                   INTEGER                        NOT NULL
+  role_id                   INTEGER                        NOT NULL
+  assigned_at               DATETIME                       NULL
+  PK: user_id, role_id
+  FK: user_id -> users(id)
+  FK: role_id -> roles(id)
+
+--- user_sessions ---
+  user_id                   INTEGER                        NOT NULL
+  session_token             VARCHAR(255)                   NOT NULL
+  ip_address                VARCHAR(45)                    NULL
+  user_agent                VARCHAR(255)                   NULL
+  login_time                DATETIME                       NULL
+  logout_time               DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  PK: id
+  FK: user_id -> users(id)
+
+--- users ---
+  email                     VARCHAR(120)                   NOT NULL
+  password_hash             VARCHAR(128)                   NOT NULL
+  first_name                VARCHAR(50)                    NOT NULL
+  last_name                 VARCHAR(50)                    NOT NULL
+  phone                     VARCHAR(20)                    NULL
+  address                   VARCHAR(100)                   NULL
+  city                      VARCHAR(20)                    NULL
+  state                     VARCHAR(20)                    NULL
+  country                   VARCHAR(20)                    NULL
+  postal_code               VARCHAR(20)                    NULL
+  timezone                  VARCHAR(20)                    NULL
+  avatar_url                VARCHAR(255)                   NULL
+  bio                       TEXT                           NULL
+  date_of_birth             DATE                           NULL
+  gender_id                 INTEGER                        NULL
+  specialization            VARCHAR(100)                   NULL
+  license_number            VARCHAR(100)                   NULL
+  experience_years          INTEGER                        NULL
+  clinic_name               VARCHAR(100)                   NULL
+  user_role_id              INTEGER                        NOT NULL
+  organization_id           VARCHAR(50)                    NOT NULL
+  custom_role_id            INTEGER                        NULL
+  tenant_id                 INTEGER                        NULL
+  is_admin                  BOOLEAN                        NULL
+  email_verified            BOOLEAN                        NULL
+  last_login                DATETIME                       NULL
+  last_activity             DATETIME                       NULL
+  stripe_customer_id        VARCHAR(255)                   NULL
+  settings                  JSON                           NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: gender_id -> genders(id)
+  FK: user_role_id -> user_roles(id)
+  FK: organization_id -> organizations(public_id)
+  FK: custom_role_id -> roles(id)
+  FK: tenant_id -> tenants(id)
+
+--- vital_signs ---
+  patient_id                INTEGER                        NOT NULL
+  recorded_by               INTEGER                        NOT NULL
+  blood_pressure_systolic   INTEGER                        NULL
+  blood_pressure_diastolic  INTEGER                        NULL
+  heart_rate                INTEGER                        NULL
+  respiratory_rate          INTEGER                        NULL
+  temperature               NUMERIC(4, 1)                  NULL
+  oxygen_saturation         NUMERIC(4, 1)                  NULL
+  height                    NUMERIC(4, 1)                  NULL
+  weight                    NUMERIC(5, 2)                  NULL
+  bmi                       NUMERIC(4, 1)                  NULL
+  record_date               DATETIME                       NULL
+  notes                     TEXT                           NULL
+  position                  VARCHAR(50)                    NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: patient_id -> patients(id)
+  FK: recorded_by -> users(id)
+
+--- vital_signs_units ---
+  unit_type                 VARCHAR(50)                    NULL
+  conversion_factor         FLOAT                          NULL
+  si_unit                   VARCHAR(20)                    NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- webhook_event_statuses ---
+  is_final_status           BOOLEAN                        NULL
+  allows_retry              BOOLEAN                        NULL
+  max_retries               INTEGER                        NULL
+  code                      VARCHAR(50)                    NOT NULL
+  name                      VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- widget_templates ---
+  name                      VARCHAR(100)                   NOT NULL
+  title                     VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  widget_type_id            INTEGER                        NOT NULL
+  default_config            JSON                           NOT NULL
+  default_size              VARCHAR(20)                    NULL
+  category                  VARCHAR(50)                    NULL
+  is_system_template        BOOLEAN                        NULL
+  required_permission       VARCHAR(100)                   NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: widget_type_id -> widget_types(id)
+
+--- widget_types ---
+  name                      VARCHAR(50)                    NOT NULL
+  description               TEXT                           NULL
+  code                      VARCHAR(50)                    NOT NULL
+  default_size              VARCHAR(20)                    NULL
+  category                  VARCHAR(50)                    NULL
+  supports_refresh          BOOLEAN                        NULL
+  max_data_points           INTEGER                        NULL
+  sort_order                INTEGER                        NULL
+  color                     VARCHAR(7)                     NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+
+--- widgets ---
+  user_id                   INTEGER                        NOT NULL
+  organization_id           VARCHAR(50)                    NOT NULL
+  widget_type_id            INTEGER                        NOT NULL
+  title                     VARCHAR(100)                   NOT NULL
+  description               TEXT                           NULL
+  size                      VARCHAR(20)                    NULL
+  position_x                INTEGER                        NULL
+  position_y                INTEGER                        NULL
+  width                     INTEGER                        NULL
+  height                    INTEGER                        NULL
+  config                    JSON                           NULL
+  data_source               JSON                           NOT NULL
+  refresh_interval          INTEGER                        NULL
+  filters                   JSON                           NULL
+  is_visible                BOOLEAN                        NULL
+  requires_permission       VARCHAR(100)                   NULL
+  id                        INTEGER                        NOT NULL
+  public_id                 VARCHAR(36)                    NOT NULL
+  created_at                DATETIME                       NOT NULL
+  updated_at                DATETIME                       NULL
+  is_active                 BOOLEAN                        NULL
+  PK: id
+  FK: user_id -> users(id)
+  FK: organization_id -> organizations(public_id)
+  FK: widget_type_id -> widget_types(id)

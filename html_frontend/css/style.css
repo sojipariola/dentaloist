@@ -1,0 +1,12 @@
+:root {
+  --primary: #0d6efd;
+  --bg: #ffffff;
+  --text: #212529;
+  --card-bg: #f8f9fa;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #e9ecef;
+  --card-bg: #1e1e1e;
+}

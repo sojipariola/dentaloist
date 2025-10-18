@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soji AI Assistant</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        #chat { border: 1px solid #ccc; padding: 20px; height: 400px; overflow-y: auto; margin-bottom: 10px; }
+        #input { width: 70%; padding: 10px; }
+        button { padding: 10px 15px; }
+        .user { background: #e3f2fd; margin: 5px 0; padding: 10px; border-radius: 5px; }
+        .assistant { background: #f5f5f5; margin: 5px 0; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Soji AI Programming Assistant</h1>
+    <div id="chat"></div>
+    <input type="text" id="input" placeholder="Ask a programming question...">
+    <button onclick="sendMessage()">Send</button>
+
+    <select id="model-selector">
+        <option value="llama3.2:1b">Fast Model (llama3.2:1b)</option>
+        <option value="soji:latest">Soji (CodeLlama 13B) - Slow</option>
+        <option value="codellama:13b">CodeLlama 13B - Slow</option>
+    </select>
+
+    <script>
+        async function sendMessage() {
+            const input = document.getElementById('input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            addMessage(message, 'user');
+            input.value = '';
+            input.disabled = true;
+
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message })
+                });
+
+                const data = await response.json();
+                if (data.response) {
+                    addMessage(data.response, 'assistant');
+                } else {
+                    addMessage('Error: ' + (data.error || 'No response'), 'assistant');
+                }
+            } catch (error) {
+                addMessage('Error connecting to server', 'assistant');
+            }
+
+            input.disabled = false;
+            input.focus();
+        }
+
+        function addMessage(text, role) {
+            const chat = document.getElementById('chat');
+            const div = document.createElement('div');
+            div.className = role;
+            div.textContent = (role === 'user' ? 'You: ' : 'Soji: ') + text;
+            chat.appendChild(div);
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        document.getElementById('input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+</html>

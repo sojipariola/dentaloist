@@ -1,0 +1,16 @@
+<div class="top-navbar">
+    <div class="nav-content">
+        <div class="nav-welcome">
+            <h3>Welcome, {{ current_user.first_name or current_user.email }}!</h3>
+            <p>Dental Practice Management Dashboard</p>
+        </div>
+        <div class="nav-actions">
+            <div class="user-menu">
+                <span class="user-info">
+                    <i class="material-icons">person</i>
+                    {{ current_user.email }}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

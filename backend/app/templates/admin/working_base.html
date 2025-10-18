@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dentaloist Admin</title>
+    <style>
+        /* Basic reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        /* Layout */
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: #2c3e50;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .sidebar h2 {
+            color: #3498db;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Categories */
+        .category {
+            margin: 15px 0;
+        }
+        
+        .category-header {
+            background: #34495e;
+            padding: 12px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .category-header:hover {
+            background: #3d566e;
+        }
+        
+        .nav-items {
+            background: #2c3e50;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .nav-items.expanded {
+            max-height: 500px;
+        }
+        
+        .nav-link {
+            display: block;
+            color: #bdc3c7;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .nav-link:hover {
+            background: #34495e;
+            color: white;
+            border-left-color: #3498db;
+        }
+        
+        .nav-link.active {
+            background: #34495e;
+            color: white;
+            border-left-color: #3498db;
+            font-weight: bold;
+        }
+        
+        /* Main content */
+        .main {
+            flex: 1;
+            margin-left: 280px;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: white;
+            padding: 15px 30px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .breadcrumb {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        /* Debug */
+        .debug {
+            background: #e74c3c;
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .success {
+            background: #27ae60;
+        }
+        
+        /* Mobile menu button */
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            
+            .main {
+                margin-left: 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- SIDEBAR -->
+        <div class="sidebar" id="sidebar">
+            <h2>🦷 Dentaloist Admin</h2>
+            
+            <!-- Debug info -->
+            <div class="debug {% if admin_manager and admin_manager.get_menu() %}success{% endif %}">
+                {% if admin_manager and admin_manager.get_menu() %}
+                    ✅ {{ admin_manager.get_menu().keys()|list|length }} Categories Loaded
+                {% else %}
+                    ❌ No Menu Data
+                {% endif %}
+            </div>
+
+            <!-- Menu -->
+            {% if admin_manager and admin_manager.get_menu() %}
+                {% for category, items in admin_manager.get_menu().items() %}
+                <div class="category">
+                    <div class="category-header" onclick="toggleCategory(this)">
+                        <span>{{ category }}</span>
+                        <span>({{ items|length }}) ▼</span>
+                    </div>
+                    <div class="nav-items">
+                        {% for item in items %}
+                        <a href="{{ url_for('admin.list_view', model_name=item.model_name) }}" 
+                           class="nav-link"
+                           data-model="{{ item.model_name }}"
+                           onclick="setActiveLink(this)">
+                            📄 {{ item.name }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div style="color: #e74c3c; text-align: center; padding: 20px;">
+                    Menu not available
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main">
+            <!-- NAVBAR -->
+            <div class="navbar">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
+                    <div class="breadcrumb">
+                        <a href="{{ url_for('admin.dashboard') }}" style="color: #3498db; text-decoration: none;">Dashboard</a> 
+                        / 
+                        <span>{% block breadcrumb %}Home{% endblock %}</span>
+                    </div>
+                </div>
+                <div class="user-menu">
+                    <span>👤 {{ current_user.email if current_user.is_authenticated else 'Guest' }}</span>
+                    <a href="{{ url_for('auth.logout_route') }}" style="color: #666; text-decoration: none;">🚪 Logout</a>
+                </div>
+            </div>
+
+            <!-- CONTENT -->
+            <div class="content">
+                {% block content %}
+                <h1>Welcome to Dentaloist Admin</h1>
+                <p>Sidebar navigation should be working with accordion categories.</p>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Category toggle
+        function toggleCategory(header) {
+            const navItems = header.nextElementSibling;
+            navItems.classList.toggle('expanded');
+        }
+        
+        // Set active link
+        function setActiveLink(link) {
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        }
+        
+        // Mobile menu
+        function toggleMobileMenu() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+        
+        // Auto-expand first category
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstCategory = document.querySelector('.category');
+            if (firstCategory) {
+                const navItems = firstCategory.querySelector('.nav-items');
+                navItems.classList.add('expanded');
+            }
+            
+            // Set active link based on current page
+            const currentPath = window.location.pathname;
+            const modelMatch = currentPath.match(/\/admin\/([^\/]+)/);
+            if (modelMatch) {
+                const currentModel = modelMatch[1].toLowerCase();
+                const activeLink = document.querySelector(`[data-model="${currentModel}"]`);
+                if (activeLink) {
+                    setActiveLink(activeLink);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

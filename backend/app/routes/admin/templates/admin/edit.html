@@ -1,0 +1,113 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="edit-container">
+    <div class="edit-header">
+        <h1>Edit {{ view.name }}</h1>
+        <a href="{{ url_for('admin.list_view', endpoint=endpoint) }}" class="btn btn-outline-secondary">
+            <i class="material-icons">arrow_back</i>
+            Back to List
+        </a>
+    </div>
+
+    <div class="edit-form-container">
+        <form method="POST" class="edit-form">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <i class="material-icons">edit</i>
+                        Edit {{ view.name }} #{{ item.id }}
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% for column in form_columns %}
+                    <div class="mb-3">
+                        <label for="{{ column }}" class="form-label">
+                            {{ column|replace('_', ' ')|title }}
+                        </label>
+                        
+                        {% set value = getattr(item, column, '') %}
+                        {% set column_type = 'text' %}
+                        
+                        {% if 'password' in column %}
+                            {% set column_type = 'password' %}
+                            {% set value = '' %}
+                        {% elif 'email' in column %}
+                            {% set column_type = 'email' %}
+                        {% elif 'date' in column %}
+                            {% set column_type = 'date' %}
+                            {% if value %}
+                                {% set value = value.strftime('%Y-%m-%d') %}
+                            {% endif %}
+                        {% elif 'time' in column %}
+                            {% set column_type = 'time' %}
+                        {% elif 'datetime' in column %}
+                            {% set column_type = 'datetime-local' %}
+                            {% if value %}
+                                {% set value = value.strftime('%Y-%m-%dT%H:%M') %}
+                            {% endif %}
+                        {% elif 'phone' in column or 'tel' in column %}
+                            {% set column_type = 'tel' %}
+                        {% elif 'number' in column or 'count' in column or 'quantity' in column %}
+                            {% set column_type = 'number' %}
+                        {% endif %}
+                        
+                        {% if column_type in ['text', 'email', 'password', 'tel', 'number'] %}
+                            <input type="{{ column_type }}" 
+                                   class="form-control" 
+                                   id="{{ column }}" 
+                                   name="{{ column }}"
+                                   value="{{ value }}"
+                                   {% if column_type == 'number' %}step="any"{% endif %}>
+                        
+                        {% elif column_type in ['date', 'time', 'datetime-local'] %}
+                            <input type="{{ column_type }}" 
+                                   class="form-control" 
+                                   id="{{ column }}" 
+                                   name="{{ column }}"
+                                   value="{{ value }}">
+                        
+                        {% elif 'description' in column or 'notes' in column or 'content' in column %}
+                            <textarea class="form-control" 
+                                      id="{{ column }}" 
+                                      name="{{ column }}" 
+                                      rows="4">{{ value }}</textarea>
+                        
+                        {% elif 'is_' in column or 'has_' in column %}
+                            <div class="form-check">
+                                <input class="form-check-input" 
+                                       type="checkbox" 
+                                       id="{{ column }}" 
+                                       name="{{ column }}" 
+                                       value="true"
+                                       {{ 'checked' if value }}>
+                                <label class="form-check-label" for="{{ column }}">
+                                    {{ column|replace('_', ' ')|title }}
+                                </label>
+                            </div>
+                        
+                        {% else %}
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="{{ column }}" 
+                                   name="{{ column }}"
+                                   value="{{ value }}">
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="material-icons">save</i>
+                        Update {{ view.name }}
+                    </button>
+                    <a href="{{ url_for('admin.list_view', endpoint=endpoint) }}" class="btn btn-secondary">
+                        <i class="material-icons">cancel</i>
+                        Cancel
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

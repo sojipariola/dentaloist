@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌍 Global Theme */
+:root {
+  --color-primary: #2563eb; /* Blue-600 */
+  --color-secondary: #1e293b; /* Slate-800 */
+  --color-accent: #facc15; /* Yellow-400 */
+  --color-bg: #f9fafb; /* Gray-50 */
+}
+
+/* Base body styling */
+body {
+  background-color: var(--color-bg);
+  color: #1f2937; /* Gray-800 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Links */
+a {
+  color: inherit;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: var(--color-primary);
+}
+
+/* Forms */
+input,
+textarea,
+select {
+  border: 1px solid #d1d5db; /* Gray-300 */
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+}
+
+/* Buttons base */
+button {
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================
+   ✅ Custom Reusable Components
+   ============================ */
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition shadow-md;
+  }
+  .btn-primary {
+    @apply btn bg-blue-600 text-white hover:bg-blue-700;
+  }
+  .btn-outline {
+    @apply btn border border-blue-600 text-blue-600 hover:bg-blue-50;
+  }
+  .btn-accent {
+    @apply btn bg-yellow-400 text-gray-900 hover:bg-yellow-500;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-2xl shadow-lg p-6;
+  }
+  .card-hover {
+    @apply card transform transition hover:scale-105 hover:shadow-xl;
+  }
+
+  /* Section Containers */
+  .section {
+    @apply container mx-auto px-6 py-20;
+  }
+
+  /* Headings */
+  .heading-1 {
+    @apply text-5xl md:text-6xl font-bold text-gray-800 leading-tight;
+  }
+  .heading-2 {
+    @apply text-3xl md:text-4xl font-bold text-gray-800 leading-snug;
+  }
+  .subheading {
+    @apply text-xl text-gray-600 leading-relaxed;
+  }
+}

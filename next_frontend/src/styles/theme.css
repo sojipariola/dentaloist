@@ -1,0 +1,35 @@
+.light {
+  --primary: #0d6efd;
+  --primary-foreground: #ffffff;
+  --secondary: #6c757d;
+  --secondary-foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #212529;
+  --muted: #f8f9fa;
+  --muted-foreground: #6c757d;
+  --accent: #f8f9fa;
+  --accent-foreground: #212529;
+  --destructive: #dc3545;
+  --destructive-foreground: #ffffff;
+  --border: #dee2e6;
+  --input: #dee2e6;
+  --ring: #0d6efd;
+}
+
+.dark {
+  --primary: #4dabf7;
+  --primary-foreground: #1a1a1a;
+  --secondary: #868e96;
+  --secondary-foreground: #ffffff;
+  --background: #121212;
+  --foreground: #e9ecef;
+  --muted: #1e1e1e;
+  --muted-foreground: #a0a0a0;
+  --accent: #1e1e1e;
+  --accent-foreground: #e9ecef;
+  --destructive: #ff6b6b;
+  --destructive-foreground: #ffffff;
+  --border: #343a40;
+  --input: #343a40;
+  --ring: #4dabf7;
+}

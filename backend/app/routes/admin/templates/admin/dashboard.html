@@ -1,0 +1,102 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="dashboard-container">
+    <!-- Welcome Section -->
+    <div class="welcome-card">
+        <h1 class="welcome-title">Welcome to Dentaloist Admin</h1>
+        <p class="welcome-subtitle">Manage your dental practice efficiently with real-time insights and tools</p>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+        <div class="stat-card primary">
+            <div class="stat-icon">
+                <i class="material-icons">people</i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">{{ stats.total_users }}</div>
+                <div class="stat-label">Total Users</div>
+            </div>
+        </div>
+        
+        <div class="stat-card success">
+            <div class="stat-icon">
+                <i class="material-icons">personal_injury</i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">{{ stats.total_patients }}</div>
+                <div class="stat-label">Total Patients</div>
+            </div>
+        </div>
+        
+        <div class="stat-card warning">
+            <div class="stat-icon">
+                <i class="material-icons">event</i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">{{ stats.total_appointments }}</div>
+                <div class="stat-label">Appointments</div>
+            </div>
+        </div>
+        
+        <div class="stat-card danger">
+            <div class="stat-icon">
+                <i class="material-icons">business</i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">{{ stats.total_organizations }}</div>
+                <div class="stat-label">Organizations</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions & Recent Activity -->
+    <div class="content-grid">
+        <div class="quick-actions-card">
+            <h2 class="card-title">
+                <i class="material-icons">flash_on</i>
+                Quick Actions
+            </h2>
+            <div class="action-grid">
+                {% for category, views in admin_manager.get_menu().items() %}
+                    {% for view_item in views|slice(2) %}
+                    <a href="{{ url_for('admin.list_view', endpoint=view_item.endpoint) }}" class="action-item">
+                        <i class="material-icons">list</i>
+                        Manage {{ view_item.name }}
+                    </a>
+                    {% endfor %}
+                {% endfor %}
+                
+                {% if admin_manager.get_menu() and admin_manager.get_menu()|first and admin_manager.get_menu()|first[1] %}
+                <a href="{{ url_for('admin.create_view', endpoint=admin_manager.get_menu()|first[1][0].endpoint) }}" class="action-item">
+                    <i class="material-icons">add</i>
+                    Add New Item
+                </a>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="activity-card">
+            <h2 class="card-title">
+                <i class="material-icons">history</i>
+                Recent Activity
+            </h2>
+            <div class="activity-list">
+                {% for activity in recent_activity %}
+                <div class="activity-item {{ activity.type }}">
+                    <div class="activity-icon">
+                        <i class="material-icons">{{ activity.icon }}</i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-message">{{ activity.message }}</div>
+                        <div class="activity-time">{{ activity.timestamp }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

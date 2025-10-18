@@ -1,0 +1,14 @@
+DATABASE_URL=postgresql://soji@localhost/dentaloist
+SECRET_KEY=bd8b73920687b0cf4eda5c96262e07901193c158a0e32ebe4c3f279250553c19
+FERNET_KEY=Xg0F_xYjYguH9bvKoA0DPc9nCQdk7AHh34T9zuaReAQ=
+FLASK_ENV=development
+ENCRYPTION_KEY=A3kKN5_AmT9ehN-bEElX4S-dVB3fDudZTwYnTfcIMMo=
+
+# Database Configuration
+
+DB_PASSWORD=Password123DATABASE_URL=postgresql://olusoji:secure_password_123@localhost:5432/dentaloist_db
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=dentaloist_db
+DB_USER=olusoji
+DB_PASSWORD=secure_password_123

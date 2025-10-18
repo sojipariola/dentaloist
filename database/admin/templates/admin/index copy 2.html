@@ -1,0 +1,326 @@
+{% extends 'admin/base.html' %}
+
+{% block head_css %}
+    {{ super() }}
+    <link href="{{ url_for('static', filename='css/admin.css') }}" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block body %}
+<!-- Google-Style Header -->
+<header class="admin-header">
+    <div class="header-container">
+        <div class="logo-section">
+            <a href="{{ admin_view.admin.url }}" class="logo">
+                <div class="logo-icon">
+                    <i class="material-icons">local_hospital</i>
+                </div>
+                Dentaloist Admin
+            </a>
+        </div>
+        
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" id="admin-search" class="search-input" placeholder="Search users, patients, appointments...">
+                <span class="search-icon material-icons">search</span>
+            </div>
+        </div>
+        
+        <div class="user-section">
+            <span class="material-icons" style="color: var(--google-gray-600);">account_circle</span>
+            <span>{{ current_user.email }}</span>
+        </div>
+    </div>
+</header>
+
+<main class="admin-main">
+    <!-- Welcome Section -->
+    <div class="welcome-card">
+        <h1 class="welcome-title">Welcome to Dentaloist Admin</h1>
+        <p class="welcome-subtitle">Manage your dental practice efficiently with real-time insights and tools</p>
+    </div>
+
+    <!-- Statistics Grid -->
+    <div class="stats-grid">
+        <div class="stat-card primary" data-type="users">
+            <div class="stat-header">
+                <div class="stat-icon">
+                    <i class="material-icons">people</i>
+                </div>
+            </div>
+            <div class="stat-title">Total Users</div>
+            <div class="stat-value">{{ stats.total_users|default(0) }}</div>
+            <div class="stat-change positive">
+                <i class="material-icons">trending_up</i>
+                <span>12% increase</span>
+            </div>
+        </div>
+        
+        <div class="stat-card success" data-type="patients">
+            <div class="stat-header">
+                <div class="stat-icon">
+                    <i class="material-icons">personal_injury</i>
+                </div>
+            </div>
+            <div class="stat-title">Total Patients</div>
+            <div class="stat-value">{{ stats.total_patients|default(0) }}</div>
+            <div class="stat-change positive">
+                <i class="material-icons">trending_up</i>
+                <span>8% increase</span>
+            </div>
+        </div>
+        
+        <div class="stat-card warning" data-type="appointments">
+            <div class="stat-header">
+                <div class="stat-icon">
+                    <i class="material-icons">event</i>
+                </div>
+            </div>
+            <div class="stat-title">Appointments</div>
+            <div class="stat-value">{{ stats.total_appointments|default(0) }}</div>
+            <div class="stat-change positive">
+                <i class="material-icons">trending_up</i>
+                <span>5% increase</span>
+            </div>
+        </div>
+        
+        <div class="stat-card danger" data-type="organizations">
+            <div class="stat-header">
+                <div class="stat-icon">
+                    <i class="material-icons">business</i>
+                </div>
+            </div>
+            <div class="stat-title">Organizations</div>
+            <div class="stat-value">{{ stats.total_organizations|default(0) }}</div>
+            <div class="stat-change positive">
+                <i class="material-icons">trending_up</i>
+                <span>3% increase</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="content-grid">
+        <!-- Quick Actions & Analytics -->
+        <div>
+            <!-- Quick Actions -->
+            <div class="quick-actions-card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <i class="material-icons">flash_on</i>
+                        Quick Actions
+                    </h2>
+                </div>
+                <div class="action-grid">
+                    <a href="{{ url_for('user.index_view') }}" class="action-item">
+                        <div class="action-icon">
+                            <i class="material-icons">manage_accounts</i>
+                        </div>
+                        <span class="action-text">Manage Users</span>
+                    </a>
+                    <a href="{{ url_for('patient.index_view') }}" class="action-item">
+                        <div class="action-icon">
+                            <i class="material-icons">personal_injury</i>
+                        </div>
+                        <span class="action-text">Manage Patients</span>
+                    </a>
+                    <a href="{{ url_for('appointment.index_view') }}" class="action-item">
+                        <div class="action-icon">
+                            <i class="material-icons">event</i>
+                        </div>
+                        <span class="action-text">View Appointments</span>
+                    </a>
+                    <a href="{{ url_for('organization.index_view') }}" class="action-item">
+                        <div class="action-icon">
+                            <i class="material-icons">business</i>
+                        </div>
+                        <span class="action-text">Manage Organizations</span>
+                    </a>
+                    <button class="action-item quick-action-btn" data-action="export-data">
+                        <div class="action-icon">
+                            <i class="material-icons">download</i>
+                        </div>
+                        <span class="action-text">Export Data</span>
+                    </button>
+                    <button class="action-item quick-action-btn" data-action="system-check">
+                        <div class="action-icon">
+                            <i class="material-icons">health_and_safety</i>
+                        </div>
+                        <span class="action-text">System Check</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Analytics Chart -->
+            <div class="chart-card" style="margin-top: var(--space-8);">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <i class="material-icons">analytics</i>
+                        Monthly Analytics
+                    </h2>
+                </div>
+                <div class="chart-placeholder">
+                    <canvas id="adminChart" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Info & Activity -->
+        <div>
+            <!-- System Information -->
+            <div class="system-info-card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <i class="material-icons">info</i>
+                        System Information
+                    </h2>
+                </div>
+                <div class="info-list">
+                    <div class="info-item">
+                        <span class="info-label">Admin User</span>
+                        <span class="info-value">{{ current_user.email }}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Last Login</span>
+                        <span class="info-value">
+                            {{ current_user.last_login_at.strftime('%Y-%m-%d %H:%M') if current_user.last_login_at else 'Never' }}
+                        </span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Admin Access</span>
+                        <span class="status-badge success">Active</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Current Time</span>
+                        <span class="info-value" id="current-time">
+                            {{ stats.now.strftime('%Y-%m-%d %H:%M:%S') if stats.now else '' }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="system-info-card" style="margin-top: var(--space-8);">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <i class="material-icons">history</i>
+                        Recent Activity
+                    </h2>
+                </div>
+                <div class="activity-feed">
+                    <div class="activity-item success">
+                        <div class="activity-icon">
+                            <i class="material-icons">person_add</i>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-message">New patient registered - John Doe</div>
+                            <div class="activity-time">2 minutes ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item info">
+                        <div class="activity-icon">
+                            <i class="material-icons">event_available</i>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-message">Appointment scheduled - Dental Checkup</div>
+                            <div class="activity-time">15 minutes ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item warning">
+                        <div class="activity-icon">
+                            <i class="material-icons">backup</i>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-message">System backup completed</div>
+                            <div class="activity-time">1 hour ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item info">
+                        <div class="activity-icon">
+                            <i class="material-icons">login</i>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-message">User login - {{ current_user.email }}</div>
+                            <div class="activity-time">2 hours ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Status -->
+    <div class="system-info-card no-print">
+        <div class="card-header">
+            <h2 class="card-title">
+                <i class="material-icons">dns</i>
+                System Status
+            </h2>
+        </div>
+        <div class="system-status-grid">
+            <div class="status-item online">
+                <div class="status-icon">
+                    <i class="material-icons">storage</i>
+                </div>
+                <div class="status-label">Database</div>
+                <div class="status-value">Online</div>
+            </div>
+            <div class="status-item online">
+                <div class="status-icon">
+                    <i class="material-icons">api</i>
+                </div>
+                <div class="status-label">API</div>
+                <div class="status-value">Active</div>
+            </div>
+            <div class="status-item online">
+                <div class="status-icon">
+                    <i class="material-icons">security</i>
+                </div>
+                <div class="status-label">Security</div>
+                <div class="status-value">Secure</div>
+            </div>
+            <div class="status-item warning">
+                <div class="status-icon">
+                    <i class="material-icons">cloud</i>
+                </div>
+                <div class="status-label">Storage</div>
+                <div class="status-value">78% Used</div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block tail_js %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+    <script>
+        // Update current time every second
+        function updateCurrentTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString('en-US', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            }).replace(/,/g, '');
+            
+            const timeElement = document.getElementById('current-time');
+            if (timeElement) {
+                timeElement.textContent = timeString;
+            }
+        }
+        
+        // Update time immediately and every second
+        updateCurrentTime();
+        setInterval(updateCurrentTime, 1000);
+    </script>
+{% endblock %}

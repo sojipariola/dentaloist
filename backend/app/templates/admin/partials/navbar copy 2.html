@@ -1,0 +1,40 @@
+<div class="top-navbar">
+    <div class="nav-content">
+        <div class="nav-welcome">
+            <h3>Welcome, {{ current_user.first_name or current_user.email }}!</h3>
+            <p>Dental Practice Management Dashboard</p>
+        </div>
+        <div class="nav-actions">
+            <div class="user-menu">
+                <a href="{{ url_for('admin.detail_view', model_name='user', id=current_user.id) }}" class="user-info clickable">
+                    <i class="material-icons">person</i>
+                    {{ current_user.email }}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.user-info.clickable {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #2c3e50;
+    font-weight: 500;
+    padding: 8px 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.user-info.clickable:hover {
+    background: #e9ecef;
+    border-color: #3498db;
+    color: #3498db;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+</style>

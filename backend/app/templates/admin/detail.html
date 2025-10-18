@@ -1,0 +1,277 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="detail-container">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="header-content">
+            <nav class="breadcrumb">
+                <a href="{{ url_for('admin.list_view', model_name=model_name) }}" class="breadcrumb-item">
+                    {{ view.name }}
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-item active">Details</span>
+            </nav>
+            <h1>{{ view.name }} Details</h1>
+            <p>Complete information for {{ view.name|lower }} #{{ item.id }}</p>
+        </div>
+        <div class="header-actions">
+            {% if view.can_edit %}
+            <a href="{{ url_for('admin.edit_view', model_name=model_name, id=item.id) }}" class="btn btn-primary">
+                <i class="material-icons">edit</i>
+                Edit
+            </a>
+            {% endif %}
+            <a href="{{ url_for('admin.list_view', model_name=model_name) }}" class="btn btn-outline">
+                <i class="material-icons">arrow_back</i>
+                Back to List
+            </a>
+        </div>
+    </div>
+
+    <!-- Detail Content -->
+    <div class="detail-content">
+        <!-- Main Information Card -->
+        <div class="detail-card card">
+            <div class="card-header">
+                <h2 class="card-title">
+                    <i class="material-icons">info</i>
+                    Basic Information
+                </h2>
+            </div>
+            <div class="card-body">
+                <div class="detail-grid">
+                    {% for column in columns %}
+                    <div class="detail-field">
+                        <label class="field-label">{{ column|replace('_', ' ')|title }}</label>
+                        <div class="field-value">
+                            {% set value = getattr(item, column) %}
+                            {% if column in formatters %}
+                                {{ formatters[column](None, item, column)|safe }}
+                            {% else %}
+                                {% if value is none %}
+                                    <span class="text-muted">Not set</span>
+                                {% elif value is string %}
+                                    {{ value }}
+                                {% elif value is iterable and value is not string %}
+                                    <div class="collection-items">
+                                        {% for subitem in value %}
+                                        <span class="badge badge-outline">{{ subitem }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% elif value is boolean %}
+                                    <span class="badge {{ 'badge-success' if value else 'badge-secondary' }}">
+                                        {{ 'Yes' if value else 'No' }}
+                                    </span>
+                                {% else %}
+                                    {{ value }}
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Information -->
+        <div class="sidebar-info">
+            <!-- Timestamps Card -->
+            <div class="info-card card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="material-icons">schedule</i>
+                        Timestamps
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Created</label>
+                            <span>{{ item.created_at.strftime('%Y-%m-%d %H:%M') if item.created_at else 'Unknown' }}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Last Updated</label>
+                            <span>{{ item.updated_at.strftime('%Y-%m-%d %H:%M') if item.updated_at else 'Never' }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions Card -->
+            <div class="info-card card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="material-icons">bolt</i>
+                        Quick Actions
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="action-list">
+                        {% if view.can_edit %}
+                        <a href="{{ url_for('admin.edit_view', model_name=model_name, id=item.id) }}" class="action-item">
+                            <i class="material-icons">edit</i>
+                            <span>Edit {{ view.name|lower }}</span>
+                        </a>
+                        {% endif %}
+                        
+                        {% if view.can_delete %}
+                        <button type="button" 
+                                class="action-item text-danger" 
+                                onclick="adminDashboard.confirmDelete(
+                                    {{ item.id }}, 
+                                    '{{ view.name|lower }}',
+                                    '{{ url_for('admin.delete_view', model_name=model_name) }}',
+                                    '{{ url_for('admin.list_view', model_name=model_name) }}'
+                                )">
+                            <i class="material-icons">delete</i>
+                            <span>Delete {{ view.name|lower }}</span>
+                        </button>
+                        {% endif %}
+                        
+                        <a href="{{ url_for('admin.list_view', model_name=model_name) }}" class="action-item">
+                            <i class="material-icons">list</i>
+                            <span>View all {{ view.name|lower }}s</span>
+                        </a>
+
+                        {% if view.can_create %}
+                        <a href="{{ url_for('admin.create_view', model_name=model_name) }}" class="action-item">
+                            <i class="material-icons">add</i>
+                            <span>Create new {{ view.name|lower }}</span>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<style>
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.breadcrumb-item {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.breadcrumb-item.active {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.breadcrumb-separator {
+    color: var(--text-muted);
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.detail-field {
+    padding: 15px;
+    border: 1px solid #ecf0f1;
+    border-radius: 8px;
+    background: #f8f9fa;
+}
+
+.field-label {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.field-value {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.sidebar-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item label {
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.info-item span {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.action-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.action-item:hover {
+    background: white;
+    border-color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.action-item.text-danger {
+    color: var(--danger-color);
+}
+
+.action-item.text-danger:hover {
+    border-color: var(--danger-color);
+    background: #fee;
+}
+
+.collection-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+</style>
+{% endblock %}

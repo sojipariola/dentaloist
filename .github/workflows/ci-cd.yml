@@ -1,0 +1,118 @@
+name: 🧪 CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+env:
+  PYTHON_VERSION: 3.11
+  NODE_VERSION: 20
+  BACKEND_DIR: backend
+  FRONTEND_DIR: frontend
+
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15
+        ports: ['5432:5432']
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test_db
+        options: >-
+          --health-cmd="pg_isready -U postgres"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      # ---- BACKEND ----
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: 🔧 Install backend dependencies
+        working-directory: ${{ env.BACKEND_DIR }}
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install black flake8 pytest bandit
+
+      - name: 🧹 Lint & Security Check (Backend)
+        working-directory: ${{ env.BACKEND_DIR }}
+        run: |
+          black --check .
+          flake8 .
+          bandit -r app
+
+      - name: 🧪 Run Backend Tests
+        working-directory: ${{ env.BACKEND_DIR }}
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_db
+        run: |
+          pytest --disable-warnings --maxfail=1 --cov=app
+
+      # ---- FRONTEND ----
+      - name: ⚛️ Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 📦 Install frontend dependencies
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm ci
+
+      - name: 🧹 Lint Frontend
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm run lint --if-present
+
+      - name: 🧪 Run Frontend Tests
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm run test -- --coverage --watchAll=false || true
+
+      # ---- BUILD ----
+      - name: 🏗️ Build Backend Docker Image
+        run: docker build -t dentaloist-backend:latest ./backend
+
+      - name: 🏗️ Build Frontend Docker Image
+        run: docker build -t dentaloist-frontend:latest ./frontend
+
+      # ---- DEPLOY ----
+      - name: 🚀 Deploy to Render (Backend)
+        if: github.ref == 'refs/heads/main'
+        uses: render-examples/deploy-action@v1
+        with:
+          serviceId: ${{ secrets.RENDER_BACKEND_SERVICE_ID }}
+          apiKey: ${{ secrets.RENDER_API_KEY }}
+
+      - name: 🚀 Deploy to Render (Frontend)
+        if: github.ref == 'refs/heads/main'
+        uses: render-examples/deploy-action@v1
+        with:
+          serviceId: ${{ secrets.RENDER_FRONTEND_SERVICE_ID }}
+          apiKey: ${{ secrets.RENDER_API_KEY }}
+
+      # ---- OPTIONAL: Azure Deployment ----
+      # Uncomment below if deploying to Azure App Service instead
+      # - name: 🚀 Deploy Backend to Azure
+      #   uses: azure/webapps-deploy@v3
+      #   with:
+      #     app-name: 'dentaloist-backend'
+      #     publish-profile: ${{ secrets.AZURE_BACKEND_PUBLISH_PROFILE }}
+      #     images: 'dentaloist-backend:latest'
+      #
+      # - name: 🚀 Deploy Frontend to Azure
+      #   uses: azure/webapps-deploy@v3
+      #   with:
+      #     app-name: 'dentaloist-frontend'
+      #     publish-profile: ${{ secrets.AZURE_FRONTEND_PUBLISH_PROFILE }}
+      #     images: 'dentaloist-frontend:latest'

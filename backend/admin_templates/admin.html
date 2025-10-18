@@ -1,0 +1,841 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dentaloist Local Admin</title>
+    <link rel="stylesheet" href="/admin-static/css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>🦷 Dentaloist Admin</h2>
+                <div class="system-stats">
+                    <div class="stat">
+                        <span class="stat-number">77</span>
+                        <span class="stat-label">Tables</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">247</span>
+                        <span class="stat-label">Routes</span>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+
+                <div class="nav-section">
+                    <h3>Analytics</h3>
+                    <ul>
+
+                        <li>
+                            <a href="#table-analytics_dashboards" class="nav-link" data-table="analytics_dashboards">
+                                📊 analytics_dashboards
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-analytics_widgets" class="nav-link" data-table="analytics_widgets">
+                                📊 analytics_widgets
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-financial_reports" class="nav-link" data-table="financial_reports">
+                                📊 financial_reports
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-kpi_history" class="nav-link" data-table="kpi_history">
+                                📊 kpi_history
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-kpis" class="nav-link" data-table="kpis">
+                                📊 kpis
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-report_runs" class="nav-link" data-table="report_runs">
+                                📊 report_runs
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-report_schedules" class="nav-link" data-table="report_schedules">
+                                📊 report_schedules
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-report_types" class="nav-link" data-table="report_types">
+                                📊 report_types
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Appointments</h3>
+                    <ul>
+
+                        <li>
+                            <a href="#table-appointment_statuses" class="nav-link" data-table="appointment_statuses">
+                                📊 appointment_statuses
+                                <span class="row-count">7</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-appointment_types" class="nav-link" data-table="appointment_types">
+                                📊 appointment_types
+                                <span class="row-count">12</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Clinical Data</h3>
+                    <ul>
+
+                        <li>
+                            <a href="#table-patients" class="nav-link" data-table="patients">
+                                📊 patients
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-treatment_priorities" class="nav-link" data-table="treatment_priorities">
+                                📊 treatment_priorities
+                                <span class="row-count">4</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-treatment_rooms" class="nav-link" data-table="treatment_rooms">
+                                📊 treatment_rooms
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-treatment_statuses" class="nav-link" data-table="treatment_statuses">
+                                📊 treatment_statuses
+                                <span class="row-count">5</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-treatment_types" class="nav-link" data-table="treatment_types">
+                                📊 treatment_types
+                                <span class="row-count">10</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-treatments" class="nav-link" data-table="treatments">
+                                📊 treatments
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Financial</h3>
+                    <ul>
+
+                        <li>
+                            <a href="#table-claim_statuses" class="nav-link" data-table="claim_statuses">
+                                📊 claim_statuses
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-invoice_statuses" class="nav-link" data-table="invoice_statuses">
+                                📊 invoice_statuses
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-payment_methods" class="nav-link" data-table="payment_methods">
+                                📊 payment_methods
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-payment_statuses" class="nav-link" data-table="payment_statuses">
+                                📊 payment_statuses
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Inventory</h3>
+                    <ul>
+
+                        <li>
+                            <a href="#table-inventory_adjustment_types" class="nav-link" data-table="inventory_adjustment_types">
+                                📊 inventory_adjustment_types
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-inventory_adjustments" class="nav-link" data-table="inventory_adjustments">
+                                📊 inventory_adjustments
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-inventory_items" class="nav-link" data-table="inventory_items">
+                                📊 inventory_items
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-inventory_transaction_types" class="nav-link" data-table="inventory_transaction_types">
+                                📊 inventory_transaction_types
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-inventory_transactions" class="nav-link" data-table="inventory_transactions">
+                                📊 inventory_transactions
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-product_categories" class="nav-link" data-table="product_categories">
+                                📊 product_categories
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-product_images" class="nav-link" data-table="product_images">
+                                📊 product_images
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-product_price_history" class="nav-link" data-table="product_price_history">
+                                📊 product_price_history
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-product_types" class="nav-link" data-table="product_types">
+                                📊 product_types
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-products" class="nav-link" data-table="products">
+                                📊 products
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-purchase_order_statuses" class="nav-link" data-table="purchase_order_statuses">
+                                📊 purchase_order_statuses
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-purchase_orders" class="nav-link" data-table="purchase_orders">
+                                📊 purchase_orders
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-suppliers" class="nav-link" data-table="suppliers">
+                                📊 suppliers
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Lookup Tables</h3>
+                    <ul>
+
+                        <li>
+                            <a href="#table-industry_types" class="nav-link" data-table="industry_types">
+                                📊 industry_types
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-integration_statuses" class="nav-link" data-table="integration_statuses">
+                                📊 integration_statuses
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-note_types" class="nav-link" data-table="note_types">
+                                📊 note_types
+                                <span class="row-count">6</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-notification_types" class="nav-link" data-table="notification_types">
+                                📊 notification_types
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-organization_types" class="nav-link" data-table="organization_types">
+                                📊 organization_types
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-security_event_types" class="nav-link" data-table="security_event_types">
+                                📊 security_event_types
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-tenant_statuses" class="nav-link" data-table="tenant_statuses">
+                                📊 tenant_statuses
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-webhook_event_statuses" class="nav-link" data-table="webhook_event_statuses">
+                                📊 webhook_event_statuses
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-widget_types" class="nav-link" data-table="widget_types">
+                                📊 widget_types
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>System</h3>
+                    <ul>
+
+                        <li>
+                            <a href="#table-allergies" class="nav-link" data-table="allergies">
+                                📊 allergies
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-allergy_severities" class="nav-link" data-table="allergy_severities">
+                                📊 allergy_severities
+                                <span class="row-count">4</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-currencies" class="nav-link" data-table="currencies">
+                                📊 currencies
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-email_logs" class="nav-link" data-table="email_logs">
+                                📊 email_logs
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-expense_categories" class="nav-link" data-table="expense_categories">
+                                📊 expense_categories
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-expenses" class="nav-link" data-table="expenses">
+                                📊 expenses
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-family_members" class="nav-link" data-table="family_members">
+                                📊 family_members
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-genders" class="nav-link" data-table="genders">
+                                📊 genders
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-login_attempts" class="nav-link" data-table="login_attempts">
+                                📊 login_attempts
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-medication_routes" class="nav-link" data-table="medication_routes">
+                                📊 medication_routes
+                                <span class="row-count">5</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-notes" class="nav-link" data-table="notes">
+                                📊 notes
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-organizations" class="nav-link" data-table="organizations">
+                                📊 organizations
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-password_history" class="nav-link" data-table="password_history">
+                                📊 password_history
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-priority_levels" class="nav-link" data-table="priority_levels">
+                                📊 priority_levels
+                                <span class="row-count">4</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-rate_limits" class="nav-link" data-table="rate_limits">
+                                📊 rate_limits
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-security_events" class="nav-link" data-table="security_events">
+                                📊 security_events
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-staff" class="nav-link" data-table="staff">
+                                📊 staff
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-subscription_plans" class="nav-link" data-table="subscription_plans">
+                                📊 subscription_plans
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-subscriptions" class="nav-link" data-table="subscriptions">
+                                📊 subscriptions
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-tenant_audit_logs" class="nav-link" data-table="tenant_audit_logs">
+                                📊 tenant_audit_logs
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-tenant_invitations" class="nav-link" data-table="tenant_invitations">
+                                📊 tenant_invitations
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-tenants" class="nav-link" data-table="tenants">
+                                📊 tenants
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-vital_signs" class="nav-link" data-table="vital_signs">
+                                📊 vital_signs
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-vital_signs_units" class="nav-link" data-table="vital_signs_units">
+                                📊 vital_signs_units
+                                <span class="row-count">5</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-widget_templates" class="nav-link" data-table="widget_templates">
+                                📊 widget_templates
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-widgets" class="nav-link" data-table="widgets">
+                                📊 widgets
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>User Management</h3>
+                    <ul>
+
+                        <li>
+                            <a href="#table-permission_categories" class="nav-link" data-table="permission_categories">
+                                📊 permission_categories
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-permissions" class="nav-link" data-table="permissions">
+                                📊 permissions
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-role_permissions" class="nav-link" data-table="role_permissions">
+                                📊 role_permissions
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-roles" class="nav-link" data-table="roles">
+                                📊 roles
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-user_oauths" class="nav-link" data-table="user_oauths">
+                                📊 user_oauths
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-user_roles" class="nav-link" data-table="user_roles">
+                                📊 user_roles
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-user_roles_association" class="nav-link" data-table="user_roles_association">
+                                📊 user_roles_association
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-user_sessions" class="nav-link" data-table="user_sessions">
+                                📊 user_sessions
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#table-users" class="nav-link" data-table="users">
+                                📊 users
+                                <span class="row-count">0</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <header class="content-header">
+                <h1 id="content-title">System Overview</h1>
+                <div class="header-actions">
+                    <button id="refresh-btn" class="btn btn-primary">🔄 Refresh</button>
+                    <button id="export-btn" class="btn btn-secondary">📤 Export Data</button>
+                </div>
+            </header>
+            
+            <div class="content-area">
+                <!-- System Overview -->
+                <div id="system-overview" class="content-section active">
+                    <div class="overview-cards">
+                        <div class="card">
+                            <h3>📊 Database Statistics</h3>
+                            <div class="card-content">
+
+                                <div class="stat-item">
+                                    <span class="stat-category">Analytics:</span>
+                                    <span class="stat-value">8 tables</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">Appointments:</span>
+                                    <span class="stat-value">2 tables</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">Clinical Data:</span>
+                                    <span class="stat-value">6 tables</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">Financial:</span>
+                                    <span class="stat-value">4 tables</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">Inventory:</span>
+                                    <span class="stat-value">13 tables</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">Lookup Tables:</span>
+                                    <span class="stat-value">9 tables</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">System:</span>
+                                    <span class="stat-value">26 tables</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">User Management:</span>
+                                    <span class="stat-value">9 tables</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>🌐 Application Routes</h3>
+                            <div class="card-content">
+
+                                <div class="stat-item">
+                                    <span class="stat-category">WebAuth:</span>
+                                    <span class="stat-value">8 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">admin:</span>
+                                    <span class="stat-value">25 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">analytics:</span>
+                                    <span class="stat-value">4 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">api-docs:</span>
+                                    <span class="stat-value">2 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">appointments:</span>
+                                    <span class="stat-value">10 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">audit:</span>
+                                    <span class="stat-value">5 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">auth:</span>
+                                    <span class="stat-value">20 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">billing:</span>
+                                    <span class="stat-value">10 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">clinical:</span>
+                                    <span class="stat-value">10 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">dashboard:</span>
+                                    <span class="stat-value">11 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">family_members:</span>
+                                    <span class="stat-value">9 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">files:</span>
+                                    <span class="stat-value">2 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">health:</span>
+                                    <span class="stat-value">6 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">insurance:</span>
+                                    <span class="stat-value">8 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">integrations:</span>
+                                    <span class="stat-value">10 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">inventory:</span>
+                                    <span class="stat-value">9 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">labs:</span>
+                                    <span class="stat-value">9 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">main:</span>
+                                    <span class="stat-value">3 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">notifications:</span>
+                                    <span class="stat-value">10 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">organizations:</span>
+                                    <span class="stat-value">10 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">patients:</span>
+                                    <span class="stat-value">9 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">prescriptions:</span>
+                                    <span class="stat-value">10 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">reports:</span>
+                                    <span class="stat-value">10 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">settings:</span>
+                                    <span class="stat-value">9 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">telemedicine:</span>
+                                    <span class="stat-value">10 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">users:</span>
+                                    <span class="stat-value">11 routes</span>
+                                </div>
+
+                                <div class="stat-item">
+                                    <span class="stat-category">widget_api:</span>
+                                    <span class="stat-value">7 routes</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Table Details will be loaded here dynamically -->
+                <div id="table-details" class="content-section"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/admin-static/js/admin.js"></script>
+</body>
+</html>

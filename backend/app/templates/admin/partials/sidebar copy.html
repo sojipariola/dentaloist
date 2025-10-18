@@ -1,0 +1,102 @@
+<div class="sidebar-accordion" id="sidebar">
+    <div class="sidebar-header">
+        <a href="{{ url_for('admin.dashboard') }}" class="sidebar-brand">
+            <i class="material-icons">medical_services</i>
+            Dentaloist Admin
+        </a>
+    </div>
+
+    <nav class="sidebar-nav">
+        <!-- Dashboard Link -->
+        <div class="accordion-item">
+            <a href="{{ url_for('admin.dashboard') }}" class="accordion-link dashboard-link">
+                <i class="material-icons nav-icon">dashboard</i>
+                Dashboard
+            </a>
+        </div>
+
+        <!-- Menu Categories as Accordion Items -->
+        {% for category, views in admin_manager.get_menu().items() %}
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">
+                    <i class="material-icons nav-icon">folder</i>
+                    {{ category }}
+                </div>
+                <i class="material-icons accordion-icon">expand_more</i>
+            </button>
+            <div class="accordion-content">
+                <ul class="accordion-links">
+                    {% for view_item in views %}
+                    <li>
+                        <a href="{{ url_for('admin.list_view', model_name=view_item.model_name) }}" 
+                           class="accordion-link {% if request.endpoint == 'admin.list_view' and request.view_args.model_name == view_item.model_name %}active{% endif %}">
+                            <i class="material-icons nav-icon">{{ view_item.icon|replace('fa-', '') }}</i>
+                            {{ view_item.name }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- System Links -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">
+                    <i class="material-icons nav-icon">settings</i>
+                    System
+                </div>
+                <i class="material-icons accordion-icon">expand_more</i>
+            </button>
+            <div class="accordion-content">
+                <ul class="accordion-links">
+                    <li>
+                        <a href="{{ url_for('admin.documentation') }}" class="accordion-link">
+                            <i class="material-icons nav-icon">book</i>
+                            Documentation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('admin.debug_urls') }}" class="accordion-link">
+                            <i class="material-icons nav-icon">link</i>
+                            Debug URLs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('admin.debug_models') }}" class="accordion-link">
+                            <i class="material-icons nav-icon">model_training</i>
+                            Debug Models
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('admin.debug_views') }}" class="accordion-link">
+                            <i class="material-icons nav-icon">admin_panel_settings</i>
+                            Debug Views
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('admin.debug_template_vars') }}" class="accordion-link">
+                            <i class="material-icons nav-icon">code</i>
+                            Template Vars
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Logout Section -->
+        <div class="accordion-item">
+            <!-- Hidden form for POST logout -->
+            <form method="POST" action="{{ url_for('admin.admin_logout') }}" id="logout-form" style="display: none;">
+            </form>
+            
+            <!-- Visible logout link -->
+            <a href="#" class="accordion-link dashboard-link" onclick="event.preventDefault(); logoutUser();">
+                <i class="material-icons nav-icon">logout</i>
+                Logout
+            </a>
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,81 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Dentaloist Admin Dashboard</h1>
+    <p class="lead">Welcome to the admin panel</p>
+    
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Users</h5>
+                    <p class="card-text display-4">{{ stats.total_users }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Patients</h5>
+                    <p class="card-text display-4">{{ stats.total_patients }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-info mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Appointments</h5>
+                    <p class="card-text display-4">{{ stats.total_appointments }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Organizations</h5>
+                    <p class="card-text display-4">{{ stats.total_organizations }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Quick Actions</h5>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <a href="{{ url_for('admin.list_view', endpoint='user') }}" class="list-group-item list-group-item-action">
+                            Manage Users
+                        </a>
+                        <a href="{{ url_for('admin.list_view', endpoint='patient') }}" class="list-group-item list-group-item-action">
+                            Manage Patients
+                        </a>
+                        <a href="{{ url_for('admin.list_view', endpoint='appointment') }}" class="list-group-item list-group-item-action">
+                            Manage Appointments
+                        </a>
+                        <a href="{{ url_for('admin.create_view', endpoint='user') }}" class="list-group-item list-group-item-action">
+                            Add New User
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">System Info</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>Admin User:</strong> {{ current_user.email }}</p>
+                    <p><strong>Current Time:</strong> {{ stats.now }}</p>
+                    <p><strong>Status:</strong> <span class="badge bg-success">Operational</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

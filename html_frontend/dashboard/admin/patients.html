@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patients - DentalSys</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/themes/light.css" id="theme-link">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div class="main-content">
+        <div id="sidebar-container"></div>
+        <div class="page-content">
+            <h1>👥 Patients</h1>
+            <div class="toolbar">
+                <input type="text" id="search" placeholder="Search patients...">
+                <button id="add-patient">+ Add Patient</button>
+            </div>
+            <div id="patients-table"></div>
+        </div>
+    </div>
+    <template id="patient-row-template">
+        <tr>
+            <td class="patient-name"></td>
+            <td class="patient-email"></td>
+            <td class="patient-phone"></td>
+            <td class="patient-dob"></td>
+            <td>
+                <button class="btn-edit">Edit</button>
+                <button class="btn-view">View</button>
+            </td>
+        </tr>
+    </template>
+    <script type="module" src="../../js/pages/patients.js"></script>
+</body>
+</html>

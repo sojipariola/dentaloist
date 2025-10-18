@@ -1,0 +1,131 @@
+__pycache__/
+instance/
+.env
+node_modules/
+build/
+# ----------------------------------------
+# .gitignore for backend/ (Flask / Python)
+# Place this file at backend/.gitignore
+# ----------------------------------------
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+# Usually these are created by PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+env/
+ENV/
+env.bak/
+venv/
+.venv/
+venv.bak/
+venv3/
+
+# pipenv / poetry (local virtual envs)
+# (Lockfiles like Pipfile.lock / poetry.lock are typically committed; do not ignore them)
+.python-version
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.pytest_cache/
+
+# Mypy / static analysis caches
+.mypy_cache/
+.dmypy.json
+.pyre/
+
+# Flask instance folder (sensitive config, e.g., instance/config.py)
+instance/
+
+# Local DB files
+*.db
+*.sqlite3
+*.sqlite
+
+# Environment / credentials
+.env
+.flaskenv
+.env.*    # local env variants
+
+# Secrets / keys
+*.pem
+*.key
+secrets.json
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Logs
+*.log
+logs/
+gunicorn.log
+gunicorn.error.log
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts / caches (C extension builds, wheels)
+*.egg
+*.egg-info/
+wheelhouse/
+
+# Misc
+local_settings.py
+.coverage.*
+.cache/
+.venv/              # sometimes duplicated, but kept for completeness
+
+# Notes:
+# - Do NOT ignore migration folders if you intend to track DB migrations (Alembic, Flask-Migrate).
+#   If you want to track migrations, remove them from this file (e.g., keep migrations/).
+# - Keep lockfiles (Pipfile.lock / poetry.lock) committed for reproducible installs.

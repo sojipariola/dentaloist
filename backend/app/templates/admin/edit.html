@@ -1,0 +1,214 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="form-container">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="header-content">
+            <nav class="breadcrumb">
+                <a href="{{ url_for('admin.list_view', model_name=model_name) }}" class="breadcrumb-item">
+                    {{ view.name }}
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="{{ url_for('admin.detail_view', model_name=model_name, id=item.id) }}" class="breadcrumb-item">
+                    {{ item.id }}
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-item active">Edit</span>
+            </nav>
+            <h1>Edit {{ view.name }}</h1>
+            <p>Update the information for {{ view.name|lower }} #{{ item.id }}</p>
+        </div>
+        <div class="header-actions">
+            <a href="{{ url_for('admin.detail_view', model_name=model_name, id=item.id) }}" class="btn btn-outline">
+                <i class="material-icons">visibility</i>
+                View Details
+            </a>
+            <a href="{{ url_for('admin.list_view', model_name=model_name) }}" class="btn btn-outline">
+                <i class="material-icons">arrow_back</i>
+                Back to List
+            </a>
+        </div>
+    </div>
+
+    <!-- Edit Form -->
+    <div class="form-card card">
+        <form method="POST" action="{{ url_for('admin.edit_view', model_name=model_name, id=item.id) }}">
+            {{ form.csrf_token if form and hasattr(form, 'csrf_token') }}
+            
+            <div class="form-grid">
+                {% for column in form_columns %}
+                <div class="form-group">
+                    <label for="{{ column }}" class="form-label">
+                        {{ column|replace('_', ' ')|title }}
+                    </label>
+                    {% set value = getattr(item, column) %}
+                    <input type="text" 
+                           id="{{ column }}" 
+                           name="{{ column }}" 
+                           class="form-control"
+                           value="{{ request.form[column] or value or '' }}"
+                           {{ 'readonly' if column in ['id', 'created_at'] }}>
+                    
+                    {% if column in ['created_at', 'updated_at'] and value %}
+                    <div class="form-help-text">
+                        <small class="text-muted">
+                            {{ value.strftime('%Y-%m-%d %H:%M:%S') if value }}
+                        </small>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                    <i class="material-icons">save</i>
+                    Update {{ view.name }}
+                </button>
+                <button type="reset" class="btn btn-outline">
+                    <i class="material-icons">refresh</i>
+                    Reset
+                </button>
+                <a href="{{ url_for('admin.detail_view', model_name=model_name, id=item.id) }}" class="btn btn-outline">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Current Information -->
+    <div class="current-info card">
+        <div class="card-header">
+            <h3 class="card-title">
+                <i class="material-icons">history</i>
+                Current Information
+            </h3>
+        </div>
+        <div class="card-body">
+            <div class="info-grid">
+                {% for column in ['id', 'created_at', 'updated_at'] %}
+                {% if column in form_columns %}
+                {% set value = getattr(item, column) %}
+                <div class="info-item">
+                    <label>{{ column|replace('_', ' ')|title }}</label>
+                    <span>
+                        {% if value %}
+                            {% if value is string %}
+                                {{ value }}
+                            {% else %}
+                                {{ value.strftime('%Y-%m-%d %H:%M:%S') }}
+                            {% endif %}
+                        {% else %}
+                            <span class="text-muted">Not set</span>
+                        {% endif %}
+                    </span>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<style>
+.form-help-text {
+    margin-top: 5px;
+}
+
+.current-info {
+    margin-top: 30px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.info-item label {
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.info-item span {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Read-only field styling */
+.form-control[readonly] {
+    background-color: #f8f9fa;
+    border-color: #e9ecef;
+    color: var(--text-muted);
+    cursor: not-allowed;
+}
+
+/* Enhanced reset button */
+.btn[type="reset"]:hover {
+    border-color: var(--warning-color);
+    color: var(--warning-color);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    const resetBtn = form.querySelector('button[type="reset"]');
+    
+    if (resetBtn) {
+        resetBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (confirm('Are you sure you want to reset all changes?')) {
+                form.reset();
+                adminDashboard.showNotification('Form reset to original values', 'info');
+            }
+        });
+    }
+    
+    // Track form changes
+    let formChanged = false;
+    const initialValues = {};
+    
+    // Store initial values
+    form.querySelectorAll('input, select, textarea').forEach(field => {
+        if (field.name && !field.readonly) {
+            initialValues[field.name] = field.value;
+        }
+    });
+    
+    // Detect changes
+    form.addEventListener('input', function() {
+        let hasChanges = false;
+        
+        form.querySelectorAll('input, select, textarea').forEach(field => {
+            if (field.name && !field.readonly && initialValues[field.name] !== field.value) {
+                hasChanges = true;
+            }
+        });
+        
+        formChanged = hasChanges;
+    });
+    
+    // Warn before leaving if changes exist
+    window.addEventListener('beforeunload', function(e) {
+        if (formChanged) {
+            e.preventDefault();
+            e.returnValue = 'You have unsaved changes. Are you sure you want to leave?';
+        }
+    });
+});
+</script>
+{% endblock %}

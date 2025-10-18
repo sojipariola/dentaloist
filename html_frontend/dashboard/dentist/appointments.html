@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointments - DentalSys</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/themes/light.css" id="theme-link">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div class="main-content">
+        <div id="sidebar-container"></div>
+        <div class="page-content">
+            <h1>🦷 Today's Appointments</h1>
+            <div class="toolbar">
+                <button id="add-appointment">+ New Appointment</button>
+                <select id="status-filter">
+                    <option value="all">All Status</option>
+                    <option value="scheduled">Scheduled</option>
+                    <option value="confirmed">Confirmed</option>
+                    <option value="in_progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            <div id="appointments-list" class="grid"></div>
+        </div>
+    </div>
+    <template id="appointment-card-template">
+        <div class="appointment-card">
+            <div class="card-header">
+                <h3 class="title"></h3>
+                <span class="status-badge"></span>
+            </div>
+            <div class="card-body">
+                <p><strong>Patient:</strong> <span class="patient-name"></span></p>
+                <p><strong>Time:</strong> <span class="time"></span></p>
+                <p><strong>Type:</strong> <span class="type"></span></p>
+                <p><strong>Room:</strong> <span class="room"></span></p>
+            </div>
+            <div class="card-footer">
+                <button class="btn-view">View Details</button>
+                <button class="btn-start">Start</button>
+            </div>
+        </div>
+    </template>
+    <script type="module" src="../../js/pages/appointments.js"></script>
+</body>
+</html>
